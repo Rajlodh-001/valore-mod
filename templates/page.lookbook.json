@@ -1,0 +1,402 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ae10bb88-9b33-4910-b547-a15da9fdf005": {
+      "type": "hero",
+      "blocks": {
+        "ba00d5be-3ddf-4b56-aad7-277fa385e019": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "A Bold Fusion of Performance and Design"
+          }
+        },
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-title-1": {
+          "type": "title",
+          "settings": {
+            "title": "VALORE 2026 Collection Preview",
+            "heading_size": "h-xl"
+          }
+        },
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read More",
+            "button_link": "shopify://blogs/news/valore-x-lamborghini-cross-border-collaboration",
+            "button_style": "btn--white",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "ba00d5be-3ddf-4b56-aad7-277fa385e019",
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-title-1",
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-button-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/valore-x-lamborghini-lookbook-1.jpg",
+        "image_mobile": "shopify://shop_images/valore-x-lamborghini-lookbook-1-mobile.jpg",
+        "image_overlay_opacity": 20,
+        "hero_height": "large",
+        "content_in_container": false,
+        "content_position": "center",
+        "text_alignment": "center",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "667c1b48-1229-4411-9100-b2833e094c54": {
+      "type": "rich-text",
+      "blocks": {
+        "97ea19a8-6cb6-46a6-850c-1f603a2ac621": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "October 2024"
+          }
+        },
+        "template--16360124678305__667c1b48-1229-4411-9100-b2833e094c54-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Relentlessly pushing the boundaries of outdoor aesthetics",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        }
+      },
+      "block_order": [
+        "97ea19a8-6cb6-46a6-850c-1f603a2ac621",
+        "template--16360124678305__667c1b48-1229-4411-9100-b2833e094c54-heading-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "c9f93ba3-daa8-411a-bbb6-839020ef01ac": {
+      "type": "lookbook",
+      "blocks": {
+        "template--16360124678305__c9f93ba3-daa8-411a-bbb6-839020ef01ac-lookbook-2": {
+          "type": "lookbook-slider",
+          "settings": {
+            "heading": "Shop the look",
+            "heading_size": "h2",
+            "description": "",
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-2.jpg",
+            "image_position": "left",
+            "annotation_color": "light",
+            "product_image_ratio": "adapt",
+            "product_card_width": 280,
+            "product_per_slide": "1",
+            "controls_background": "none",
+            "controls_position": "center",
+            "pagination_type": "dots",
+            "top_1": 63,
+            "left_1": 70,
+            "product_1": "valore-x-lamborghini-limited-edition-cycling-clothing-gift-box-set",
+            "top_2": 35,
+            "left_2": 50,
+            "product_2": "",
+            "top_3": 85,
+            "left_3": 40,
+            "product_3": "",
+            "top_4": 0,
+            "left_4": 0,
+            "product_4": "",
+            "top_5": 20,
+            "left_5": 0,
+            "product_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16360124678305__c9f93ba3-daa8-411a-bbb6-839020ef01ac-lookbook-2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "image_aspect_ratio": "3/4",
+        "columns": 2,
+        "column_gap": "extra-large",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "bb4f542e-8940-44b9-8f89-4402abe60ee6": {
+      "type": "lookbook",
+      "blocks": {
+        "35563d3f-c1b8-4aba-96bd-cc1d326895c0": {
+          "type": "lookbook-slider",
+          "settings": {
+            "heading": "Shop the look",
+            "heading_size": "h2",
+            "description": "",
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-3.jpg",
+            "image_position": "right",
+            "annotation_color": "light",
+            "product_image_ratio": "adapt",
+            "product_card_width": 280,
+            "product_per_slide": "1",
+            "controls_background": "none",
+            "controls_position": "center",
+            "pagination_type": "dots",
+            "top_1": 63,
+            "left_1": 70,
+            "product_1": "",
+            "top_2": 35,
+            "left_2": 50,
+            "product_2": "",
+            "top_3": 85,
+            "left_3": 40,
+            "product_3": "valore-x-lamborghini-limited-edition-cycling-clothing-gift-box-set",
+            "top_4": 0,
+            "left_4": 0,
+            "product_4": "",
+            "top_5": 20,
+            "left_5": 0,
+            "product_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "35563d3f-c1b8-4aba-96bd-cc1d326895c0"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "image_aspect_ratio": "3/4",
+        "columns": 2,
+        "column_gap": "extra-large",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "e52948b7-670c-4444-b587-a01de129d4ae": {
+      "type": "rich-text",
+      "blocks": {
+        "4319c8dc-0592-45a5-921c-1befcc26fbf4": {
+          "type": "heading",
+          "settings": {
+            "heading": "cutting-edge design",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "f74a3b09-b9d3-424f-84da-8aa1e12213f6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Commitment to creating products that not only look good but also perform under the most intense conditions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "4319c8dc-0592-45a5-921c-1befcc26fbf4",
+        "f74a3b09-b9d3-424f-84da-8aa1e12213f6"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "mobile-remove-br",
+        "animations": "inherit"
+      }
+    },
+    "5c324583-1c57-42dc-9af7-9fae8ff2df72": {
+      "type": "custom-content",
+      "blocks": {
+        "template--16360124678305__5c324583-1c57-42dc-9af7-9fae8ff2df72-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-4.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "3c26ee6e-d0c1-40bb-80de-feac9c154cd0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-5.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "3d36ef7f-c862-434a-83fe-d7fa649d53ae": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-6.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "659db980-5998-4a5d-b169-49741b13abb4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-7.jpg",
+            "link": "",
+            "width": "66%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "a2f1cc5c-acb4-40a2-a287-16f9880b92af": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/valore-x-lamborghini-lookbook-8.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "template--16360124678305__5c324583-1c57-42dc-9af7-9fae8ff2df72-image-1",
+        "3c26ee6e-d0c1-40bb-80de-feac9c154cd0",
+        "3d36ef7f-c862-434a-83fe-d7fa649d53ae",
+        "659db980-5998-4a5d-b169-49741b13abb4",
+        "a2f1cc5c-acb4-40a2-a287-16f9880b92af"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h3",
+        "description": "",
+        "column_gap": "extra-small",
+        "row_gap": "extra-small",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "03f3404d-800d-41c8-860f-849ad9d07479": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "section_header_padding_bottom": "large",
+        "header_layout": "vertical",
+        "heading": "Featured collection",
+        "heading_size": "h2",
+        "subheading": "",
+        "description": "",
+        "collection": "mens-cycling-bib-shorts",
+        "limit": 6,
+        "columns": 4,
+        "column_gap": "extra-small",
+        "row_gap": "medium",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "enable_slider": true,
+        "show_nav": true,
+        "show_dots": false,
+        "show_all_button_on_top": true,
+        "button_label": "",
+        "button_style": "btn--underline",
+        "enable_swipe_mobile": true,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "video_FncGLH": {
+      "type": "video",
+      "settings": {
+        "container": "container",
+        "section_header_padding_bottom": "medium",
+        "heading": "Video",
+        "heading_size": "h2",
+        "description": "",
+        "video_type": "external",
+        "video_url": "https://www.youtube.com/watch?v=hOVSuygb8f0",
+        "cover_image": "shopify://shop_images/2024-banner-valore-x-lamborghini-1.jpg",
+        "video_ratio": "adapt",
+        "autoplay_video": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ae10bb88-9b33-4910-b547-a15da9fdf005",
+    "667c1b48-1229-4411-9100-b2833e094c54",
+    "c9f93ba3-daa8-411a-bbb6-839020ef01ac",
+    "bb4f542e-8940-44b9-8f89-4402abe60ee6",
+    "e52948b7-670c-4444-b587-a01de129d4ae",
+    "5c324583-1c57-42dc-9af7-9fae8ff2df72",
+    "03f3404d-800d-41c8-860f-849ad9d07479",
+    "video_FncGLH"
+  ]
+}

@@ -1,0 +1,191 @@
+{%- doc -%}
+  Desktop or mobile Men/Women mega-nav item used when those links are missing from the Shopify menu.
+
+  @param {string} gender - "men" or "women"
+  @param {object} section - header section
+  @param {boolean} is_hover - whether dropdowns open on hover
+  @param {string} [context] - "desktop" or "mobile"
+{%- enddoc -%}
+
+{%- liquid
+  assign gender_handle = gender | handleize
+  assign catalog_url = routes.all_products_collection_url
+  assign gender_label = 'Men'
+  assign promo_layout = 'cards'
+  assign new_1 = 'New Arrivals'
+  assign new_2 = 'All Collections'
+  assign new_3 = 'Running Singlets'
+  assign new_4 = 'Cycling Skinsuits'
+  assign new_5 = 'Jacket & Windbreaker'
+  assign cloth_1 = 'Cycling Jersey Mens'
+  assign cloth_2 = 'Bibs & Shorts'
+  assign cloth_3 = 'Vest & Gilet'
+  assign cloth_4 = 'Base Layers'
+  assign cloth_5 = 'Tights'
+  if gender_handle == 'women'
+    assign gender_label = 'Women'
+    assign promo_layout = 'wide'
+    assign new_3 = 'Running Singlets Womens'
+    assign new_4 = 'Cycling Skinsuits Womens'
+    assign new_5 = 'Jackets'
+    assign cloth_1 = 'Jerseys'
+  endif
+
+  assign promo_html = ''
+  assign images_position = 'right'
+  for block in section.blocks
+    assign block_heading = block.settings.heading | handleize
+    if block_heading == gender_handle
+      if block.type == 'mega_menu' or block.type == 'banner'
+        assign images_position = block.settings.images_position | default: 'right'
+        capture promo_html
+          render 'prestige-mega-menu-images', block: block, layout: promo_layout
+        endcapture
+        break
+      endif
+    endif
+  endfor
+-%}
+
+{%- if context == 'mobile' -%}
+  <li class="f-mobile-nav__item f-mobile-nav__item--has-child" data-menu-toggle-item data-collapsible-parent>
+    <a href="{{ catalog_url }}" class="f-mobile-nav__link">{{ gender_label }}</a>
+    <collapsible-tab>
+      <span class="f-mobile-nav__arrow" data-trigger>
+        <span class="no-js-hidden f-mobile-nav__arrow-icon">
+          <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </span>
+      <div class="f-mobile-nav__dropdown" data-content>
+        <ul class="list-none w-full">
+          <li class="f-mobile-nav__subitem f-mobile-nav__sub-item--has-child" data-menu-toggle-item data-collapsible-parent>
+            <a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">What's New</a>
+            <collapsible-tab>
+              <span class="f-mobile-nav__arrow" data-trigger>
+                <span class="no-js-hidden f-mobile-nav__arrow-icon">
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </span>
+              <div class="f-mobile-nav__dropdown f-mobile-nav__dropdown--level3" data-content>
+                <ul class="list-none">
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ new_1 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ new_2 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ new_3 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ new_4 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ new_5 }}</a></li>
+                </ul>
+              </div>
+            </collapsible-tab>
+          </li>
+          <li class="f-mobile-nav__subitem f-mobile-nav__sub-item--has-child" data-menu-toggle-item data-collapsible-parent>
+            <a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Clothing</a>
+            <collapsible-tab>
+              <span class="f-mobile-nav__arrow" data-trigger>
+                <span class="no-js-hidden f-mobile-nav__arrow-icon">
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </span>
+              <div class="f-mobile-nav__dropdown f-mobile-nav__dropdown--level3" data-content>
+                <ul class="list-none">
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ cloth_1 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ cloth_2 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ cloth_3 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ cloth_4 }}</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">{{ cloth_5 }}</a></li>
+                </ul>
+              </div>
+            </collapsible-tab>
+          </li>
+          <li class="f-mobile-nav__subitem f-mobile-nav__sub-item--has-child" data-menu-toggle-item data-collapsible-parent>
+            <a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Accessories</a>
+            <collapsible-tab>
+              <span class="f-mobile-nav__arrow" data-trigger>
+                <span class="no-js-hidden f-mobile-nav__arrow-icon">
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </span>
+              <div class="f-mobile-nav__dropdown f-mobile-nav__dropdown--level3" data-content>
+                <ul class="list-none">
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Caps & Hats</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Gloves</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Socks</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Musette Bag</a></li>
+                  <li class="f-mobile-nav__sub-item f-mobile-nav__sub-item--level3"><a href="{{ catalog_url }}" class="f-mobile-nav__sub-link">Bottles & Mugs</a></li>
+                </ul>
+              </div>
+            </collapsible-tab>
+          </li>
+        </ul>
+      </div>
+    </collapsible-tab>
+  </li>
+{%- else -%}
+  <li class="f-site-nav__item f-site-nav__item--has-child f-site-nav__item--mega" data-index="{{ gender_handle }}">
+    <a href="{{ catalog_url }}" class="f-site-nav__link focus-inset">
+      <span>{{ gender_label }}</span>
+    </a>
+    <div class="f-site-nav__dropdown f-site-nav__dropdown--level2 f-site-nav__dropdown--mega prestige-mega no-js-hidden color-{{ section.settings.menu_dropdown_color_schema }}" tabindex="-1">
+      <div class="container">
+        <div class="prestige-mega-menu{% if images_position == 'left' %} prestige-mega-menu--reverse{% endif %}{% if promo_layout == 'wide' %} prestige-mega-menu--wide{% endif %}">
+          <ul class="prestige-mega-menu__columns list-none" role="list">
+            <li class="prestige-mega-menu__column">
+              <a href="{{ catalog_url }}" class="prestige-mega-menu__heading">What's New</a>
+              <ul class="prestige-mega-menu__links list-none" role="list">
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ new_1 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ new_2 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ new_3 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ new_4 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ new_5 }}</a></li>
+              </ul>
+            </li>
+            <li class="prestige-mega-menu__column">
+              <a href="{{ catalog_url }}" class="prestige-mega-menu__heading">Clothing</a>
+              <ul class="prestige-mega-menu__links list-none" role="list">
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ cloth_1 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ cloth_2 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ cloth_3 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ cloth_4 }}</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">{{ cloth_5 }}</a></li>
+              </ul>
+            </li>
+            <li class="prestige-mega-menu__column">
+              <a href="{{ catalog_url }}" class="prestige-mega-menu__heading">Accessories</a>
+              <ul class="prestige-mega-menu__links list-none" role="list">
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">Caps & Hats</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">Gloves</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">Socks</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">Musette Bag</a></li>
+                <li><a href="{{ catalog_url }}" class="prestige-mega-menu__link">Bottles & Mugs</a></li>
+              </ul>
+            </li>
+          </ul>
+          {%- if promo_html != blank -%}
+            <div class="prestige-mega-menu__promo{% if promo_layout == 'wide' %} prestige-mega-menu__promo--wide{% endif %}">
+              {{- promo_html -}}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </li>
+{%- endif -%}

@@ -1,0 +1,516 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_byM9Bq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NBiBwM": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "text_mmBCRi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Valore was created from a simple belief,<br/>cycling is never only about speed or distance.<br/>It is about the pursuit of something more.</p>"
+          }
+        },
+        "button_YYfFUF": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_NBiBwM",
+        "text_mmBCRi",
+        "button_YYfFUF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "image_with_text_DGLykV": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_yPp8pk": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading text"
+          }
+        },
+        "heading_gdLHxn": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_3MEAiy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The brand was founded by Mr. Cai, a passionate cycling performance apparel visionary with over 17 years in the industry. His goal was to build a cycling brand that connects riders across cultures, disciplines, and places. From the beginning, Valore was imagined not just as apparel, but as a shared connection between cyclists who see the ride as part of a larger journey.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_yPp8pk",
+        "heading_gdLHxn",
+        "text_3MEAiy"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "background-2",
+        "image": "shopify://shop_images/mr-cai.jpg",
+        "image_width": "50%",
+        "image_position": "left",
+        "vertical_alignment": "center",
+        "column_gap": "none",
+        "row_gap": "medium",
+        "padding_left": 100,
+        "padding_right": 0,
+        "align_content_container": "right",
+        "mobile_padding_left": 15,
+        "mobile_padding_right": 15,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "image_with_text_9MjBw4": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_3zFkzt": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h2"
+          }
+        },
+        "text_V69PQL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This philosophy lives through the spirit of Further Together,<br/>the belief that cycling moves us forward, but connection takes us further.<br/>Valore's creative direction is shaped by Angelo Porrovecchio, a cyclist and designer with 20 years in the industry, whose Italian heritage and Australian perspective guide the brand's core identity and focus.</p>"
+          }
+        },
+        "button_EQnUpn": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_3zFkzt",
+        "text_V69PQL",
+        "button_EQnUpn"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "image": "shopify://shop_images/angelo-porrovecchio.jpg",
+        "image_width": "50%",
+        "image_position": "right",
+        "vertical_alignment": "center",
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "padding_left": 0,
+        "padding_right": 0,
+        "align_content_container": "none",
+        "mobile_padding_left": 15,
+        "mobile_padding_right": 15,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "custom_html_mwqXYE": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Together, their collaboration brings a unique balance:",
+        "heading_size": "h2",
+        "description": "<p>Australian creative vision.<br/>Italian design heritage.<br/>Chinese precision craftsmanship.</p>",
+        "custom_html": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_hma3tP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yE6NRf": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "text_8y6f6T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Behind every collection stands nearly two decades of technical apparel development through Valore's own performance manufacturing studio, where advanced materials, precise construction, and riding experience shape each product.</p><p>At the heart of the brand is a philosophy we call AOE:<br/><strong>Aspire. Overcome. Elevate.</strong><br/>To <strong>Aspire</strong> beyond yesterday.<br/>To <strong>Overcome</strong> the road ahead.<br/>To <strong>Elevate</strong> every ride.</p><p>Because cycling is never only about reaching the destination.</p><p>It is about the riders we become along the way.</p><p>VALORE<br/><br/></p>"
+          }
+        },
+        "button_Fx98bK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_yE6NRf",
+        "text_8y6f6T",
+        "button_Fx98bK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "45e4c2ac-12b8-4ed1-a789-75b4dbc9c578": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17157701599458__45e4c2ac-12b8-4ed1-a789-75b4dbc9c578-column-1": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Column",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "23738779-93a8-4a1b-aa4a-382808fc8419": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Column",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "62b69dd1-a1f1-4028-9f0c-bf65a341a11c": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Column",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        }
+      },
+      "block_order": [
+        "template--17157701599458__45e4c2ac-12b8-4ed1-a789-75b4dbc9c578-column-1",
+        "23738779-93a8-4a1b-aa4a-382808fc8419",
+        "62b69dd1-a1f1-4028-9f0c-bf65a341a11c"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "layout": "vertical",
+        "text_alignment": "center",
+        "image_width": "x-small",
+        "columns": 3,
+        "column_gap": "extra-large",
+        "row_gap": "medium",
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "border-bottom",
+        "animations": "inherit"
+      }
+    },
+    "a16d91be-b626-44c9-8cae-a679dc435c62": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_DMajqn": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image_link": "",
+            "title": "Column",
+            "heading_size": "h3",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-1": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Designed with purpose",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/tested-on-real-roads.jpg",
+            "image_link": "",
+            "title": "Tested on real roads",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/shoot-moments.jpg",
+            "image_link": "",
+            "title": "Shoot Moments",
+            "heading_size": "h4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        }
+      },
+      "block_order": [
+        "column_DMajqn",
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-1",
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-2",
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "large",
+        "heading": "Behind Valore",
+        "heading_size": "h2",
+        "description": "",
+        "layout": "vertical",
+        "text_alignment": "left",
+        "image_width": "fullwidth",
+        "columns": 3,
+        "column_gap": "large",
+        "row_gap": "medium",
+        "enable_swipe_mobile": true,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "video_hero_mPRd6c": {
+      "type": "video-hero",
+      "blocks": {
+        "subtitle_CGhmen": {
+          "type": "subtitle",
+          "disabled": true,
+          "settings": {
+            "subtitle": "Subheading text"
+          }
+        },
+        "title_XxMjQA": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title": "Valore AOE | Cycling Beyond Limits in Stelvio, Italy",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_CGhmen",
+        "title_XxMjQA"
+      ],
+      "settings": {
+        "container": "container-full",
+        "video_type": "external",
+        "video_url": "https://www.youtube.com/watch?v=qfU7n0uvYfo",
+        "image_overlay_opacity": 40,
+        "hero_height": "large",
+        "content_in_container": false,
+        "content_position": "center",
+        "text_alignment": "center",
+        "vertical_content_padding": 40,
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "vertical_content_padding_mobile": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "73c8e618-10a0-43bf-b1d9-fa6707a4b913": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "74dc4299-fedb-45c6-9455-f3dd358440e7": {
+          "type": "image",
+          "settings": {
+            "image_height": 24,
+            "image_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 10,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 10
+          }
+        },
+        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "font_family": "body",
+            "text_size": 20,
+            "text_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 60,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 40
+          }
+        },
+        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a": {
+          "type": "image",
+          "settings": {
+            "image_height": 24,
+            "image_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 10,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 10
+          }
+        }
+      },
+      "block_order": [
+        "74dc4299-fedb-45c6-9455-f3dd358440e7",
+        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874",
+        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "alignment": "center",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.3,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_id": "",
+        "custom_class": "border-top border-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_byM9Bq",
+    "image_with_text_DGLykV",
+    "image_with_text_9MjBw4",
+    "custom_html_mwqXYE",
+    "rich_text_hma3tP",
+    "45e4c2ac-12b8-4ed1-a789-75b4dbc9c578",
+    "a16d91be-b626-44c9-8cae-a679dc435c62",
+    "video_hero_mPRd6c",
+    "73c8e618-10a0-43bf-b1d9-fa6707a4b913"
+  ]
+}

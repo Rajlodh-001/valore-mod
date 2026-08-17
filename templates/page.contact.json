@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "9afa8596-3ed0-4b39-b08f-161e9d270d09": {
+      "type": "breadcrumb",
+      "settings": {
+        "brc_container": "container",
+        "brc_text_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "d048fef5-6c70-4d0e-a47d-7fafdc83d026": {
+      "type": "custom-content",
+      "blocks": {
+        "template--16355052552353__d048fef5-6c70-4d0e-a47d-7fafdc83d026-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/upf.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "template--16355052552353__d048fef5-6c70-4d0e-a47d-7fafdc83d026-text-1": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "background-2",
+            "title": "Valore",
+            "heading_size": "h2",
+            "subheading": "",
+            "text": "<p>At VALORE, we believe that style and performance go hand in hand. Our designs are a reflection of clean, minimalist aesthetics and bold colors, allowing cyclists to perform at their best while looking sharp. From limited-edition collections to innovative collaborations, our gear sets a standard for contemporary cycling fashion.<br/></p>",
+            "alignment": "center",
+            "align_text": "left",
+            "padding_left": 80,
+            "padding_right": 80,
+            "align_content_container": "none",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "width": "50%",
+            "mobile_color_scheme": "",
+            "mobile_padding_left": 0,
+            "mobile_padding_right": 0,
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "template--16355052552353__d048fef5-6c70-4d0e-a47d-7fafdc83d026-image-1",
+        "template--16355052552353__d048fef5-6c70-4d0e-a47d-7fafdc83d026-text-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "column_gap": "none",
+        "row_gap": "medium",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "8a1d85d7-2430-41e0-bb31-8d20e342d1de": {
+          "type": "name",
+          "settings": {
+            "label": "Name",
+            "placeholder": "Enter your name",
+            "field_width": "1/2",
+            "hide_label": true,
+            "required": false
+          }
+        },
+        "21a662e3-f906-405a-ab49-e293e94acda6": {
+          "type": "email",
+          "settings": {
+            "label": "Email",
+            "placeholder": "Enter your email",
+            "field_width": "1/2",
+            "hide_label": true
+          }
+        },
+        "565061aa-197f-4276-b9da-2c541b1812f9": {
+          "type": "phone",
+          "disabled": true,
+          "settings": {
+            "label": "Phone number",
+            "placeholder": "Enter your phone number",
+            "field_width": "full",
+            "hide_label": true,
+            "required": false
+          }
+        },
+        "3d980acc-c8a3-45b3-9c2c-69e05bbc14b5": {
+          "type": "message",
+          "settings": {
+            "label": "Message",
+            "placeholder": "Enter your message",
+            "hide_label": true
+          }
+        }
+      },
+      "block_order": [
+        "8a1d85d7-2430-41e0-bb31-8d20e342d1de",
+        "21a662e3-f906-405a-ab49-e293e94acda6",
+        "565061aa-197f-4276-b9da-2c541b1812f9",
+        "3d980acc-c8a3-45b3-9c2c-69e05bbc14b5"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "heading": "Contact form",
+        "section_header_padding_bottom": "medium",
+        "heading_size": "h2",
+        "description": "",
+        "form_design": "design-1",
+        "form_width": 770,
+        "form_alignment": "center",
+        "button_label": "Submit",
+        "button_style": "btn--primary",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9afa8596-3ed0-4b39-b08f-161e9d270d09",
+    "d048fef5-6c70-4d0e-a47d-7fafdc83d026",
+    "form"
+  ]
+}

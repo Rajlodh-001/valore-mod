@@ -1,0 +1,203 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ae10bb88-9b33-4910-b547-a15da9fdf005": {
+      "type": "hero",
+      "blocks": {
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-title-1": {
+          "type": "title",
+          "settings": {
+            "title": "VALORE 2026 Collection Preview",
+            "heading_size": "h-xl"
+          }
+        },
+        "ba00d5be-3ddf-4b56-aad7-277fa385e019": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "A quick preview to help you choose your kit for upcoming rides."
+          }
+        }
+      },
+      "block_order": [
+        "template--17166279147746__ae10bb88-9b33-4910-b547-a15da9fdf005-title-1",
+        "ba00d5be-3ddf-4b56-aad7-277fa385e019"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/2026-preview-cover-horizontal.jpg",
+        "image_mobile": "shopify://shop_images/valore-x-lamborghini-lookbook-1-mobile.jpg",
+        "image_overlay_opacity": 20,
+        "hero_height": "large",
+        "content_in_container": false,
+        "content_position": "center",
+        "text_alignment": "center",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "667c1b48-1229-4411-9100-b2833e094c54": {
+      "type": "rich-text",
+      "blocks": {
+        "97ea19a8-6cb6-46a6-850c-1f603a2ac621": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Pick your favorites for your next shoot."
+          }
+        },
+        "template--16360124678305__667c1b48-1229-4411-9100-b2833e094c54-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find what speaks to your rhythm.",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "text_TANjRh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Here’s an early look at our 2026 line - crafted for stories we’ll tell together.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "97ea19a8-6cb6-46a6-850c-1f603a2ac621",
+        "template--16360124678305__667c1b48-1229-4411-9100-b2833e094c54-heading-1",
+        "text_TANjRh"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "custom_html_kMAUXT": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Short Sleeve Jerseys",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "<style>\n.preview-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 20px;\n  text-align: center;\n}\n.preview-item {\n  flex: 1 1 300px;\n  max-width: 420px;\n}\n.preview-item img {\n  width: 100%;\n  height: auto;\n  border-radius: 6px;\n}\n.preview-links {\n  margin-top: 10px;\n}\n.preview-links a {\n  margin: 0 10px;\n  text-decoration: none;\n  font-weight: 500;\n  color: #000;\n  border-bottom: 1px solid transparent;\n  transition: border-color 0.3s;\n}\n.preview-links a:hover {\n  border-color: #000;\n}\n</style>\n\n<div class=\"preview-grid\">\n  <!-- Image 1 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/modulo-1.jpg?v=1773821902\" alt=\"Series 1\">\n    <div class=\"preview-links\">\n<p>Modulo</p>\n\n      <a href=\"https://www.valore.cc/products/modulo-jersey-mens-chalk-aqua\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/modulo-jersey-womens-chalk-aqua\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 2 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/cinetico-2.jpg?v=1773821690\" alt=\"Series 2\">\n    <div class=\"preview-links\">\n<p>Cinetico</p>\n\n      <a href=\"https://www.valore.cc/products/cinetico-jersey-mens-solar-fade\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/cinetico-jersey-womens-solar-fade\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 3 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/rito-sociale-3.jpg?v=1773821853\" alt=\"Series 3\">\n    <div class=\"preview-links\">\n<p>Rito Sociale</p>\n\n      <a href=\"https://www.valore.cc/products/rito-sociale-jersey-mens-chalk\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/rito-sociale-jersey-womens-chalk\"><u>Women’s</u></a>\n    </div>\n  </div>\n</div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_html_AA886p": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Short Sleeve Jerseys",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "<style>\n.preview-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 20px;\n  text-align: center;\n}\n.preview-item {\n  flex: 1 1 300px;\n  max-width: 420px;\n}\n.preview-item img {\n  width: 100%;\n  height: auto;\n  border-radius: 6px;\n}\n.preview-links {\n  margin-top: 10px;\n}\n.preview-links a {\n  margin: 0 10px;\n  text-decoration: none;\n  font-weight: 500;\n  color: #000;\n  border-bottom: 1px solid transparent;\n  transition: border-color 0.3s;\n}\n.preview-links a:hover {\n  border-color: #000;\n}\n</style>\n\n<div class=\"preview-grid\">\n  <!-- Image 1 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/boundless-1.jpg?v=1766987559\" alt=\"cycling jerseys\">\n    <div class=\"preview-links\">\n<p>Boundless</p>\n\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-mens-boundless-black-gold\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-womens-boundless-black-gold\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 2 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/serie-tempo-jersey-1.jpg?v=1767065411\" alt=\"cycling jerseys\">\n    <div class=\"preview-links\">\n<p>Serie Tempo</p>\n\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-mens-serie-tempo-stone-grey\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-womens-serie-tempo-stone-grey\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 3 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/occhio-jersey-1.jpg?v=1777950069&amp;width=1946\" alt=\"cycling jerseys\">\n    <div class=\"preview-links\">\n<p>Occhio</p>\n\n      <a href=\"https://www.valore.cc/products/occhio-mens-jersey-coral-orange-blend\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/occhio-womens-jersey-coral-orange-blend\"><u>Women’s</u></a>\n    </div>\n  </div>\n</div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_html_w4AAej": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Short Sleeve Jerseys",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "<style>\n.preview-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 20px;\n  text-align: center;\n}\n.preview-item {\n  flex: 1 1 300px;\n  max-width: 420px;\n}\n.preview-item img {\n  width: 100%;\n  height: auto;\n  border-radius: 6px;\n}\n.preview-links {\n  margin-top: 10px;\n}\n.preview-links a {\n  margin: 0 10px;\n  text-decoration: none;\n  font-weight: 500;\n  color: #000;\n  border-bottom: 1px solid transparent;\n  transition: border-color 0.3s;\n}\n.preview-links a:hover {\n  border-color: #000;\n}\n</style>\n\n<div class=\"preview-grid\">\n  <!-- Image 1 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/linea-arte-series-1.jpg?v=1762411895\" alt=\"Series 1\">\n    <div class=\"preview-links\">\n<p>Linea Arte</p>\n<p>Clean lines · modern · minimal</p>\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-mens-linea-arte-midnight-patch\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-womens-linea-arte-midnight-patch\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 2 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/retro-corsa.jpg?v=1762484069\" alt=\"Series 2\">\n    <div class=\"preview-links\">\n<p>Retro Corsa</p>\n<p>Classic · heritage · Italian vibe</p>\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-mens-retro-corsa-classic-italia\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-womens-retro-corsa-classic-italia\"><u>Women’s</u></a>\n    </div>\n  </div>\n\n  <!-- Image 3 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/v-motiva-womens-2.jpg?v=1762498553\" alt=\"Series 3\">\n    <div class=\"preview-links\">\n<p>V Motiva</p>\n<p>Bold pattern · expressive · standout</p>\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-mens-v-motiva-green-rust\"><u>Men’s</u></a> |\n      <a href=\"https://www.valore.cc/products/short-sleeve-jersey-womens-v-motiva-green-rust\"><u>Women’s</u></a>\n    </div>\n  </div>\n</div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_html_MNjxHC": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Long Sleeve Summer Cycling Jersey",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "<style>\n.preview-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 20px;\n  text-align: center;\n}\n.preview-item {\n  flex: 1 1 300px;\n  max-width: 420px;\n}\n.preview-item img {\n  width: 100%;\n  height: auto;\n  border-radius: 6px;\n}\n.preview-links {\n  margin-top: 10px;\n}\n.preview-links a {\n  margin: 0 10px;\n  text-decoration: none;\n  font-weight: 500;\n  color: #000;\n  border-bottom: 1px solid transparent;\n  transition: border-color 0.3s;\n}\n.preview-links a:hover {\n  border-color: #000;\n}\n</style>\n\n<div class=\"preview-grid\">\n  <!-- Image 1 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/retro-corsa-ls-1.jpg?v=1764921269\" alt=\"long sleeve summer cycling jersey\">\n    <div class=\"preview-links\">\n     <p>Retro Corsa</p>\n      <a href=\"https://www.valore.cc/products/long-sleeve-jersey-mens-retro-corsa-classic-italia\">Men's</a> |\n      <a href=\"https://www.valore.cc/products/long-sleeve-jersey-womens-retro-corsa-classic-italia\">Women's</a> \n\n    </div>\n  </div>\n\n  <!-- Image 2 -->\n  <div class=\"preview-item\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0668/7168/9408/files/linea-arte-ls-mens.jpg?v=1764919364\" alt=\"long sleeve summer cycling jersey\">\n    <div class=\"preview-links\">\n     <p>Linea Arte</p>\n <a href=\"https://www.valore.cc/products/long-sleeve-jersey-mens-linea-arte-midnight-patch\">Men's</a> |\n <a href=\"https://www.valore.cc/products/long-sleeve-jersey-womens-linea-arte-midnight-patch\">Women's</a> \n    </div>\n  </div>\n\n  \n</div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_html_6mUgkN": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "If you’d like a matching cap",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "<style>\n.preview-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 20px;\n  text-align: center;\n}\n.preview-item {\n  flex: 1 1 300px;\n  max-width: 420px;\n}\n.preview-item img {\n  width: 100%;\n  height: auto;\n  border-radius: 6px;\n}\n.preview-links {\n  margin-top: 10px;\n}\n.preview-links a {\n  margin: 0 10px;\n  text-decoration: none;\n  font-weight: 500;\n  color: #000;\n  border-bottom: 1px solid transparent;\n  transition: border-color 0.3s;\n}\n.preview-links a:hover {\n  border-color: #000;\n}\n</style>\n\n<div class=\"preview-grid\">\n  <!-- Image 1 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/v-motiva-red-sky-hat-1.jpg?v=1762503695\" alt=\"Series 1\">\n    <div class=\"preview-links\">\n      <a href=\"https://www.valore.cc/products/cap-v-motiva-red-sky\">Cap - V Motiva</a>\n    </div>\n  </div>\n\n  <!-- Image 2 -->\n  <div class=\"preview-item\">\n    <img src=\"https://www.valore.cc/cdn/shop/files/linea-arte-stone-blue-hat.jpg?v=1762504990\" alt=\"Series 2\">\n    <div class=\"preview-links\">\n      <a href=\"https://www.valore.cc/products/cap-linea-arte-vanilla-mist\">Cap - Linea Arte</a>\n    </div>\n  </div>\n\n  \n</div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_html_Nc6dzn": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "All styles are performance-tested, choose what feels most you.",
+        "heading_size": "h2",
+        "description": "",
+        "custom_html": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ae10bb88-9b33-4910-b547-a15da9fdf005",
+    "667c1b48-1229-4411-9100-b2833e094c54",
+    "custom_html_kMAUXT",
+    "custom_html_AA886p",
+    "custom_html_w4AAej",
+    "custom_html_MNjxHC",
+    "custom_html_6mUgkN",
+    "custom_html_Nc6dzn"
+  ]
+}

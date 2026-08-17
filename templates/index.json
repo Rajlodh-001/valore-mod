@@ -1,0 +1,1176 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ *
+ * DEV STORE TEMP FIX (aeie4i-1i): shopify_video cleared below because the
+ * video file exists only on the live Valore store.
+ *
+ * RESTORE on original store:
+ *   Copy templates/index.json.original over this file, OR restore these values:
+ *   - slideshow_CH788z > video_W9K8bm > shopify_video:
+ *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
+ *   - video_hero section > shopify_video:
+ *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
+ *
+ * Full original backup: _theme-backups/valore-modify/index.json.original
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_CH788z": {
+      "type": "slideshow",
+      "blocks": {
+        "video_W9K8bm": {
+          "type": "video",
+          "settings": {
+            "shopify_video": "",
+            "video_alt_text": "Valore AOE",
+            "image_overlay_opacity": 0,
+            "content_position": "left-bottom",
+            "text_alignment": "left",
+            "text_color": "#ffffff",
+            "title": "Every Ride a Story",
+            "heading_size": "h1",
+            "subheading": "",
+            "description": "",
+            "desc_size": "text-desc-base",
+            "button_text_1": "Explore Collection",
+            "button_link_1": "shopify://collections/spring-summer-made-to-move",
+            "button_style_1": "btn--primary",
+            "button_size_1": "",
+            "button_text_2": "",
+            "button_link_2": "",
+            "button_style_2": "btn--primary",
+            "button_size_2": ""
+          }
+        },
+        "slide_Q9QMzA": {
+          "type": "slide",
+          "settings": {
+            "background": "shopify://shop_images/20260415-valore-banner-cinetico-2560-x-1200-2.jpg",
+            "mb_background": "shopify://shop_images/20260415-valore-banner-cinetico-1200-x-960-2.jpg",
+            "image_overlay_opacity": 0,
+            "content_position": "left-middle",
+            "text_alignment": "left",
+            "text_color": "#ffffff",
+            "title": "",
+            "heading_size": "h-xl",
+            "subheading": "",
+            "description": "",
+            "desc_size": "text-desc-lg",
+            "button_text_1": "",
+            "button_link_1": "shopify://collections/jerseys",
+            "button_style_1": "btn--primary",
+            "button_size_1": "btn--medium",
+            "button_text_2": "",
+            "button_link_2": "shopify://collections/spring-summer-made-to-move",
+            "button_style_2": "btn--primary",
+            "button_size_2": "btn--medium"
+          }
+        },
+        "slide_EVeMYC": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "background": "shopify://shop_images/20260415-valore-banner-cinetico-2560-x-1200-1.jpg",
+            "mb_background": "shopify://shop_images/20260415-valore-banner-cinetico-1200-x-960-3.jpg",
+            "image_overlay_opacity": 0,
+            "content_position": "left-middle",
+            "text_alignment": "left",
+            "text_color": "#ffffff",
+            "title": "",
+            "heading_size": "h-xl",
+            "subheading": "",
+            "description": "",
+            "desc_size": "text-desc-lg",
+            "button_text_1": "",
+            "button_link_1": "shopify://collections/jerseys",
+            "button_style_1": "btn--primary",
+            "button_size_1": "btn--medium",
+            "button_text_2": "",
+            "button_link_2": "",
+            "button_style_2": "btn--white",
+            "button_size_2": "btn--small"
+          }
+        }
+      },
+      "block_order": [
+        "video_W9K8bm",
+        "slide_Q9QMzA",
+        "slide_EVeMYC"
+      ],
+      "settings": {
+        "container": "container-full",
+        "slideshow_height": "large",
+        "show_dots": true,
+        "show_nav": false,
+        "autoplay": false,
+        "autorotate_speed": 3,
+        "pagination_background": "light",
+        "controls_position": "center",
+        "pagination_style": "dots",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "accessibility_info": "Slideshow about our brand",
+        "custom_id": "",
+        "custom_class": "",
+        "enable_bg_zoom_effect": false
+      }
+    },
+    "rich_text_xKNFpm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Pi777C": {
+          "type": "heading",
+          "settings": {
+            "heading": "Purpose in Motion",
+            "heading_size": "h1",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "subheading_pY6rdM": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Shop the collection built for balance, endurance, and everyday rides."
+          }
+        },
+        "text_FdFM7b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our cycling apparel is designed to move with you, combining comfort, detail, and lasting performance.</p><p>Whether it’s a winter climb or a summer spin, find your perfect kit.</p>"
+          }
+        },
+        "button_7JXxF9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore Valore",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Pi777C",
+        "subheading_pY6rdM",
+        "text_FdFM7b",
+        "button_7JXxF9"
+      ],
+      "custom_css": [
+        "h4.h6 {margin-top: 10px;}",
+        ".rich-text__text.mega-description.rte.f-scroll-trigger.animate--fade-in-up {margin-top: 15px;}",
+        ".rte > p:first-child {margin-bottom: 10px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "left",
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "custom_content_8eV7qg": {
+      "type": "custom-content",
+      "blocks": {
+        "image_card_aXahJJ": {
+          "type": "image_card",
+          "settings": {
+            "layout": "layout1",
+            "text_color": "#ffffff",
+            "image": "shopify://shop_images/20250303_448_2_1.png",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 0,
+            "sub_heading": "",
+            "heading": "Spring/Summer",
+            "heading_size": "h-xl",
+            "description": "<p><strong>Made to Move</strong></p>",
+            "button_label": "Move with Intention",
+            "button_link": "shopify://collections/spring-summer-made-to-move",
+            "button_style": "btn--white",
+            "vertical_content_padding": 40,
+            "vertical_content_padding_mobile": 40,
+            "alignment": "center",
+            "width": "50%",
+            "animations": "inherit"
+          }
+        },
+        "image_card_WdBcAb": {
+          "type": "image_card",
+          "settings": {
+            "layout": "layout1",
+            "text_color": "#ffffff",
+            "image": "shopify://shop_images/20240823_6970.png",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 0,
+            "sub_heading": "",
+            "heading": "Autumn/Winter",
+            "heading_size": "h-xl",
+            "description": "<p><strong>Built To Endure</strong></p>",
+            "button_label": "Find Your Layer",
+            "button_link": "shopify://collections/autumn-winter-built-to-endure",
+            "button_style": "btn--white",
+            "vertical_content_padding": 40,
+            "vertical_content_padding_mobile": 40,
+            "alignment": "center",
+            "width": "50%",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_aXahJJ",
+        "image_card_WdBcAb"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "1762786887d266c8a6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d982d26_nCdHyX": {
+          "type": "ai_gen_block_d982d26",
+          "settings": {
+            "section_title": "Discover Your Essentials",
+            "title_alignment": "center",
+            "title_size": 32,
+            "title_color": "#222222",
+            "collection_1": "jerseys",
+            "description_1": "<p><a href=\"/collections/cycling-jersey-mens\" title=\"Men’s Jerseys\">Men</a>  |  <a href=\"/collections/cycling-jersey-women\" title=\"Women’s Jerseys\">Women</a></p>",
+            "collection_2": "bib-shorts",
+            "description_2": "<p><a href=\"/collections/mens-cycling-bib-shorts\" title=\"Men's Bib Shorts\">Men</a>  |  <a href=\"/collections/womens-cycling-bib-shorts\" title=\"Women’s Bib Shorts\">Women</a></p>",
+            "collection_3": "accessories",
+            "description_3": "<p><a href=\"/collections/accessories\" title=\"Accessories\">Men</a>  |  <a href=\"/collections/accessories\" title=\"Accessories\">Women</a></p>",
+            "content_alignment": "center",
+            "collection_title_size": 18,
+            "collection_title_weight": "700",
+            "collection_title_color": "#222222",
+            "description_size": 14,
+            "description_color": "#666666",
+            "link_color": "#222222",
+            "link_hover_color": "#000000",
+            "image_border_radius": 8,
+            "grid_gap": 30,
+            "columns_mobile": "1"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d982d26_nCdHyX"
+      ],
+      "settings": {}
+    },
+    "video_hero_pWKkdn": {
+      "type": "video-hero",
+      "blocks": {
+        "title_Y7W9cy": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title": "Colder days. Warmer connection. ",
+            "heading_size": "h2"
+          }
+        },
+        "subtitle_cxJy78": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Further Under the Sun."
+          }
+        },
+        "text_6gKA9y": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>Open roads. Riding forward, together.<br/><br/></p>"
+          }
+        },
+        "button_eVCUEt": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Summer Kit",
+            "button_link": "shopify://collections/spring-summer-made-to-move",
+            "button_style": "btn--primary",
+            "button_size": "",
+            "button_second_label": "",
+            "button_second_link": "",
+            "button_second_style": "btn--primary",
+            "button_second_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_Y7W9cy",
+        "subtitle_cxJy78",
+        "text_6gKA9y",
+        "button_eVCUEt"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".f-hero_text {margin-top: 10px;}",
+        "@media (min-width: 768px) {.f-hero--large {--hero-height: 100vh; }}",
+        ".btn--primary {background: #fff; color: #000;}",
+        ".btn:not(.btn--plain):not(.btn--underline):not( .spr-button, .announcement-bar__close ):hover {border: 2px solid #fff; color: #fff;}"
+      ],
+      "settings": {
+        "container": "container-full",
+        "video_type": "shopify",
+        "shopify_video": "",
+        "video_url": "",
+        "image_overlay_opacity": 40,
+        "hero_height": "large",
+        "content_in_container": true,
+        "content_position": "left-bottom",
+        "text_alignment": "left",
+        "vertical_content_padding": 98,
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "vertical_content_padding_mobile": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "hero_kyyH7r": {
+      "type": "hero",
+      "blocks": {
+        "text_4QqyDP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Life on two wheels is more than distance - it’s the people beside you and the stories you create. Valore makes apparel that moves with you: refined, purposeful, and built for rides that mean something.</p>"
+          }
+        },
+        "button_m8TRb3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn Our Story",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "btn--secondary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_4QqyDP",
+        "button_m8TRb3"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "p {font-size: 40px;}",
+        ".f-hero--medium {--hero-height: 100vh;}"
+      ],
+      "name": "t:sections.hero.presets.name",
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/Valore_1.png",
+        "image_overlay_opacity": 40,
+        "hero_height": "medium",
+        "content_in_container": false,
+        "content_position": "left-bottom",
+        "text_alignment": "left",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": true,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "rich_text_bdaE6t": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UVEcjN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find What Moves You",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UVEcjN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "hero_tL6Wk6": {
+      "type": "hero",
+      "blocks": {
+        "button_Ht7UcJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Let's Get Into Gear",
+            "button_link": "shopify://collections/all",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_Ht7UcJ"
+      ],
+      "custom_css": [
+        ".f-hero .f-hero__bg img {object-fit: contain;}"
+      ],
+      "name": "t:sections.hero.presets.name",
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/Valore_1_1.png",
+        "image_overlay_opacity": 0,
+        "hero_height": "adapt",
+        "content_in_container": false,
+        "content_position": "center",
+        "text_alignment": "center",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": true,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "featured_blog_LUEACw": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "heading": "Every Ride a Story",
+        "heading_size": "h2",
+        "subheading": "",
+        "description": "",
+        "blog": "news",
+        "image_aspect_ratio": "adapt",
+        "article_heading_size": "h4",
+        "show_date": true,
+        "show_excerpt": true,
+        "show_readmore": true,
+        "button_label": "",
+        "button_style": "btn--primary",
+        "limit": 3,
+        "columns": 3,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "enable_slider": false,
+        "show_dots": false,
+        "show_nav": false,
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "show_excerpt_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "product_tabs_mE6rmB": {
+      "type": "product-tabs",
+      "blocks": {
+        "tab_VhzCk3": {
+          "type": "tab",
+          "settings": {
+            "title": "New Arrivals",
+            "collection": "new-arrivals"
+          }
+        },
+        "tab_T8dWD3": {
+          "type": "tab",
+          "settings": {
+            "title": "Jerseys",
+            "collection": "cycling-jersey-mens"
+          }
+        }
+      },
+      "block_order": [
+        "tab_VhzCk3",
+        "tab_T8dWD3"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "background-2",
+        "layout": "horizontal",
+        "heading": "Our Products",
+        "heading_size": "h2",
+        "description": "<p><br/>Elevated essentials, crafted for every ride.<br/><br/></p>",
+        "limit": 3,
+        "columns": 3,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "enable_slider": false,
+        "show_nav": false,
+        "show_dots": false,
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "button_label": "",
+        "button_style": "btn--primary",
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "featured_collection_G7hJg6": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "header_layout": "horizontal",
+        "heading": "New Arrivals",
+        "heading_size": "h2",
+        "subheading": "",
+        "description": "",
+        "collection": "frontpage",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "extra-small",
+        "row_gap": "medium",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "enable_slider": true,
+        "show_nav": true,
+        "show_dots": false,
+        "show_all_button_on_top": true,
+        "button_label": "Shop all products",
+        "button_style": "btn--underline",
+        "enable_swipe_mobile": true,
+        "column_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "collection_tabs_tP8H3W": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_bfdXjL": {
+          "type": "collection",
+          "settings": {
+            "collection": "cycling-jersey-mens",
+            "image": "shopify://shop_images/create-for-style.jpg",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        },
+        "collection_jfbHDN": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-cycling-bib-shorts",
+            "image": "shopify://shop_images/cycling-bib-shorts-men.jpg",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        },
+        "collection_VJnaRJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "cycling-socks",
+            "image": "shopify://shop_images/2024010600658.jpg",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_bfdXjL",
+        "collection_jfbHDN",
+        "collection_VJnaRJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "inverse",
+        "heading": "Design for life create for style",
+        "heading_size": "h-xl",
+        "subheading": "Collection",
+        "description": "",
+        "image_position": "right",
+        "image_ratio": "1/1",
+        "prefix_header": "ordinal_number",
+        "trigger_behavior": "hover",
+        "autoplay": false,
+        "autoplay_duration": 5,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "rich_text_GW78im": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_L6yY9q": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our missions"
+          }
+        },
+        "heading_ibEU8g": {
+          "type": "heading",
+          "settings": {
+            "heading": "combining performance with aesthetics",
+            "heading_size": "h-xl",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "text_g7CEra": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our design philosophy embraces clean, minimalist lines and bold colors, ensuring that cyclists not only perform well but also look good. We frequently release limited-edition collaborations and collections that reflect contemporary style trends.</p>"
+          }
+        },
+        "button_EtLaQ7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_L6yY9q",
+        "heading_ibEU8g",
+        "text_g7CEra",
+        "button_EtLaQ7"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "text_alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "hero_yNnGHN": {
+      "type": "hero",
+      "blocks": {
+        "title_UUXAYJ": {
+          "type": "title",
+          "settings": {
+            "title": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_tMM6K8": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_My96Cr": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_UUXAYJ",
+        "text_tMM6K8",
+        "button_My96Cr"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/2025-410-banner-3.jpg",
+        "image_mobile": "shopify://shop_images/2025-410-banner-3-vertical.jpg",
+        "image_overlay_opacity": 40,
+        "hero_height": "large",
+        "content_in_container": false,
+        "content_position": "center",
+        "text_alignment": "center",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": true,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "featured_product_QbyGbz": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_CDdwBL": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_6eRWA4": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_9z8y6M": {
+          "type": "price",
+          "settings": {
+            "show_sale_badge": true,
+            "sale_badge_type": "text"
+          }
+        },
+        "variant_picker_WrJMM6": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "variant_picker_show_selected": true
+          }
+        },
+        "quantity_selector_jGdCV7": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_edKdeB": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        },
+        "description_fn9kpt": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_CDdwBL",
+        "title_6eRWA4",
+        "price_9z8y6M",
+        "variant_picker_WrJMM6",
+        "quantity_selector_jGdCV7",
+        "buy_buttons_edKdeB",
+        "description_fn9kpt"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "product": "valore-x-lamborghini-limited-edition-cycling-clothing-gift-box-set",
+        "media_position": "left",
+        "media_size": "medium",
+        "mobile_thumbnails": "hide",
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "scrolling_promotion_i3kjyD": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "testimonial_wxtDAJ": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>The design is very attractive. Few brands offer varied colors with innovative designs. Perfect freedom of movement, no tension from the jersey. The new bib shorts fit very well. The strap length is perfect, and there is no particular pressure felt. The padding is very comfortable and of good quality, no complaints. We don't know any brand in Europe with a quality/price ratio like yours. You are unbeatable in this area. </p>",
+            "author": "Virginie",
+            "product": "valore-long-sleeve-jersey-sunae-light-pink",
+            "image": "shopify://shop_images/1-virginie.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_zmDr33": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>The apparel is sleek, functional, and perfectly suited for the demands of Morocco's rugged landscapes. The lightweight, breathable jersey allows for optimal airflow, keeping the rider cool and comfortable even during intense rides under the sun. Meanwhile, the fitted bib shorts provide the necessary support and padding, ensuring comfort over long distances on uneven, rocky trails.</p>",
+            "author": "Marouane",
+            "product": "",
+            "image": "shopify://shop_images/2-marouane.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_atTM6T": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>Training 5 times a week and engaging in races require durable, high-performance gear. The jersey is crafted from breathable fabric, offering excellent moisture-wicking properties, critical for maintaining comfort during long, intense climbs, ideally suited for the challenging alpine climbs. For riders who are committed to pushing their limits and experiencing freedom through cycling, this kit is an excellent choice for challenging climbs like the Col du Galibier.</p>",
+            "author": "Morel",
+            "product": "",
+            "image": "shopify://shop_images/3-morel.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_7AyAtN": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>This ultralight jersey is exactly what I need for my rides, especially during the hottest days. I've spent 8 years doing ultra-distance rides and bikepacking, and now that I'm preparing for triathlon races, having lightweight, breathable gear is crucial. <br/><br/>Plus, I love making cycling videos for my YouTube channel, and this kit is not only functional but also looks great on camera. It's a stylish addition to my rides.</p>",
+            "author": "Özcan",
+            "product": "",
+            "image": "shopify://shop_images/4-ozcan.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_aMVc9r": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I've been testing out this ultralight jersey on the roads around my hometown in Ontario, Canada, just east of Toronto. For me, there's nothing better than exploring new locations, especially when there's a great coffee stop mid-ride! This jersey has been a perfect companion on both my solo and social rides. Since I started road racing last year at 50, I've been looking for gear that helps me push out of my comfort zone, and this kit does just that.</p>",
+            "author": "Kim",
+            "product": "",
+            "image": "shopify://shop_images/5-kim.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_wrqWtB": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>This weekend, I took it out for a spin in the Wichita Mountains in Oklahoma, and it was exactly what I needed for the ride. The weather was warm, and the sun was strong, but this kit kept me feeling cool and dry throughout. Whether climbing hills or coasting through beautiful wildflower fields, the Valore line offered both comfort and performance. I couldn't have asked for a better combination of function and style!</p>",
+            "author": "Kristina",
+            "product": "",
+            "image": "shopify://shop_images/6-kristina.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_Kqizf6": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I recently took this kit out for a ride in Serra de Sintra, Portugal. I'm a passionate cyclist, spending as much time on the bike as I can—whether on my indoor trainer or out on the road. <br/><br/>This kit really stood out for its comfort during long rides. The breathable fabric was perfect for spending hours on the road. Even after miles and miles, it stayed comfortable, which is crucial when you're pushing through those extra kilometers.<br/></p>",
+            "author": "Nelson",
+            "product": "",
+            "image": "shopify://shop_images/7-nelson-1080.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_8XWwUb": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I'm seriously loving the Valore line from Monton right now—the fit is just perfect, and the fabric is so breathable. It makes all the difference when I'm out riding through New Jersey, especially on those climbs up Bear Mountain or the scenic stretch to Nyack. Having the right kit is a game changer. I'm all about kits with that race fit and breathable fabric. They help keep me cool and comfortable on those long, tough climbs, which is exactly what you need when you're pushing your limits.</p>",
+            "author": "Eric",
+            "product": "",
+            "image": "shopify://shop_images/8-eric.jpg",
+            "icon": "5-stars"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_wxtDAJ",
+        "testimonial_zmDr33",
+        "testimonial_atTM6T",
+        "testimonial_7AyAtN",
+        "testimonial_aMVc9r",
+        "testimonial_wrqWtB",
+        "testimonial_Kqizf6",
+        "testimonial_8XWwUb"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container-full",
+        "color_schema": "inverse",
+        "section_header_padding_bottom": "medium",
+        "heading": "Testimonials",
+        "heading_size": "h2",
+        "description": "<p>Aims to create high-performance gear that is designed and tested with professional athletes and cycling enthusiasts in mind.</p>",
+        "alignment": "center",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.1,
+        "item_gap": 40,
+        "item_gap_mobile": 30,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "lookbook_kEcaGH": {
+      "type": "lookbook",
+      "blocks": {
+        "lookbook_slider_UmLC3G": {
+          "type": "lookbook-slider",
+          "settings": {
+            "heading": "Shop the look",
+            "heading_size": "h2",
+            "description": "",
+            "image": "shopify://shop_images/lookbook-homepage.jpg",
+            "image_position": "right",
+            "annotation_color": "light",
+            "product_image_ratio": "adapt",
+            "product_card_width": 280,
+            "product_per_slide": "2",
+            "controls_background": "none",
+            "controls_position": "center",
+            "pagination_type": "dots",
+            "top_1": 38,
+            "left_1": 56,
+            "product_1": "valore-long-sleeve-jersey-sunae-laurel-green",
+            "top_2": 45,
+            "left_2": 45,
+            "product_2": "valore-monton-mens-bib-shorts-nuova-luna-medium-gray",
+            "top_3": 51,
+            "left_3": 85,
+            "product_3": "fingerless-gloves-era-light-gray",
+            "top_4": 82,
+            "left_4": 63,
+            "product_4": "valore-monton-cycling-socks-era-light-gray",
+            "top_5": 20,
+            "left_5": 0,
+            "product_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_slider_UmLC3G"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "Lookbook",
+        "heading_size": "h2",
+        "description": "",
+        "image_aspect_ratio": "3/4",
+        "columns": 2,
+        "column_gap": "medium",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "collage_tabs_3MBTHm": {
+      "type": "collage-tabs",
+      "blocks": {
+        "tab_YQYWcg": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "",
+            "navigation_title": "Technology",
+            "image": "shopify://shop_images/ss-jersey-men-era-white-gray-06_9e15af0e-cc66-4cf4-885d-f790382753be.jpg",
+            "heading": "Lightweight",
+            "heading_size": "h2",
+            "subheading": "Technology",
+            "description": "<p>The lightweight construction feels almost like you’re wearing nothing at all, allowing you to focus fully on your ride, whether it's a challenging climb or a fast-paced descent. If you're looking for a jersey that balances minimal weight with maximum performance, this is the one for you. Perfect for cyclists who want to push their limits while staying cool and comfortable.</p>",
+            "text_alignment": "center",
+            "button_label": "Learn More",
+            "button_link": "shopify://collections/mens-cycling-jersey-short-sleeve",
+            "button_style": "btn--primary"
+          }
+        },
+        "tab_mm4ieb": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "background-2",
+            "navigation_title": "UPF",
+            "image": "shopify://shop_images/upf.jpg",
+            "heading": "Sun Protection",
+            "heading_size": "h2",
+            "subheading": "UPF",
+            "description": "<p>Made from the innovative Revolutional® fabric by Carvico, this jersey is not only lightweight but also breathable, ensuring that it fits like a second skin. The UPF 50+ rating provides essential protection against harmful UV rays, making it an ideal choice for summer rides. </p>",
+            "text_alignment": "center",
+            "button_label": "Learn More",
+            "button_link": "shopify://collections/womens-long-sleeve-summer-cycling-jersey",
+            "button_style": "btn--primary"
+          }
+        },
+        "tab_3t3nHb": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "",
+            "navigation_title": "Padding",
+            "image": "shopify://shop_images/padding.jpg",
+            "heading": "Elastic Interface",
+            "heading_size": "h2",
+            "subheading": "Padding",
+            "description": "<p>The inclusion of Elastic Interface PARIS HP padding guarantees superior cushioning, making long-distance cycling a more enjoyable experience.</p>",
+            "text_alignment": "center",
+            "button_label": "Learn More",
+            "button_link": "shopify://collections/mens-cycling-bib-shorts",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "tab_YQYWcg",
+        "tab_mm4ieb",
+        "tab_3t3nHb"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "desktop_navigation_alignment": "center",
+        "desktop_image_position": "left",
+        "desktop_image_width": 50,
+        "image_aspect_ratio": "adapt",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "multicolumn_ByB3cx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_C7Td3E": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-shipping.jpg",
+            "image_link": "",
+            "title": "FREE SHIPPING",
+            "heading_size": "h3",
+            "text": "<p>Exclusive deal on orders $180+</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "column_6Rw3hy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/easy-refund.jpg",
+            "image_link": "",
+            "title": "EASY REFUND",
+            "heading_size": "h3",
+            "text": "<p>Within 30 days of purchase</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "column_tgeC8K": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/oneline-support.jpg",
+            "image_link": "",
+            "title": "ONLINE SUPPORT",
+            "heading_size": "h3",
+            "text": "<p>24 hours a day, 7 days a week</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "column_V74dnk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/flexible-payment.png",
+            "image_link": "",
+            "title": "FLEXIBLE PAYMENT",
+            "heading_size": "h3",
+            "text": "<p>Paypal</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        }
+      },
+      "block_order": [
+        "column_C7Td3E",
+        "column_6Rw3hy",
+        "column_tgeC8K",
+        "column_V74dnk"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "layout": "vertical",
+        "text_alignment": "center",
+        "image_width": "x-small",
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "slideshow_CH788z",
+    "rich_text_xKNFpm",
+    "custom_content_8eV7qg",
+    "1762786887d266c8a6",
+    "video_hero_pWKkdn",
+    "hero_kyyH7r",
+    "rich_text_bdaE6t",
+    "hero_tL6Wk6",
+    "featured_blog_LUEACw",
+    "product_tabs_mE6rmB",
+    "featured_collection_G7hJg6",
+    "collection_tabs_tP8H3W",
+    "rich_text_GW78im",
+    "hero_yNnGHN",
+    "featured_product_QbyGbz",
+    "scrolling_promotion_i3kjyD",
+    "lookbook_kEcaGH",
+    "collage_tabs_3MBTHm",
+    "multicolumn_ByB3cx"
+  ]
+}

@@ -1,0 +1,487 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16540498779afc678b": {
+      "type": "hero",
+      "blocks": {
+        "6c5b032a-0a6b-4a5e-8fd0-28f11a0b20ab": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "We are a global collective of riders, designers, and makers connected by motion and meaning."
+          }
+        },
+        "16540498776329c8d1-0": {
+          "type": "title",
+          "settings": {
+            "title": "Built for the ride. Made for the people.",
+            "heading_size": "h-xl"
+          }
+        }
+      },
+      "block_order": [
+        "6c5b032a-0a6b-4a5e-8fd0-28f11a0b20ab",
+        "16540498776329c8d1-0"
+      ],
+      "settings": {
+        "container": "container-full",
+        "image": "shopify://shop_images/italy-banner-1.jpg",
+        "image_mobile": "shopify://shop_images/italy-banner-1-mobile.jpg",
+        "image_overlay_opacity": 20,
+        "hero_height": "adapt",
+        "content_in_container": false,
+        "content_position": "center-top",
+        "text_alignment": "center",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "large",
+        "content_position_mobile": "center",
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "16540501175e796680": {
+      "type": "rich-text",
+      "blocks": {
+        "1654050117f10d5d66-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cycling connects us. Every ride, every climb, every shared goal builds a story worth keeping. Valore creates apparel made for those moments,  crafted with detail, built for connection, and designed to go further together.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "1654050117f10d5d66-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-narrow",
+        "color_schema": "background-1",
+        "text_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "8cada7c1-f0b3-48e7-8f44-9ac2bbdf7fe2": {
+      "type": "collage-tabs",
+      "blocks": {
+        "tab_pHJdk7": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "background-2",
+            "navigation_title": "Craftsmanship",
+            "image": "shopify://shop_images/craftsmanship-251104-5.jpg",
+            "heading": "Craftsmanship",
+            "heading_size": "h2",
+            "subheading": "",
+            "description": "<p><br/>Precision and comfort in every seam. We test every piece in motion.<br/><br/></p>",
+            "text_alignment": "center",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "template--17157701599458__8cada7c1-f0b3-48e7-8f44-9ac2bbdf7fe2-tab-1": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "accent",
+            "navigation_title": "Community",
+            "image": "shopify://shop_images/community-251104.jpg",
+            "heading": "Community",
+            "heading_size": "h2",
+            "subheading": "",
+            "description": "<p>We ride to connect. Every rider is part of the story.</p>",
+            "text_alignment": "left",
+            "button_label": "",
+            "button_link": "#",
+            "button_style": "btn--primary"
+          }
+        },
+        "bf0e39bb-afe7-4aed-96d7-0a79da248101": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "accent",
+            "navigation_title": "Expression",
+            "image": "shopify://shop_images/expression-251104.jpg",
+            "heading": "Expression",
+            "heading_size": "h2",
+            "subheading": "",
+            "description": "<p>Minimal design that lets individuality shine.</p>",
+            "text_alignment": "left",
+            "button_label": "",
+            "button_link": "#",
+            "button_style": "btn--primary"
+          }
+        },
+        "ecdcc2e7-dc1a-4dc9-9f6d-519779df0e51": {
+          "type": "tab",
+          "settings": {
+            "content_color_schema": "accent",
+            "navigation_title": "Purpose",
+            "image": "shopify://shop_images/purpose-251104.jpg",
+            "heading": "Purpose",
+            "heading_size": "h2",
+            "subheading": "",
+            "description": "<p>We believe the ride itself has value - not the numbers.<br/><br/></p>",
+            "text_alignment": "left",
+            "button_label": "",
+            "button_link": "#",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "tab_pHJdk7",
+        "template--17157701599458__8cada7c1-f0b3-48e7-8f44-9ac2bbdf7fe2-tab-1",
+        "bf0e39bb-afe7-4aed-96d7-0a79da248101",
+        "ecdcc2e7-dc1a-4dc9-9f6d-519779df0e51"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "desktop_navigation_alignment": "center",
+        "desktop_image_position": "left",
+        "desktop_image_width": 50,
+        "image_aspect_ratio": "adapt",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "45e4c2ac-12b8-4ed1-a789-75b4dbc9c578": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17157701599458__45e4c2ac-12b8-4ed1-a789-75b4dbc9c578-column-1": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Style With Purpose",
+            "heading_size": "h4",
+            "text": "<p><br/>Minimalist yet bold, Valore blends performance with aesthetics. Every piece moves seamlessly between function and expression, proving that style itself is a form of strength.<br/><br/></p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "23738779-93a8-4a1b-aa4a-382808fc8419": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Responsibility in Motion",
+            "heading_size": "h4",
+            "text": "<p><br/>We ride with sincerity. Our apparel is made responsibly, with respect for both people and planet. Integrity guides not just our process, but our purpose.<br/><br/></p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        },
+        "62b69dd1-a1f1-4028-9f0c-bf65a341a11c": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "More Than a Brand",
+            "heading_size": "h4",
+            "text": "<p><br/>Valore is a community of riders bound by ambition, resilience, and connection. Together we chase the horizon, discover meaning in movement, and create friendships that outlast the ride.<br/><br/></p>",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "btn--underline"
+          }
+        }
+      },
+      "block_order": [
+        "template--17157701599458__45e4c2ac-12b8-4ed1-a789-75b4dbc9c578-column-1",
+        "23738779-93a8-4a1b-aa4a-382808fc8419",
+        "62b69dd1-a1f1-4028-9f0c-bf65a341a11c"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "layout": "vertical",
+        "text_alignment": "center",
+        "image_width": "x-small",
+        "columns": 3,
+        "column_gap": "extra-large",
+        "row_gap": "medium",
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "border-bottom mobile-remove-br",
+        "animations": "inherit"
+      }
+    },
+    "16540503155db15864": {
+      "type": "image-with-text",
+      "blocks": {
+        "1654050315a020c10e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Performance and Innovation",
+            "heading_size": "h2"
+          }
+        },
+        "1654050315a020c10e-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We constantly explore new fabric technologies and design techniques to push the boundaries of what’s possible in cycling clothing. Innovation is in our DNA, and it shows in every detail of our gear.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1654050315a020c10e-0",
+        "1654050315a020c10e-1"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "image": "shopify://shop_images/performance.jpg",
+        "image_width": "50%",
+        "image_position": "left",
+        "vertical_alignment": "center",
+        "column_gap": "none",
+        "row_gap": "medium",
+        "padding_left": 120,
+        "padding_right": 200,
+        "align_content_container": "none",
+        "mobile_padding_left": 0,
+        "mobile_padding_right": 0,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 0,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "16540504704fa88658": {
+      "type": "image-with-text",
+      "blocks": {
+        "1654050470051141b0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevating Every Ride",
+            "heading_size": "h2"
+          }
+        },
+        "1654050470051141b0-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>The right gear doesn’t just support the rider — it transforms the ride.<br/><br/>From alpine climbs to city streets, Valore apparel is made for those who push further, endure longer, and discover more along the way.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "1654050470051141b0-0",
+        "1654050470051141b0-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "image": "shopify://shop_images/1-group_VALORE_sunae_1.jpg",
+        "image_width": "50%",
+        "image_position": "right",
+        "vertical_alignment": "center",
+        "column_gap": "none",
+        "row_gap": "medium",
+        "padding_left": 120,
+        "padding_right": 120,
+        "align_content_container": "none",
+        "mobile_padding_left": 15,
+        "mobile_padding_right": 15,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "gallery_images_n8cF8V": {
+      "type": "gallery-images",
+      "blocks": {
+        "image_Bk9VFx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gallery-image-1.jpg",
+            "text": "",
+            "text_size": "medium",
+            "link": "shopify://blogs/news/cycling-through-paradise-riding-in-phuket-thailand"
+          }
+        },
+        "image_qazXVq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gallery-image-2.jpg",
+            "text": "",
+            "text_size": "medium",
+            "link": "shopify://blogs/news/ride-with-valore-ride-in-montenegro"
+          }
+        },
+        "image_HcqTh8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gallery-image-3.jpg",
+            "text": "",
+            "text_size": "medium",
+            "link": "shopify://blogs/news/ride-with-valore-ride-in-montenegro"
+          }
+        },
+        "image_TMCCiD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gallery-image-4.jpg",
+            "text": "",
+            "text_size": "medium",
+            "link": "shopify://blogs/news/ride-with-valore-ride-in-cape-town"
+          }
+        }
+      },
+      "block_order": [
+        "image_Bk9VFx",
+        "image_qazXVq",
+        "image_HcqTh8",
+        "image_TMCCiD"
+      ],
+      "name": "t:sections.gallery-images.presets.name",
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "People of Valore",
+        "heading_size": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "image_ratio": "adapt",
+        "columns": 4,
+        "column_gap": "medium",
+        "layout": "grid",
+        "metro_item_color_schema": "",
+        "enable_slider": false,
+        "show_nav": false,
+        "show_dots": false,
+        "enable_swipe_mobile": false,
+        "column_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "a16d91be-b626-44c9-8cae-a679dc435c62": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-1": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Read the Journal",
+            "heading_size": "h4",
+            "text": "<p>Be a part of the community. Stay updated with our latest releases and events.</p>",
+            "button_text": "Blog",
+            "button_link": "shopify://blogs/news",
+            "button_style": "btn--underline"
+          }
+        },
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-2": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Shop the Collection",
+            "heading_size": "h4",
+            "text": "<p>Explore our latest designs and gear up for your next adventure.</p>",
+            "button_text": "Shop All",
+            "button_link": "shopify://collections",
+            "button_style": "btn--underline"
+          }
+        },
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-3": {
+          "type": "column",
+          "settings": {
+            "image_link": "",
+            "title": "Follow Us on Instagram",
+            "heading_size": "h4",
+            "text": "<p>Stay connected with us on social media and share your VALORE experience.</p>",
+            "button_text": "Instagram",
+            "button_link": "https://www.instagram.com/valoreaoe/",
+            "button_style": "btn--underline"
+          }
+        }
+      },
+      "block_order": [
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-1",
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-2",
+        "template--17157701599458__a16d91be-b626-44c9-8cae-a679dc435c62-column-3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "large",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "<p><strong>Valore is a community united by ambition, resilience, and love of the road.</strong><br/><br/>We ride together, we grow together, we endure together.<br/><br/></p>",
+        "layout": "vertical",
+        "text_alignment": "left",
+        "image_width": "fullwidth",
+        "columns": 3,
+        "column_gap": "large",
+        "row_gap": "medium",
+        "enable_swipe_mobile": true,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "border-top",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16540498779afc678b",
+    "16540501175e796680",
+    "8cada7c1-f0b3-48e7-8f44-9ac2bbdf7fe2",
+    "45e4c2ac-12b8-4ed1-a789-75b4dbc9c578",
+    "16540503155db15864",
+    "16540504704fa88658",
+    "gallery_images_n8cF8V",
+    "a16d91be-b626-44c9-8cae-a679dc435c62"
+  ]
+}

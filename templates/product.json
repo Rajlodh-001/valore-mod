@@ -1,0 +1,712 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ *
+ * DEV STORE TEMP FIX (aeie4i-1i): variant_picker repeater/size_title removed
+ * because color-pattern metaobjects exist only on the live Valore store.
+ *
+ * RESTORE on original store:
+ *   Copy templates/product.json.original over this file, OR restore:
+ *   - variant_picker > repeater:
+ *     "{{ product.metafields.shopify[\"color-pattern\"].value }}"
+ *   - variant_picker > settings > size_title:
+ *     "{{ block.repeater.label.value }}"
+ *
+ * Full original backup: _theme-backups/valore-modify/product.json.original
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "c67b7c41-4a92-419d-85c6-c970bb43bf2d": {
+          "type": "badge",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_sale_badge": false,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "c9d012f0-f3f5-4c1b-b197-e7c8f9de13ac": {
+          "type": "richtext",
+          "settings": {
+            "text": "<p>Pioneering the future of cycling apparel is in our DNA. We constantly seek new innovations in fabric technology and design to elevate the riding experience, ensuring our gear is always at the forefront of what's possible in the sport.</p>"
+          }
+        },
+        "59ca3415-b1aa-4301-b178-ad6e434ba477": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_as_progress": true,
+            "enable_inventory_transfer": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "variant_picker_show_selected": true,
+            "variant_picker_dont_select_the_default_variant": false,
+            "size_title": "",
+            "size_chart_from_page": "size-chart"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_atc_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "2115d0d9-102e-4377-a68b-42b8ed4a4edc": {
+          "type": "shipping",
+          "settings": {
+            "deliver_text": "",
+            "deliver_days": "",
+            "shipping_text": "<p>Free Shipping for orders $180+</p>",
+            "date_format": "%b %d"
+          }
+        },
+        "text_iihwrL": {
+          "type": "text",
+          "settings": {
+            "icon": "currency-dollar",
+            "text": "Money back within 30 days for an exchange.",
+            "text_style": "body"
+          }
+        },
+        "4813cc96-81ff-4094-bd6a-4bf96eab69e9": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "block_heading": "BUY IT WITH",
+            "make_collapsible_row": true,
+            "icon": "none",
+            "product_list_limit": 10,
+            "products_per_page": 1,
+            "enable_slider": true,
+            "image_ratio": "adapt",
+            "enable_quick_add": true,
+            "enable_quick_view": false,
+            "pcard_show_color_swatch": true
+          }
+        },
+        "f11043ac-1746-42ad-a36b-91ff4cc9f432": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Collapsible tab",
+            "content": "",
+            "liquid": "",
+            "page": "",
+            "default_open": false
+          }
+        },
+        "e303936e-d82d-4e37-8b83-e227d48fbb3d": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Collapsible tab",
+            "content": "",
+            "liquid": "",
+            "page": "",
+            "default_open": false
+          }
+        },
+        "addons": {
+          "type": "addons",
+          "settings": {
+            "show_share": true,
+            "show_ask_question": true
+          }
+        },
+        "doran_product_reviews_rating_widget_GFHcLi": {
+          "type": "shopify://apps/doran-product-reviews/blocks/rating-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
+          "settings": {
+            "is_hide_detail": false,
+            "is_display_questions": false,
+            "class_name": "",
+            "is_hide_if_no_reviews": false,
+            "is_use_shopify_font": false,
+            "shopify_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "c67b7c41-4a92-419d-85c6-c970bb43bf2d",
+        "title",
+        "price",
+        "c9d012f0-f3f5-4c1b-b197-e7c8f9de13ac",
+        "59ca3415-b1aa-4301-b178-ad6e434ba477",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "2115d0d9-102e-4377-a68b-42b8ed4a4edc",
+        "text_iihwrL",
+        "4813cc96-81ff-4094-bd6a-4bf96eab69e9",
+        "f11043ac-1746-42ad-a36b-91ff4cc9f432",
+        "e303936e-d82d-4e37-8b83-e227d48fbb3d",
+        "addons",
+        "doran_product_reviews_rating_widget_GFHcLi"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "show_breadcrumb": true,
+        "enable_sticky_info": true,
+        "media_layout": "grid-2-cols",
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "show_featured_media": false
+      }
+    },
+    "product_information_tabs_p7BegR": {
+      "type": "product-information-tabs",
+      "blocks": {
+        "description_Lqm8Mx": {
+          "type": "description",
+          "settings": {
+            "header": "Description",
+            "default_open": true
+          }
+        },
+        "custom_kWdK4Y": {
+          "type": "custom",
+          "settings": {
+            "header": "Shipping & Return",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
+            "content_page": "",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "description_Lqm8Mx",
+        "custom_kWdK4Y"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "color_schema": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "1757472451fc7201d4": {
+      "type": "apps",
+      "blocks": {
+        "doran_product_reviews_product_widget_rdKyrY": {
+          "type": "shopify://apps/doran-product-reviews/blocks/product-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
+          "settings": {
+            "topPadding": 36,
+            "bottomPadding": 36,
+            "is_hide_if_no_reviews": false,
+            "is_use_shopify_font": false,
+            "shopify_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "doran_product_reviews_product_widget_rdKyrY"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "73c8e618-10a0-43bf-b1d9-fa6707a4b913": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "74dc4299-fedb-45c6-9455-f3dd358440e7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pc-banner--1.jpg",
+            "image_height": 24,
+            "image_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 10,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 10
+          }
+        },
+        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to Valore",
+            "font_family": "body",
+            "text_size": 20,
+            "text_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 60,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 40
+          }
+        },
+        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1-2024010600161.jpg",
+            "image_height": 24,
+            "image_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 10,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 10
+          }
+        },
+        "8d95b262-4168-4c7f-9457-5897c7935129": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our Valore",
+            "font_family": "body",
+            "text_size": 20,
+            "text_link": "",
+            "use_custom_spacing": true,
+            "margin_left": 0,
+            "margin_right": 60,
+            "margin_left_mobile": 0,
+            "margin_right_mobile": 40
+          }
+        }
+      },
+      "block_order": [
+        "74dc4299-fedb-45c6-9455-f3dd358440e7",
+        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874",
+        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a",
+        "8d95b262-4168-4c7f-9457-5897c7935129"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "alignment": "center",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.3,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_id": "",
+        "custom_class": "border-top border-bottom"
+      }
+    },
+    "8996604a-6390-4d3a-934f-c182420f74f1": {
+      "type": "custom-content",
+      "blocks": {
+        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2024010600617.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-text-1": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "",
+            "title": "Design Excellence",
+            "heading_size": "h2",
+            "subheading": "",
+            "text": "<p>At VALORE, we believe that style and performance go hand in hand. Our designs are a reflection of clean, minimalist aesthetics and bold colors, allowing cyclists to perform at their best while looking sharp. From limited-edition collections to innovative collaborations, our gear sets a standard for contemporary cycling fashion.<br/></p>",
+            "alignment": "center",
+            "align_text": "left",
+            "padding_left": 120,
+            "padding_right": 120,
+            "align_content_container": "none",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "width": "50%",
+            "mobile_color_scheme": "",
+            "mobile_padding_left": 0,
+            "mobile_padding_right": 0,
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-image-1",
+        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-text-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "padding_top": 76,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "1fa24f8a-d231-4188-aace-4cc0966e2b73": {
+      "type": "custom-content",
+      "blocks": {
+        "c13109d9-d361-43a7-9723-c7cfc5fe7fcc": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "",
+            "title": "Performance and Innovation",
+            "heading_size": "h2",
+            "subheading": "",
+            "text": "<p>At VALORE, we design cycling apparel for those who push limits. Collaborating with both professional athletes and cycling enthusiasts, we use cutting-edge fabrics and technologies to deliver gear that enhances comfort, aerodynamics, and durability, empowering cyclists at every level.<br/></p>",
+            "alignment": "center",
+            "align_text": "left",
+            "padding_left": 120,
+            "padding_right": 120,
+            "align_content_container": "none",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "width": "50%",
+            "mobile_color_scheme": "",
+            "mobile_padding_left": 0,
+            "mobile_padding_right": 0,
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "5f57f939-5efa-4c9b-8d04-9d35adc7e44d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1-2024010600020.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "mobile-order-first",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "c13109d9-d361-43a7-9723-c7cfc5fe7fcc",
+        "5f57f939-5efa-4c9b-8d04-9d35adc7e44d"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "padding_top": 84,
+        "padding_bottom": 84,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "65ac5e18-3ef9-40e4-8c86-05a3a9d4d488": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "cedb30bf-dc45-47e0-9035-1be8ee17f637": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>The design is very attractive. Few brands offer varied colors with innovative designs. Perfect freedom of movement, no tension from the jersey. The new bib shorts fit very well. The strap length is perfect, and there is no particular pressure felt. The padding is very comfortable and of good quality, no complaints. We don't know any brand in Europe with a quality/price ratio like yours. You are unbeatable in this area. <br/></p>",
+            "author": "Virginie",
+            "product": "",
+            "image": "shopify://shop_images/1-virginie.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "c24f79a5-c3f9-4f06-a651-e8218364a9be": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>The apparel is sleek, functional, and perfectly suited for the demands of Morocco's rugged landscapes. The lightweight, breathable jersey allows for optimal airflow, keeping the rider cool and comfortable even during intense rides under the sun. Meanwhile, the fitted bib shorts provide the necessary support and padding, ensuring comfort over long distances on uneven, rocky trails.</p>",
+            "author": "Marouane",
+            "product": "",
+            "image": "shopify://shop_images/2-marouane.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "dd9715f1-a636-4977-a14b-9f9955633621": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>Training 5 times a week and engaging in races require durable, high-performance gear. The jersey is crafted from breathable fabric, offering excellent moisture-wicking properties, critical for maintaining comfort during long, intense climbs, ideally suited for the challenging alpine climbs. For riders who are committed to pushing their limits and experiencing freedom through cycling, this kit is an excellent choice for challenging climbs like the Col du Galibier.</p>",
+            "author": "Morel",
+            "product": "",
+            "image": "shopify://shop_images/3-morel.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "ca2be35a-ccbb-4055-8421-a5f36b5b6853": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>This ultralight jersey is exactly what I need for my rides, especially during the hottest days. I've spent 8 years doing ultra-distance rides and bikepacking, and now that I'm preparing for triathlon races, having lightweight, breathable gear is crucial. <br/><br/>Plus, I love making cycling videos for my YouTube channel, and this kit is not only functional but also looks great on camera. It's a stylish addition to my rides.</p>",
+            "author": "Özcan",
+            "product": "",
+            "image": "shopify://shop_images/4-ozcan.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "e25c9ba7-f860-418c-8b8d-cf63e66f0d56": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I've been testing out this ultralight jersey on the roads around my hometown in Ontario, Canada, just east of Toronto. For me, there's nothing better than exploring new locations, especially when there's a great coffee stop mid-ride! This jersey has been a perfect companion on both my solo and social rides. Since I started road racing last year at 50, I've been looking for gear that helps me push out of my comfort zone, and this kit does just that.</p>",
+            "author": "Kim",
+            "product": "",
+            "image": "shopify://shop_images/5-kim.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "4f5f02ff-1548-4c2a-8909-be51f9a906ef": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>This weekend, I took it out for a spin in the Wichita Mountains in Oklahoma, and it was exactly what I needed for the ride. The weather was warm, and the sun was strong, but this kit kept me feeling cool and dry throughout. Whether climbing hills or coasting through beautiful wildflower fields, the Valore line offered both comfort and performance. I couldn't have asked for a better combination of function and style!</p>",
+            "author": "Kristina",
+            "product": "",
+            "image": "shopify://shop_images/6-kristina.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "fc65b61f-536a-47e9-8383-ea2746189c7e": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I recently took this kit out for a ride in Serra de Sintra, Portugal. I'm a passionate cyclist, spending as much time on the bike as I can—whether on my indoor trainer or out on the road. <br/><br/>This kit really stood out for its comfort during long rides. The breathable fabric was perfect for spending hours on the road. Even after miles and miles, it stayed comfortable, which is crucial when you're pushing through those extra kilometers.</p>",
+            "author": "Nelson",
+            "product": "",
+            "image": "shopify://shop_images/7-nelson-1080.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "201bc93b-6e92-4a4d-8c87-b3708a72d710": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I'm seriously loving the Valore line from Monton right now—the fit is just perfect, and the fabric is so breathable. It makes all the difference when I'm out riding through New Jersey, especially on those climbs up Bear Mountain or the scenic stretch to Nyack. Having the right kit is a game changer. I'm all about kits with that race fit and breathable fabric. They help keep me cool and comfortable on those long, tough climbs, which is exactly what you need when you're pushing your limits.<br/></p>",
+            "author": "Eric",
+            "product": "",
+            "image": "shopify://shop_images/8-eric.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_igxiEn": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>It not only performs at the highest level but also stands out with its stylish design. Whether tackling long climbs or soaking in unforgettable views in Madeira, the comfort and fit never disappoint. The materials feel premium, offering breathability and freedom of movement, making every ride an enjoyable experience.</p><ul><li><strong>Height:</strong> 172cm <strong>Weight:</strong> 60kg</li><li><strong>Size:</strong> Asian M / EU S</li></ul>",
+            "author": "Marcelo",
+            "product": "",
+            "image": "shopify://shop_images/9-marcelo-720.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_Pc97WC": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>Valore jersey and bibs fit me very well. I like the race-fit design. Jersey is a very light fabric and fits like a second skin. I love it. Bibs looks and feels like Assos (I think I can't say like this, but this is true)). OK, like premium Italian bibs). The pad is really good - not big, but very comfortable. I haven't felt any discomfort during my ride. I'll check them on long road rides, but I'm sure it will work well. These bibs Stellare have small ventilation halls in the grip area - it looks and works fantastic. </p>",
+            "author": "Daria",
+            "product": "",
+            "image": "shopify://shop_images/10-daria-720.jpg",
+            "icon": "5-stars"
+          }
+        },
+        "testimonial_Ui4rce": {
+          "type": "testimonial",
+          "settings": {
+            "text": "<p>I absolutely love them! The fit is incredibly comfortable, and the fabric feels amazing. The color combination is bold and striking—definitely a standout!<br/><br/>One of my favorite things about this collection is the high-rise bibs. They provide great coverage, so even if the jersey has a shorter cut, everything fits perfectly without any discomfort. Valore nailed both performance and style with this collection—highly recommend!</p>",
+            "author": "Tina",
+            "product": "",
+            "image": "shopify://shop_images/11-tina-720.jpg",
+            "icon": "5-stars"
+          }
+        }
+      },
+      "block_order": [
+        "cedb30bf-dc45-47e0-9035-1be8ee17f637",
+        "c24f79a5-c3f9-4f06-a651-e8218364a9be",
+        "dd9715f1-a636-4977-a14b-9f9955633621",
+        "ca2be35a-ccbb-4055-8421-a5f36b5b6853",
+        "e25c9ba7-f860-418c-8b8d-cf63e66f0d56",
+        "4f5f02ff-1548-4c2a-8909-be51f9a906ef",
+        "fc65b61f-536a-47e9-8383-ea2746189c7e",
+        "201bc93b-6e92-4a4d-8c87-b3708a72d710",
+        "testimonial_igxiEn",
+        "testimonial_Pc97WC",
+        "testimonial_Ui4rce"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "background-1",
+        "section_header_padding_bottom": "large",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "alignment": "center",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.1,
+        "item_gap": 80,
+        "item_gap_mobile": 40,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "ca424d80-c6dd-4d8e-81a4-bd4599587c4c": {
+      "type": "rich-text",
+      "blocks": {
+        "ceffc03a-da04-44bf-9db8-6734d5094f17": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "VALORE"
+          }
+        },
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ethical Production",
+            "heading_size": "h2",
+            "highlight_style": "none",
+            "enable_highlight_text_color": false
+          }
+        },
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We take pride in partnering with suppliers and manufacturers who share our values. By adhering to strict labor laws and environmental standards, we ensure fair wages, safe working conditions, and sustainable practices. At VALORE, we are committed to fostering positive change in the apparel industry.</p>"
+          }
+        },
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "btn--underline",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "ceffc03a-da04-44bf-9db8-6734d5094f17",
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-heading-1",
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-text-1",
+        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-button-1"
+      ],
+      "settings": {
+        "container": "container-narrow",
+        "color_schema": "accent",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "remove_params": false,
+        "section_header_padding_bottom": "large",
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "description": "",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "extra-small",
+        "row_gap": "medium",
+        "enable_slider": true,
+        "show_nav": true,
+        "show_dots": false,
+        "enable_swipe_mobile": true,
+        "column_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "animations": "inherit"
+      }
+    },
+    "1757472591c3a85656": {
+      "type": "apps",
+      "blocks": {
+        "doran_product_reviews_question_widget_cjzatB": {
+          "type": "shopify://apps/doran-product-reviews/blocks/question-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
+          "settings": {
+            "topPadding": 36,
+            "bottomPadding": 36,
+            "is_use_shopify_font": false,
+            "shopify_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "doran_product_reviews_question_widget_cjzatB"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_information_tabs_p7BegR",
+    "1757472451fc7201d4",
+    "73c8e618-10a0-43bf-b1d9-fa6707a4b913",
+    "8996604a-6390-4d3a-934f-c182420f74f1",
+    "1fa24f8a-d231-4188-aace-4cc0966e2b73",
+    "65ac5e18-3ef9-40e4-8c86-05a3a9d4d488",
+    "ca424d80-c6dd-4d8e-81a4-bd4599587c4c",
+    "product-recommendations",
+    "1757472591c3a85656"
+  ]
+}

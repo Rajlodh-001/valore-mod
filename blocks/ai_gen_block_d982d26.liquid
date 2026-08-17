@@ -1,0 +1,434 @@
+{% doc %}
+  @prompt
+    3 column collection list with section title on top. 
+    
+    The collection will have the title showing below the collection card. and an option to add rich text format below the collection title.
+    
+    The rich text format should allow text links without adding a new block or div
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-collection-list-{{ ai_gen_id }} {
+    padding: 40px 0;
+  }
+
+  .ai-collection-list__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.title_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-collection-list__title-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+  }
+
+  .ai-collection-list__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-collection-list__item-{{ ai_gen_id }} {
+    text-align: {{ block.settings.content_alignment }};
+  }
+
+  .ai-collection-list__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    margin-bottom: 16px;
+  }
+
+  .ai-collection-list__image-wrapper-{{ ai_gen_id }}::before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  .ai-collection-list__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-collection-list__item-{{ ai_gen_id }}:hover .ai-collection-list__image-{{ ai_gen_id }} {
+    transform: scale(1.05);
+  }
+
+  .ai-collection-list__image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-collection-list__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-collection-list__link-{{ ai_gen_id }} {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .ai-collection-list__collection-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.collection_title_size }}px;
+    font-weight: {{ block.settings.collection_title_weight }};
+    color: {{ block.settings.collection_title_color }};
+    margin: 0 0 8px 0;
+  }
+
+  .ai-collection-list__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.5;
+  }
+
+  .ai-collection-list__description-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+  }
+
+  .ai-collection-list__description-{{ ai_gen_id }} a:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-collection-list__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-collection-list__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+    }
+
+    .ai-collection-list__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-collection-list__collection-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.collection_title_size }}px * 0.9);
+    }
+
+    .ai-collection-list__description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.description_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-collection-list-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.section_title != blank %}
+    <div class="ai-collection-list__header-{{ ai_gen_id }}">
+      <h2 class="ai-collection-list__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="ai-collection-list__grid-{{ ai_gen_id }}">
+    {% for i in (1..3) %}
+      {% liquid
+        assign collection_key = 'collection_' | append: i
+        assign description_key = 'description_' | append: i
+        assign collection = block.settings[collection_key]
+        assign description = block.settings[description_key]
+      %}
+
+      <div class="ai-collection-list__item-{{ ai_gen_id }}">
+        {% if collection != blank %}
+          <a href="{{ collection.url }}" class="ai-collection-list__link-{{ ai_gen_id }}">
+            <div class="ai-collection-list__image-wrapper-{{ ai_gen_id }}">
+              {% if collection.image %}
+                <img
+                  src="{{ collection.image | image_url: width: 800 }}"
+                  alt="{{ collection.image.alt | escape }}"
+                  loading="lazy"
+                  width="800"
+                  height="800"
+                  class="ai-collection-list__image-{{ ai_gen_id }}"
+                >
+              {% elsif collection.products.first and collection.products.first.featured_image %}
+                <img
+                  src="{{ collection.products.first.featured_image | image_url: width: 800 }}"
+                  alt="{{ collection.products.first.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="800"
+                  height="800"
+                  class="ai-collection-list__image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-collection-list__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'collection-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          </a>
+
+          <h3 class="ai-collection-list__collection-title-{{ ai_gen_id }}">
+            <a href="{{ collection.url }}" class="ai-collection-list__link-{{ ai_gen_id }}">
+              {{ collection.title }}
+            </a>
+          </h3>
+
+          {% if description != blank %}
+            <div class="ai-collection-list__description-{{ ai_gen_id }}">
+              {{ description }}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="ai-collection-list__image-wrapper-{{ ai_gen_id }}">
+            <div class="ai-collection-list__image-placeholder-{{ ai_gen_id }}">
+              {{ 'collection-1' | placeholder_svg_tag }}
+            </div>
+          </div>
+          <h3 class="ai-collection-list__collection-title-{{ ai_gen_id }}">Collection {{ i }}</h3>
+          {% if description != blank %}
+            <div class="ai-collection-list__description-{{ ai_gen_id }}">
+              {{ description }}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection list",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Shop by Collection"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#222222"
+    },
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Collection 1"
+    },
+    {
+      "type": "richtext",
+      "id": "description_1",
+      "label": "Description 1"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Collection 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description_2",
+      "label": "Description 2"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Collection 3"
+    },
+    {
+      "type": "richtext",
+      "id": "description_3",
+      "label": "Description 3"
+    },
+    {
+      "type": "header",
+      "content": "Collection card style"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "collection_title_size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Collection title size",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "collection_title_weight",
+      "label": "Collection title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "collection_title_color",
+      "label": "Collection title color",
+      "default": "#222222"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list"
+    }
+  ]
+}
+{% endschema %}

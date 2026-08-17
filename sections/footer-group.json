@@ -1,0 +1,247 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer.name",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-3": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Stay Connected",
+            "heading_size": "h6",
+            "subheading": "<p><br/>Join the Valore ride — be first to know about collections, films, and rides.<br/><br/></p>",
+            "description": "<p></p><p>By subscribing you agree to the <a href=\"#\">Terms of Use</a> & <a href=\"#\">Privacy Policy.</a></p>",
+            "email_placeholder": "Enter your email",
+            "hide_label": true,
+            "form_width": 420,
+            "width": 40,
+            "open_default_collapsible_tab": true
+          }
+        },
+        "empty_column_kXUAVm": {
+          "type": "empty_column",
+          "settings": {
+            "width": 155,
+            "custom_class": ""
+          }
+        },
+        "025c08b7-b131-45af-8214-e5c1828a0c29": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "About",
+            "heading_size": "h6",
+            "menu": "footer",
+            "width": 18,
+            "open_default_collapsible_tab": false
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Brand",
+            "heading_size": "h6",
+            "menu": "brand",
+            "width": 18,
+            "open_default_collapsible_tab": false
+          }
+        },
+        "fa9f3515-f501-433a-b115-4fe8513f8f75": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Quick links",
+            "heading_size": "h6",
+            "menu": "footer",
+            "width": 14,
+            "open_default_collapsible_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "footer-3",
+        "empty_column_kXUAVm",
+        "025c08b7-b131-45af-8214-e5c1828a0c29",
+        "footer-1",
+        "fa9f3515-f501-433a-b115-4fe8513f8f75"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container-fluid",
+        "color_schema": "inverse",
+        "show_copyright": false,
+        "show_divider": true,
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "icon_size": "medium",
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "show_payments": true,
+        "bottom_menu": "footer",
+        "animations": "fade-in-up"
+      }
+    },
+    "mobile-sticky-bar": {
+      "type": "mobile-sticky-bar",
+      "blocks": {
+        "mobile-sticky-bar-0": {
+          "type": "home",
+          "settings": {
+            "text": "Home"
+          }
+        },
+        "mobile-sticky-bar-1": {
+          "type": "products",
+          "settings": {
+            "text": "Products",
+            "collection": ""
+          }
+        },
+        "mobile-sticky-bar-2": {
+          "type": "search",
+          "settings": {
+            "text": "Search"
+          }
+        },
+        "mobile-sticky-bar-3": {
+          "type": "cart",
+          "settings": {
+            "text": "Cart"
+          }
+        }
+      },
+      "block_order": [
+        "mobile-sticky-bar-0",
+        "mobile-sticky-bar-1",
+        "mobile-sticky-bar-2",
+        "mobile-sticky-bar-3"
+      ],
+      "settings": {
+        "enable_sticky_bar": true,
+        "show_text": true
+      }
+    },
+    "popup": {
+      "type": "popup",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pop.jpg",
+            "image_position": "left"
+          }
+        },
+        "popup-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "JOIN VALORE",
+            "text_size": "medium"
+          }
+        },
+        "popup-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Subscribe for store updates and discounts.</p>"
+          }
+        },
+        "popup-2": {
+          "type": "form",
+          "settings": {
+            "design": "design-1",
+            "button_label": "Subscribe"
+          }
+        },
+        "button_qetHtX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Subscribe now",
+            "button_link": "#"
+          }
+        },
+        "social_aGfwnF": {
+          "type": "social",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image",
+        "popup-0",
+        "popup-1",
+        "popup-2",
+        "button_qetHtX",
+        "social_aGfwnF"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "design_mode": false,
+        "enable": true,
+        "show_for_homepage_only": true,
+        "show_for_visitors_only": true,
+        "trigger_open": "delay",
+        "repeat_open": "every_3_days",
+        "alignment": "left",
+        "width": 870,
+        "show_teaser": false,
+        "teaser_button_text": "Newsletter",
+        "teaser_popup_bg": "#1437aa",
+        "teaser_popup_text": "#ffffff"
+      }
+    },
+    "age-verifier-popup": {
+      "type": "age-verifier-popup",
+      "blocks": {
+        "age-vefirifer-popup-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Confirm your age",
+            "heading_size": "h1"
+          }
+        },
+        "age-vefirifer-popup-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you 18 years old or older?</p>"
+          }
+        },
+        "age-vefirifer-popup-3": {
+          "type": "buttons",
+          "settings": {
+            "decline_button": "No, I'm not",
+            "approve_button": "Yes, I am"
+          }
+        }
+      },
+      "block_order": [
+        "age-vefirifer-popup-1",
+        "age-vefirifer-popup-2",
+        "age-vefirifer-popup-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "design_mode": false,
+        "enable": false,
+        "bg_blur": true,
+        "decline_heading": "Come back when you're older",
+        "decline_content": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>",
+        "return_button": "Oops, I entered incorrectly"
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "mobile-sticky-bar",
+    "popup",
+    "age-verifier-popup"
+  ]
+}

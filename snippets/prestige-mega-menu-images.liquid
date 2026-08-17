@@ -1,0 +1,129 @@
+{%- doc -%}
+  Prestige-style promotional image cards for a mega menu.
+
+  @param {object} block - header block with image settings
+  @param {string} [layout] - "wide" for a single landscape image, otherwise two portrait cards
+{%- enddoc -%}
+
+{%- liquid
+  assign promo_layout = layout | default: 'cards'
+-%}
+
+{%- if promo_layout == 'wide' -%}
+  {%- assign wide_image = block.settings.image_1 | default: block.settings.image -%}
+  {%- assign wide_link = block.settings.image_1_link | default: block.settings.link -%}
+  {%- if wide_image != blank -%}
+    {%- if wide_link != blank -%}
+      <a href="{{ wide_link }}" class="prestige-mega-menu__promo-card prestige-mega-menu__promo-card--wide">
+        <div class="prestige-mega-menu__promo-media">
+          {{
+            wide_image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              widths: '480,720,960,1200',
+              sizes: '(min-width: 1200px) 520px, 40vw',
+              class: 'prestige-mega-menu__promo-img'
+          }}
+        </div>
+      </a>
+    {%- else -%}
+      <div class="prestige-mega-menu__promo-card prestige-mega-menu__promo-card--wide">
+        <div class="prestige-mega-menu__promo-media">
+          {{
+            wide_image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              widths: '480,720,960,1200',
+              sizes: '(min-width: 1200px) 520px, 40vw',
+              class: 'prestige-mega-menu__promo-img'
+          }}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+{%- elsif block.type == 'banner' -%}
+  {%- if block.settings.image != blank -%}
+    {%- capture image_content -%}
+      <div class="prestige-mega-menu__promo-media">
+        {{
+          block.settings.image
+          | image_url: width: 630
+          | image_tag:
+            loading: 'lazy',
+            widths: '315,630,945',
+            sizes: '315px',
+            class: 'prestige-mega-menu__promo-img'
+        }}
+      </div>
+      {%- if block.settings.image_heading != blank or block.settings.image_text != blank -%}
+        <div class="prestige-mega-menu__promo-caption">
+          {%- if block.settings.image_heading != blank -%}
+            <p class="prestige-mega-menu__promo-heading">{{ block.settings.image_heading }}</p>
+          {%- endif -%}
+          {%- if block.settings.image_text != blank -%}
+            <p class="prestige-mega-menu__promo-text">{{ block.settings.image_text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endcapture -%}
+    {%- if block.settings.link != blank -%}
+      <a href="{{ block.settings.link }}" class="prestige-mega-menu__promo-card">
+        {{- image_content -}}
+      </a>
+    {%- else -%}
+      <div class="prestige-mega-menu__promo-card">
+        {{- image_content -}}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  {%- for i in (1..2) -%}
+    {%- assign image_setting = 'image_' | append: i -%}
+    {%- assign heading_setting = 'image_' | append: i | append: '_heading' -%}
+    {%- assign text_setting = 'image_' | append: i | append: '_text' -%}
+    {%- assign link_setting = 'image_' | append: i | append: '_link' -%}
+
+    {%- if block.settings[image_setting] != blank
+      or block.settings[heading_setting] != blank
+      or block.settings[text_setting] != blank
+    -%}
+      {%- capture image_content -%}
+        {%- if block.settings[image_setting] != blank -%}
+          <div class="prestige-mega-menu__promo-media">
+            {{
+              block.settings[image_setting]
+              | image_url: width: 630
+              | image_tag:
+                loading: 'lazy',
+                widths: '315,630,945',
+                sizes: '315px',
+                class: 'prestige-mega-menu__promo-img'
+            }}
+          </div>
+        {%- endif -%}
+        {%- if block.settings[heading_setting] != blank or block.settings[text_setting] != blank -%}
+          <div class="prestige-mega-menu__promo-caption">
+            {%- if block.settings[heading_setting] != blank -%}
+              <p class="prestige-mega-menu__promo-heading">{{ block.settings[heading_setting] }}</p>
+            {%- endif -%}
+            {%- if block.settings[text_setting] != blank -%}
+              <p class="prestige-mega-menu__promo-text">{{ block.settings[text_setting] }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if block.settings[link_setting] != blank -%}
+        <a href="{{ block.settings[link_setting] }}" class="prestige-mega-menu__promo-card">
+          {{- image_content -}}
+        </a>
+      {%- else -%}
+        <div class="prestige-mega-menu__promo-card">
+          {{- image_content -}}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

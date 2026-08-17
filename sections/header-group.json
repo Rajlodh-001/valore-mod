@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Welcome to VALORE</p>",
+            "link": "",
+            "homepage_only": false,
+            "hide_on_page": "",
+            "show_on_mobile": true,
+            "show_on_tablet": true,
+            "show_on_desktop": true
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "color_schema": "inverse",
+        "show_close_button": false,
+        "enable_carousel": true,
+        "autoplay": true,
+        "autorotate_speed": 4
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_men": {
+          "type": "mega_menu",
+          "settings": {
+            "heading": "Men",
+            "container": "inherit",
+            "columns": 3,
+            "images_position": "right",
+            "image_1": "shopify://shop_images/mens-25328.jpg",
+            "image_1_heading": "Cycling jersey",
+            "image_1_text": "Mens",
+            "image_1_link": "shopify://collections/cycling-jersey-mens",
+            "image_2": "shopify://shop_images/20240823_5607_1.png",
+            "image_2_heading": "Cycling jersey",
+            "image_2_text": "Womens",
+            "image_2_link": "shopify://collections/cycling-jersey-women"
+          }
+        },
+        "mega_menu_women": {
+          "type": "mega_menu",
+          "settings": {
+            "heading": "Women",
+            "container": "inherit",
+            "columns": 3,
+            "images_position": "right",
+            "image_1": "shopify://shop_images/20240823_5607_1.png",
+            "image_1_link": "shopify://collections/all"
+          }
+        },
+        "mega_menu_shop": {
+          "type": "mega_menu",
+          "settings": {
+            "heading": "Shop",
+            "container": "inherit",
+            "columns": 3,
+            "images_position": "right",
+            "image_1": "shopify://shop_images/mens-25328.jpg",
+            "image_1_heading": "Cycling jersey",
+            "image_1_text": "Mens",
+            "image_1_link": "shopify://collections/cycling-jersey-mens",
+            "image_2": "shopify://shop_images/20240823_5607_1.png",
+            "image_2_heading": "Cycling jersey",
+            "image_2_text": "Womens",
+            "image_2_link": "shopify://collections/cycling-jersey-women"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_men",
+        "mega_menu_women",
+        "mega_menu_shop"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_schema": "",
+        "layout": "design-1",
+        "container": "container",
+        "sticky_header": true,
+        "transparent_header": true,
+        "logo_width": 130,
+        "logo_mobile_width": 108,
+        "main_menu": "main-menu",
+        "mobile_menu": "main-menu",
+        "menu_dropdown_color_schema": "",
+        "dropdown_menu_trigger": "hover",
+        "enable_mega_menu": true,
+        "show_search": true,
+        "show_cart": true,
+        "show_account": true,
+        "show_country_selector": false,
+        "show_language_selector": false,
+        "logo_mobile_position": "center",
+        "mobile_show_search": true,
+        "mobile_show_cart": true,
+        "mobile_show_account": true,
+        "mobile_show_social": true,
+        "padding_top": 13,
+        "padding_bottom": 13
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
