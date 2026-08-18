@@ -79,7 +79,7 @@
             {% endif %}
           >
             <div class="multicolumn-card__inner flex flex-col text-{{ section.settings.text_alignment }}">
-              {% if image != blank %}
+              {% if image != blank and image.width > 0 %}
                 <{{ tag }}
                   {% if image_link != blank %}
                     aria-label="{{ 'accessibility.read_more' | t: title: block.settings.title }}"
@@ -94,6 +94,16 @@
                     index: forloop.index
                   %}
                 </{{ tag }}>
+              {% else %}
+                {% capture homepage_fallback %}
+                  {% render 'homepage-media-fallback', id: block.id, kind: 'image', alt: block.settings.title %}
+                {% endcapture %}
+                {% assign homepage_fallback = homepage_fallback | strip %}
+                {% if homepage_fallback != blank %}
+                  <div class="multicolumn-card__image">
+                    {{ homepage_fallback }}
+                  </div>
+                {% endif %}
               {% endif %}
               <div class="multicolumn-card__info{% if image != blank %} has-image{% endif %}">
                 {%- if block.settings.title != blank -%}

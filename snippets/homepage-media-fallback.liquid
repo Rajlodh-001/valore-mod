@@ -1,0 +1,63 @@
+{%- comment -%}
+  Local homepage media fallbacks for stores that do not have origin Files.
+  Keep original shopify:// paths in _theme-backups/valore-modify/index.json.original.
+
+  Usage:
+    {% render 'homepage-media-fallback', id: block.id, variant: 'desktop', kind: 'image', alt: shop.name %}
+    {% capture src %}{% render 'homepage-media-fallback', id: block.id, kind: 'src' %}{% endcapture %}
+{%- endcomment -%}
+{%- liquid
+  assign variant = variant | default: 'desktop'
+  assign kind = kind | default: 'image'
+  assign homepage_fallback_file = ''
+  assign lookup = id | split: '__' | last
+
+  case lookup
+    when 'slide_Q9QMzA'
+      if variant == 'mobile'
+        assign homepage_fallback_file = '20260415-valore-banner-cinetico-1200-x-960-2.jpg'
+      else
+        assign homepage_fallback_file = '20260415-valore-banner-cinetico-2560-x-1200-2.jpg'
+      endif
+    when 'slide_EVeMYC'
+      if variant == 'mobile'
+        assign homepage_fallback_file = '20260415-valore-banner-cinetico-1200-x-960-3.jpg'
+      else
+        assign homepage_fallback_file = '20260415-valore-banner-cinetico-2560-x-1200-1.jpg'
+      endif
+    when 'image_card_aXahJJ'
+      assign homepage_fallback_file = '20250303_448_2_1.jpg'
+    when 'image_card_WdBcAb'
+      assign homepage_fallback_file = '20240823_6970.jpg'
+    when 'hero_tL6Wk6'
+      assign homepage_fallback_file = 'Valore_1_1.png'
+    when 'hero_kyyH7r'
+      assign homepage_fallback_file = 'Valore_1.jpg'
+    when 'column_C7Td3E'
+      assign homepage_fallback_file = 'free-shipping.jpg'
+    when 'column_6Rw3hy'
+      assign homepage_fallback_file = 'easy-refund.jpg'
+    when 'column_tgeC8K'
+      assign homepage_fallback_file = 'oneline-support.jpg'
+    when 'column_V74dnk'
+      assign homepage_fallback_file = 'flexible-payment.png'
+    when 'video_W9K8bm', 'video_hero_pWKkdn'
+      assign homepage_fallback_file = '26ss-horizontal-version-usa-outdoor-video.mp4'
+  endcase
+-%}
+{%- if homepage_fallback_file != blank -%}
+  {%- if kind == 'src' -%}
+    {{- homepage_fallback_file | asset_url -}}
+  {%- else -%}
+    <img
+      src="{{ homepage_fallback_file | asset_url }}"
+      alt="{{ alt | default: shop.name | escape }}"
+      class="{{ class }}"
+      loading="{{ loading | default: 'lazy' }}"
+      fetchpriority="{{ fetchpriority | default: 'low' }}"
+      {% if width != blank %}width="{{ width }}"{% endif %}
+      {% if height != blank %}height="{{ height }}"{% endif %}
+      sizes="100vw"
+    >
+  {%- endif -%}
+{%- endif -%}

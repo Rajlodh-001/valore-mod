@@ -59,6 +59,7 @@
         assign video_url = video_sources.url
 
         if section.settings.video_type == 'shopify' and video_url == blank
+          assign use_homepage_video_fallback = true
           assign video_url = placeholder_video
         endif
         case section.settings.video_type
@@ -71,6 +72,15 @@
             endif
         endcase
       %}
+      {% if use_homepage_video_fallback %}
+        {% capture homepage_video_src %}
+          {% render 'homepage-media-fallback', id: section.id, kind: 'src' %}
+        {% endcapture %}
+        {% assign homepage_video_src = homepage_video_src | strip %}
+        {% if homepage_video_src != blank %}
+          {% assign video_url = homepage_video_src %}
+        {% endif %}
+      {% endif %}
       <div class="f-video-wrapper{% if animated and section.settings.enable_bg_zoom_effect %} f-image{% endif %}">
         <video-component
           class="f-video__bg"

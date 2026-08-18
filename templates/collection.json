@@ -41,7 +41,7 @@
       "type": "main-collection-product-grid",
       "settings": {
         "prestige_layout": true,
-        "container": "container-full",
+        "container": "container",
         "products_per_page": 20,
         "columns": 3,
         "column_gap": "extra-small",

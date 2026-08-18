@@ -1,0 +1,495 @@
+/**
+ * Prestige header layout + styling on Zest markup.
+ * Layout: nav left | logo center | icons right
+ * Menu items and URLs stay in Liquid.
+ *
+ * Zest html font-size is 62.5% (1rem = 10px). Prestige uses 16px rem.
+ * Values below are converted so spacing matches Prestige visually.
+ */
+
+/* --- Header bar --- */
+.site-header:not(.site-header--transparent) {
+  background: #fff;
+}
+
+.template-index .site-header--transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--color-header-transparent-text);
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.template-index .site-header--transparent .f-site-nav__link,
+.template-index .site-header--transparent .site-header__link,
+.template-index .site-header--transparent .site-logo__text,
+.template-index .site-header--transparent .country-switcher--prestige .f-disclosure__toggle,
+.template-index .site-header--transparent .country-switcher--prestige .country-switcher__static {
+  color: var(--color-header-transparent-text);
+  transition: color 0.25s ease;
+}
+
+.template-index .site-header--transparent .country-switcher--prestige .f-disclosure__toggle:hover {
+  color: var(--color-header-transparent-text);
+  opacity: 0.85;
+}
+
+.template-index .site-header--transparent .site-header .f-icon-svg {
+  color: var(--color-header-transparent-text);
+  transition: color 0.25s ease;
+}
+
+/* Prestige-style: white navbar bar + dark text on header hover / menu open */
+.template-index .site-header--transparent:hover,
+.template-index .site-header--transparent:focus-within,
+.template-index .site-header--transparent.f-header__mega-active {
+  background: #fff !important;
+  box-shadow: 0 -1px rgb(0 0 0 / 0.12) inset !important;
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--transparent:hover .f-site-nav,
+.template-index .site-header--transparent:hover .f-site-nav__item,
+.template-index .site-header--transparent:hover .f-site-nav__item:hover,
+.template-index .site-header--transparent:hover .f-site-nav__item:focus-within,
+.template-index .site-header--transparent:hover .f-site-nav__item--current,
+.template-index .site-header--transparent:hover .f-site-nav__link,
+.template-index .site-header--transparent:hover .site-header__link,
+.template-index .site-header--transparent:hover .site-header__link:hover,
+.template-index .site-header--transparent:hover .site-header__search-toggle:hover,
+.template-index .site-header--transparent:hover .site-logo__text,
+.template-index .site-header--transparent:focus-within .f-site-nav,
+.template-index .site-header--transparent:focus-within .f-site-nav__item,
+.template-index .site-header--transparent:focus-within .f-site-nav__item:hover,
+.template-index .site-header--transparent:focus-within .f-site-nav__item:focus-within,
+.template-index .site-header--transparent:focus-within .f-site-nav__item--current,
+.template-index .site-header--transparent:focus-within .f-site-nav__link,
+.template-index .site-header--transparent:focus-within .site-header__link,
+.template-index .site-header--transparent:focus-within .site-header__link:hover,
+.template-index .site-header--transparent:focus-within .site-logo__text,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav__item,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav__item:hover,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav__item:focus-within,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav__item--current,
+.template-index .site-header--transparent.f-header__mega-active .f-site-nav__link,
+.template-index .site-header--transparent.f-header__mega-active .site-header__link,
+.template-index .site-header--transparent.f-header__mega-active .site-header__link:hover,
+.template-index .site-header--transparent.f-header__mega-active .site-logo__text {
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--transparent:hover .country-switcher--prestige .f-disclosure__toggle,
+.template-index .site-header--transparent:hover .country-switcher--prestige .f-disclosure__toggle:hover,
+.template-index .site-header--transparent:hover .country-switcher--prestige .country-switcher__static,
+.template-index .site-header--transparent:focus-within .country-switcher--prestige .f-disclosure__toggle,
+.template-index .site-header--transparent:focus-within .country-switcher--prestige .f-disclosure__toggle:hover,
+.template-index .site-header--transparent:focus-within .country-switcher--prestige .country-switcher__static,
+.template-index .site-header--transparent.f-header__mega-active .country-switcher--prestige .f-disclosure__toggle,
+.template-index .site-header--transparent.f-header__mega-active .country-switcher--prestige .f-disclosure__toggle:hover,
+.template-index .site-header--transparent.f-header__mega-active .country-switcher--prestige .country-switcher__static {
+  color: rgb(0 0 0 / 0.65) !important;
+}
+
+.template-index .site-header--transparent:hover .site-header .f-icon-svg,
+.template-index .site-header--transparent:focus-within .site-header .f-icon-svg,
+.template-index .site-header--transparent.f-header__mega-active .site-header .f-icon-svg {
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--transparent:hover .mobile-nav-toggle .btn,
+.template-index .site-header--transparent:hover .mobile-nav-toggle .btn:hover,
+.template-index .site-header--transparent:focus-within .mobile-nav-toggle .btn,
+.template-index .site-header--transparent:focus-within .mobile-nav-toggle .btn:hover,
+.template-index .site-header--transparent.f-header__mega-active .mobile-nav-toggle .btn,
+.template-index .site-header--transparent.f-header__mega-active .mobile-nav-toggle .btn:hover {
+  color: var(--color-text-body) !important;
+}
+
+/* Swap to dark logo variant when header bar is active */
+.template-index .site-header--transparent:hover .with-transparent .site-logo--default,
+.template-index .site-header--transparent:focus-within .with-transparent .site-logo--default,
+.template-index .site-header--transparent.f-header__mega-active .with-transparent .site-logo--default {
+  display: block !important;
+}
+
+.template-index .site-header--transparent:hover .site-logo--transparent,
+.template-index .site-header--transparent:focus-within .site-logo--transparent,
+.template-index .site-header--transparent.f-header__mega-active .site-logo--transparent {
+  display: none !important;
+}
+
+.template-index .f-section-header .site-header__placeholder {
+  display: none;
+  height: 0;
+}
+
+.site-header {
+  border-bottom: none;
+  box-shadow: 0 -1px rgb(0 0 0 / 0.12) inset;
+  padding-block: 1.6rem;
+}
+
+.template-index .site-header--transparent {
+  box-shadow: none !important;
+}
+
+.site-header--sticky .site-header {
+  box-shadow: 0 -1px rgb(0 0 0 / 0.12) inset;
+}
+
+.site-header .container-fluid {
+  padding-inline: 4rem;
+  max-width: none;
+}
+
+@media (min-width: 1150px) {
+  .site-header .container-fluid {
+    padding-inline: 6.4rem;
+  }
+}
+
+@media (max-width: 699.98px) {
+  .site-header {
+    padding-block: 1.2rem;
+  }
+
+  .site-header .container-fluid {
+    padding-inline: 2rem;
+  }
+}
+
+/* --- Prestige 3-column grid: nav | logo | icons --- */
+.site-header--design-2 .site-header__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 2rem;
+  width: 100%;
+}
+
+.site-header--design-2 .site-header__left,
+.site-header--design-2 .site-header__right {
+  width: auto !important;
+  flex: unset !important;
+}
+
+.site-header--design-2 .site-header__left {
+  justify-self: start;
+  min-width: 0;
+}
+
+.site-header--design-2 .site-header__center,
+.site-header--design-2 .site-header__center--max {
+  justify-self: center;
+  width: auto !important;
+  flex: unset !important;
+}
+
+.site-header--design-2 .site-header__right {
+  justify-self: end;
+  justify-content: flex-end;
+}
+
+@media (min-width: 1024px) {
+  .site-header--design-2 .site-header__inner {
+    column-gap: 4rem;
+  }
+}
+
+/* --- Logo (Prestige heading / serif shop name) --- */
+.site-header--design-2 .site-logo__text {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 2.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* --- Primary nav --- */
+.f-site-nav {
+  margin: 0;
+  --nav-item-px: 0;
+  --nav-item-py: 0;
+}
+
+.f-site-nav__list {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin: 0;
+  height: auto;
+}
+
+@media (min-width: 1150px) {
+  .f-site-nav__list {
+    gap: 1rem 4rem;
+  }
+}
+
+.f-site-nav--space-xs,
+.f-site-nav--space-sm,
+.f-site-nav--space-md {
+  --nav-item-px: 0;
+}
+
+.f-site-nav__link,
+.f-site-nav summary.f-site-nav__link {
+  font-family: var(--font-heading-family);
+  font-style: normal;
+  font-weight: var(--font-heading-weight);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  padding: 0;
+  height: auto;
+}
+
+.f-site-nav__link > span:first-child {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.f-site-nav a[class*='link'] > span:not(.f-site-nav__arrow):after,
+.f-site-nav summary[class*='link'] > span:not(.f-site-nav__arrow):after {
+  height: 2px;
+  bottom: -2px;
+  background: currentColor;
+}
+
+.f-site-nav__item--mega .f-site-nav__link > span:not(.f-site-nav__arrow):after,
+.f-site-nav__item--has-child.f-site-nav__item--mega summary.f-site-nav__link > span:not(.f-site-nav__arrow):after {
+  display: none;
+}
+
+.f-site-nav__item--mega .f-site-nav__arrow {
+  display: none;
+}
+
+/* --- Standard dropdown --- */
+.f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__dropdown {
+  min-width: 20rem;
+  max-width: 28rem;
+  padding: 1.8rem 0;
+  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.05);
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: rgb(0 0 0 / 0.08);
+}
+
+.f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__sub-link {
+  padding: 0.6rem 2.5rem;
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgb(0 0 0 / 0.65);
+  transition: color 0.2s ease-in-out;
+}
+
+.f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__sub-link:hover,
+.f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__sub-link:focus-visible {
+  color: var(--color-text-body);
+  opacity: 1;
+}
+
+.f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__sub-link:before {
+  display: none;
+}
+
+/* --- Mega dropdown --- */
+.f-site-nav__dropdown--mega.prestige-mega {
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  box-shadow: none;
+  border-top: 0;
+  background: #fff !important;
+}
+
+.f-site-nav__dropdown--mega.prestige-mega::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -14px;
+  height: 14px;
+}
+
+.f-site-nav__dropdown--mega.prestige-mega .container {
+  max-width: none;
+  padding-inline: 4rem;
+}
+
+/* --- Header icons --- */
+.site-header__addons {
+  column-gap: 1.4rem;
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .site-header__addons {
+    column-gap: 2rem;
+  }
+}
+
+.site-header__link {
+  font-family: var(--font-heading-family);
+  font-style: normal;
+  font-weight: var(--font-heading-weight);
+  letter-spacing: 0.08em;
+}
+
+.site-header .f-icon-svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  stroke-width: 1.5;
+}
+
+/* --- Currency / country selector (Prestige-style) --- */
+.site-header__addons .country-switcher--prestige {
+  --f-max-width: 28rem;
+  position: relative;
+  z-index: 120;
+}
+
+.country-switcher--prestige .f-disclosure__toggle,
+.country-switcher--prestige .country-switcher__static {
+  align-items: center;
+  column-gap: 0.625rem;
+  display: inline-flex;
+  font-family: var(--font-heading-family);
+  font-style: normal;
+  font-weight: var(--font-heading-weight);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: rgb(0 0 0 / 0.65);
+  transition: color 0.2s ease-in-out;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.country-switcher--prestige .f-disclosure__toggle:hover {
+  color: var(--color-text-body);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.country-switcher--prestige .country-switcher__flag {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.country-switcher--prestige .f-disclosure__toggle svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.country-switcher--prestige .f-disclosure[open] .f-disclosure__toggle svg {
+  transform: rotate(180deg);
+}
+
+.country-switcher--prestige .country-switcher__currency {
+  white-space: nowrap;
+}
+
+.country-switcher--prestige .country-switcher__static {
+  cursor: default;
+  pointer-events: none;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure {
+  padding: 0;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure-list {
+  left: auto;
+  right: 0;
+  min-width: 22rem;
+  padding: 1.8rem 0;
+  border: 1px solid rgb(0 0 0 / 0.08);
+  box-shadow: 2px 2px 6px rgb(0 0 0 / 0.05);
+  border-radius: 0;
+  z-index: 1001;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure-list__item {
+  line-height: 1.65 !important;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure-list__item a {
+  padding: 0.6rem 2.5rem;
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgb(0 0 0 / 0.65);
+  transition: color 0.2s ease-in-out;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure-list__item .country-switcher__flag {
+  width: 20px;
+  height: 15px;
+}
+
+.site-header__addons .country-switcher--prestige .f-disclosure-list__item a:hover {
+  color: var(--color-text-body);
+}
+
+/* --- Mobile drawer --- */
+.f-mobile-nav__inner {
+  padding-inline: 2rem;
+}
+
+.f-mobile-nav__link {
+  font-family: var(--font-heading-family);
+  font-style: normal;
+  font-weight: var(--font-heading-weight);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  padding-block: 1.6rem;
+}
+
+.f-mobile-nav__sub-link {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgb(0 0 0 / 0.65);
+  transition: color 0.2s ease-in-out;
+  line-height: 1.65;
+  padding-block: 0.8rem;
+}
+
+.f-mobile-nav__sub-link:hover,
+.f-mobile-nav__sub-link:focus-visible {
+  color: var(--color-text-body);
+}
+
+.f-mobile-nav__dropdown--level3 .f-mobile-nav__sub-link {
+  padding-inline-start: 1.5rem;
+  border-inline-start: 1px solid rgb(0 0 0 / 0.12);
+  margin-inline-start: 0.5rem;
+}

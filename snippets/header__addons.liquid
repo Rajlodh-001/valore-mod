@@ -25,7 +25,11 @@
 <div class="site-header__addons flex items-center {{ custom_class }}">
   {% if show_country_selector %}
     <div class="site-header__element f-tablet-hidden">
-      {% render 'country-selector', plain: true, class: 'site-header__link', form_id: form_id %}
+      {% render 'country-selector',
+        plain: true,
+        display: 'prestige',
+        form_id: form_id
+      %}
     </div>
   {% endif %}
   {% if show_language_selector %}

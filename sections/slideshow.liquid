@@ -149,13 +149,18 @@
                   >
                 {% endif %}
 
-                {% if block.settings.background == blank %}
-                  <div class="f-slideshow__slide-placeholder h-full{% if mb_background != blank %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
-                    {% capture current %}{% cycle 1, 2 %}{% endcapture %}
-                    {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg w-full h-full' }}
-                  </div>
-                {% else %}
-                  <div class="f-slideshow__slide-bg bg-image{% if mb_background != blank %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
+                {% liquid
+                  assign has_desktop_image = false
+                  if bs.background != blank and bs.background.width > 0
+                    assign has_desktop_image = true
+                  endif
+                  assign has_mobile_image = false
+                  if mb_background != blank and mb_background.width > 0
+                    assign has_mobile_image = true
+                  endif
+                %}
+                {% if has_desktop_image %}
+                  <div class="f-slideshow__slide-bg bg-image{% if has_mobile_image %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
                     {%- liquid
                       assign image_height = bs.background.width | divided_by: bs.background.aspect_ratio
                       assign loading = 'lazy'
@@ -179,8 +184,23 @@
                         alt: alt
                     }}
                   </div>
+                {% else %}
+                  {% capture homepage_fallback %}
+                    {% render 'homepage-media-fallback', id: block.id, variant: 'desktop', kind: 'image', alt: shop.name, class: 'w-full h-full', loading: 'lazy' %}
+                  {% endcapture %}
+                  {% assign homepage_fallback = homepage_fallback | strip %}
+                  {% if homepage_fallback != blank %}
+                    <div class="f-slideshow__slide-bg bg-image{% if has_mobile_image %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
+                      {{ homepage_fallback }}
+                    </div>
+                  {% else %}
+                    <div class="f-slideshow__slide-placeholder h-full{% if has_mobile_image %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
+                      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg w-full h-full' }}
+                    </div>
+                  {% endif %}
                 {% endif %}
-                {% unless mb_background == blank %}
+                {% if has_mobile_image %}
                   <div class="f-slideshow__slide-mobile bg-image w-full md:hidden{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
                     {%- liquid
                       assign image_height = mb_background.width | divided_by: mb_background.aspect_ratio
@@ -205,7 +225,17 @@
                         alt: alt
                     }}
                   </div>
-                {% endunless %}
+                {% else %}
+                  {% capture homepage_fallback_mobile %}
+                    {% render 'homepage-media-fallback', id: block.id, variant: 'mobile', kind: 'image', alt: shop.name, class: 'w-full h-full', loading: 'lazy' %}
+                  {% endcapture %}
+                  {% assign homepage_fallback_mobile = homepage_fallback_mobile | strip %}
+                  {% if homepage_fallback_mobile != blank %}
+                    <div class="f-slideshow__slide-mobile bg-image w-full md:hidden{% if animated and section.settings.enable_bg_zoom_effect %} bg-image__animation{% endif %}">
+                      {{ homepage_fallback_mobile }}
+                    </div>
+                  {% endif %}
+                {% endif %}
                 {% if image_overlay_opacity > 0 %}
                   <div
                     class="f-slideshow__overlay bg-overlay"
@@ -241,10 +271,16 @@
                     {% liquid
                       assign videoSources = block.settings.shopify_video.sources[1]
                       assign video_url = videoSources.url
-                      if request.design_mode and video_url == blank
-                        assign video_url = 'https://cdn.shopify.com/videos/c/o/v/fbb140fd46e3429eba459e1549dbbe38.mp4'
-                      endif
                     %}
+                    {% if video_url == blank %}
+                      {% capture homepage_video_src %}
+                        {% render 'homepage-media-fallback', id: block.id, kind: 'src' %}
+                      {% endcapture %}
+                      {% assign video_url = homepage_video_src | strip %}
+                    {% endif %}
+                    {% if video_url == blank and request.design_mode %}
+                      {% assign video_url = 'https://cdn.shopify.com/videos/c/o/v/fbb140fd46e3429eba459e1549dbbe38.mp4' %}
+                    {% endif %}
                     <video class="video-playsinline" src="{{ video_url }}" playsinline autoplay muted loop></video>
                   </template>
                 </deferred-media>

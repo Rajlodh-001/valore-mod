@@ -1,5 +1,6 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 {{ 'site-nav.css' | asset_url | stylesheet_tag }}
+{{ 'prestige-header-nav.css' | asset_url | stylesheet_tag }}
 {{ 'prestige-mega-menu.css' | asset_url | stylesheet_tag }}
 {% liquid
   assign layout = section.settings.layout
@@ -21,6 +22,10 @@
   <style>
     .f-section-header {
       position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 100;
     }
     .site-header--sticky {
       position: fixed;
@@ -219,6 +224,10 @@
                 <ul class="list-none">
                   {% for link in menu_links %}
                     {% liquid
+                      assign title_handle = link.title | handleize
+                      if title_handle == 'catalog' or title_handle == 'shop'
+                        continue
+                      endif
                       assign li_class = 'f-mobile-nav__item'
                       if link.links != blank
                         if link.levels == 2
@@ -301,7 +310,7 @@
                       assign just_rendered_handle = link.title | handleize
                       assign inject_gender_nav = false
                       if gender_nav_injected == false
-                        if just_rendered_handle == 'catalog' or just_rendered_handle == 'shop'
+                        if just_rendered_handle == 'home' or just_rendered_handle == 'catalog' or just_rendered_handle == 'shop'
                           assign inject_gender_nav = true
                         endif
                       endif
@@ -342,7 +351,8 @@
                         position: 'up',
                         form_id: form_id,
                         class: 'addon-switcher__item w-full',
-                        plain: true
+                        plain: true,
+                        display: 'prestige'
                       %}
                     {% endif %}
                   </div>

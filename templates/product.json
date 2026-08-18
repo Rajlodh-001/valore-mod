@@ -176,9 +176,9 @@
         "container": "container",
         "show_breadcrumb": true,
         "enable_sticky_info": true,
-        "media_layout": "grid-2-cols",
-        "media_size": "large",
-        "mobile_thumbnails": "hide",
+        "media_layout": "carousel",
+        "media_size": "medium",
+        "mobile_thumbnails": "show",
         "enable_image_zoom": true,
         "enable_video_looping": false,
         "show_featured_media": false

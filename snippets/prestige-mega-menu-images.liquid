@@ -84,16 +84,31 @@
     {%- assign heading_setting = 'image_' | append: i | append: '_heading' -%}
     {%- assign text_setting = 'image_' | append: i | append: '_text' -%}
     {%- assign link_setting = 'image_' | append: i | append: '_link' -%}
+    {%- assign promo_image = block.settings[image_setting] -%}
+    {%- assign promo_link = block.settings[link_setting] -%}
 
-    {%- if block.settings[image_setting] != blank
+    {%- if promo_image == blank and promo_link != blank -%}
+      {%- assign promo_link_string = promo_link | append: '' -%}
+      {%- assign promo_collection_handle = '' -%}
+      {%- if promo_link_string contains 'shopify://collections/' -%}
+        {%- assign promo_collection_handle = promo_link_string | split: 'shopify://collections/' | last -%}
+      {%- elsif promo_link_string contains '/collections/' -%}
+        {%- assign promo_collection_handle = promo_link_string | split: '/collections/' | last | split: '?' | first | split: '#' | first | split: '/' | first -%}
+      {%- endif -%}
+      {%- if promo_collection_handle != blank and collections[promo_collection_handle] != blank -%}
+        {%- assign promo_image = collections[promo_collection_handle].featured_image -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if promo_image != blank
       or block.settings[heading_setting] != blank
       or block.settings[text_setting] != blank
     -%}
       {%- capture image_content -%}
-        {%- if block.settings[image_setting] != blank -%}
+        {%- if promo_image != blank -%}
           <div class="prestige-mega-menu__promo-media">
             {{
-              block.settings[image_setting]
+              promo_image
               | image_url: width: 630
               | image_tag:
                 loading: 'lazy',
@@ -115,8 +130,8 @@
         {%- endif -%}
       {%- endcapture -%}
 
-      {%- if block.settings[link_setting] != blank -%}
-        <a href="{{ block.settings[link_setting] }}" class="prestige-mega-menu__promo-card">
+      {%- if promo_link != blank -%}
+        <a href="{{ promo_link }}" class="prestige-mega-menu__promo-card">
           {{- image_content -}}
         </a>
       {%- else -%}

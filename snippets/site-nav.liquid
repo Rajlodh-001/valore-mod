@@ -50,6 +50,10 @@
           if menu_part == 'last' and forloop.index <= split_index
             continue
           endif
+          assign title_handle = link.title | handleize
+          if title_handle == 'catalog' or title_handle == 'shop'
+            continue
+          endif
           assign li_class = 'f-site-nav__item'
           assign is_mega_item = true
           assign three_level = false
@@ -60,7 +64,6 @@
               assign is_mega_item = enable_mega_menu
             endif
           endif
-          assign title_handle = link.title | handleize
           assign column = 6
           assign mega_images_position = 'right'
         %}
@@ -331,7 +334,7 @@
           assign just_rendered_handle = link.title | handleize
           assign inject_gender_nav = false
           if menu_part != 'last' and gender_nav_injected == false
-            if just_rendered_handle == 'catalog' or just_rendered_handle == 'shop'
+            if just_rendered_handle == 'home' or just_rendered_handle == 'catalog' or just_rendered_handle == 'shop'
               assign inject_gender_nav = true
             endif
           endif

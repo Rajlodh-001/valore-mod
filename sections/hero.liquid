@@ -63,7 +63,7 @@
         style="{% if hero_height == 'adapt' %}--aspect-ratio: {{ aspect_ratio }};{% endif %}{% if hero_height_mobile == 'adapt' %}--aspect-ratio-mobile: {{ aspect_ratio_mobile }};{% endif %}"
       {% endif %}
     >
-      {%- if image != blank -%}
+      {%- if image != blank and image.width > 0 -%}
         <div
           class="f-hero__bg f-hero__bg--desktop{% if image_mobile != blank %} hidden md:block{% endif %}{% if animated and section.settings.enable_bg_zoom_effect %} f-image{% endif %}"
         >
@@ -85,10 +85,18 @@
           }}
         </div>
       {%- else -%}
+        {% capture homepage_fallback %}
+          {% render 'homepage-media-fallback', id: section.id, kind: 'image', alt: shop.name, class: 'w-full h-full', loading: loading, fetchpriority: fetchpriority %}
+        {% endcapture %}
+        {% assign homepage_fallback = homepage_fallback | strip %}
         <div
           class="f-image f-hero__bg{% if image_mobile != blank %} hidden md:block{% endif %}"
         >
-          {{ 'lifestyle-' | append: 1 | placeholder_svg_tag: 'placeholder-svg' }}
+          {% if homepage_fallback != blank %}
+            {{ homepage_fallback }}
+          {% else %}
+            {{ 'lifestyle-' | append: 1 | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
         </div>
       {%- endif -%}
       {% unless image_mobile == blank %}

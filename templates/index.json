@@ -7,17 +7,17 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  *
- * DEV STORE TEMP FIX (aeie4i-1i): shopify_video cleared below because the
- * video file exists only on the live Valore store.
+ * DEV STORE TEMP FIX:
+ * shopify_video is empty here so this store can upload/preview.
+ * Origin files are in theme assets as local fallbacks.
  *
  * RESTORE on original store:
- *   Copy templates/index.json.original over this file, OR restore these values:
+ *   Copy _theme-backups/valore-modify/index.json.original over this file.
+ *   That restores:
  *   - slideshow_CH788z > video_W9K8bm > shopify_video:
  *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
  *   - video_hero section > shopify_video:
  *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
- *
- * Full original backup: _theme-backups/valore-modify/index.json.original
  * ------------------------------------------------------------
  */
 {
@@ -258,10 +258,16 @@
             "title_size": 32,
             "title_color": "#222222",
             "collection_1": "jerseys",
+            "product_1": "occhio-mens-jersey-deep-aqua-blend",
+            "card_title_1": "Jerseys",
             "description_1": "<p><a href=\"/collections/cycling-jersey-mens\" title=\"Men’s Jerseys\">Men</a>  |  <a href=\"/collections/cycling-jersey-women\" title=\"Women’s Jerseys\">Women</a></p>",
             "collection_2": "bib-shorts",
+            "product_2": "nuova-luna-ii-mens-bib-shorts-deep-aqua-blue",
+            "card_title_2": "Bib Shorts",
             "description_2": "<p><a href=\"/collections/mens-cycling-bib-shorts\" title=\"Men's Bib Shorts\">Men</a>  |  <a href=\"/collections/womens-cycling-bib-shorts\" title=\"Women’s Bib Shorts\">Women</a></p>",
             "collection_3": "accessories",
+            "product_3": "nuova-luna-ii-gloves-midnight-black",
+            "card_title_3": "Accessories",
             "description_3": "<p><a href=\"/collections/accessories\" title=\"Accessories\">Men</a>  |  <a href=\"/collections/accessories\" title=\"Accessories\">Women</a></p>",
             "content_alignment": "center",
             "collection_title_size": 18,

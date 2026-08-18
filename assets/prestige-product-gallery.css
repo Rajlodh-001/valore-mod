@@ -1,0 +1,120 @@
+/**
+ * Prestige-style product gallery: vertical thumbnails on the left, main image on the right.
+ * Desktop only (768px+). Mobile stays horizontal carousel.
+ */
+
+@media (min-width: 768px) {
+  .f-product__media-viewer--carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.2rem;
+    direction: ltr;
+  }
+
+  .f-product__media-viewer--carousel [data-media-viewer] {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails-wrapper {
+    flex: 0 0 7rem;
+    width: 7rem;
+    margin-top: 0;
+    order: 0;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails {
+    flex-direction: column !important;
+    gap: 0.8rem;
+    margin: 0;
+    max-height: 60rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails:not(.flickity-enabled) {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  /* Override Flickity's inline styles when it's enabled */
+  .f-product__media-viewer--carousel .f-product__media-thumbnails.flickity-enabled {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails.flickity-enabled .flickity-viewport {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails.flickity-enabled .flickity-slider {
+    position: static !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails.flickity-enabled .f-product__media-thumbnails-item {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails:not(.flickity-enabled) > .f-product__media-thumbnails-item {
+    width: 100%;
+    padding: 0;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails-item {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails .f-image {
+    --aspect-ratio: 1 !important;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails {
+    --aspect-ratio: auto !important;
+  }
+
+  /* Hide main image prev/next arrows on desktop */
+  .f-product__media-viewer--carousel [data-media-viewer] .flickity-button {
+    display: none;
+  }
+
+  /* Hide scrollbar on thumbnail column */
+  .f-product__media-viewer--carousel .f-product__media-thumbnails {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .f-product__media-viewer--carousel .f-product__media-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-thumbnails-wrapper .flickity-button {
+    display: none !important;
+  }
+
+  .f-product__media-viewer--carousel .flickity-wrapper.flickity-nav-inner .flickity-button {
+    display: none;
+  }
+
+  .f-product__media-viewer--carousel .f-product__media-list--carousel {
+    border: none;
+  }
+
+  /* Keep main media content to the right of thumb rail */
+  .f-product__media-viewer--carousel [data-media-viewer] {
+    order: 1;
+  }
+}

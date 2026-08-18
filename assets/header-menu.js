@@ -60,6 +60,8 @@ class HeaderMenu extends DetailsDisclosure {
     this.classes = {
       itemActive: 'f-menu__item-active'
     }
+    this.hoverOpenDelay = 0
+    this.hoverCloseDelay = 140
     this.header.timeoutEnter = null
     this.header.timeoutLeave = null
   }
@@ -77,7 +79,7 @@ class HeaderMenu extends DetailsDisclosure {
       li.classList.remove(this.classes.itemActive)
       this.header.timeoutLeave = setTimeout(() => {
         this.header.handleMegaItemDeactive()
-      }, 160)
+      }, this.hoverCloseDelay)
     } else {
       if ( isMega ) {
         clearTimeout(this.header.timeoutLeave)
@@ -86,7 +88,7 @@ class HeaderMenu extends DetailsDisclosure {
         this.header.handleMegaItemActive()
         this.header.timeoutEnter = setTimeout(() => {
           li.classList.add( this.classes.itemActive )
-        }, 160)
+        }, this.hoverOpenDelay)
       } else {
         li.classList.add( this.classes.itemActive )
       }
@@ -113,6 +115,8 @@ class SiteNav extends HTMLElement {
     this.classes = {
       itemActive: 'f-menu__item-active'
     }
+    this.hoverOpenDelay = 0
+    this.hoverCloseDelay = 140
 
     this.megaItems = this.querySelectorAll('.f-site-nav__item--mega')
     this.timeoutEnter = null
@@ -133,21 +137,26 @@ class SiteNav extends HTMLElement {
     const dropdown = target.querySelector('.f-site-nav__dropdown')
     
     if( dropdown ) {
+      this.megaItems && this.megaItems.forEach((megaItem) => {
+        if (megaItem !== target) {
+          megaItem.classList.remove(this.classes.itemActive)
+        }
+      })
       this.header.calcDropdownHeight( dropdown )
       this.header.handleMegaItemActive()
-      this.timeoutEnter = setTimeout(() => {
-        target.classList.add( this.classes.itemActive )
-      }, 160)
+      clearTimeout(this.timeoutEnter)
+      target.classList.add(this.classes.itemActive)
     }
   }
 
   onMenuItemLeave(evt, index) {
     const { target } = evt
     clearTimeout(this.timeoutEnter)
-    target.classList.remove( this.classes.itemActive )
+    clearTimeout(this.timeoutLeave)
     this.timeoutLeave = setTimeout(() => {
+      target.classList.remove(this.classes.itemActive)
       this.header.handleMegaItemDeactive()
-    }, 80)
+    }, this.hoverCloseDelay)
   }
 
   closeMegaDropdowns() {
@@ -157,7 +166,7 @@ class SiteNav extends HTMLElement {
     })
     this.timeoutLeave = setTimeout(() => {
       this.header.handleMegaItemDeactive()
-    }, 80)
+    }, this.hoverCloseDelay)
   }
 
   disconnectedCallback() {

@@ -1,0 +1,23 @@
+{%- doc -%}
+  Resolves a collection URL by handle, with a fallback.
+
+  @param {string} handle - collection handle
+  @param {string} [fallback] - "catalog", "collections", or "new"
+{%- enddoc -%}
+{%- liquid
+  assign resolved_url = collections[handle].url
+  if resolved_url == blank
+    case fallback
+      when 'collections'
+        assign resolved_url = routes.collections_url | default: '/collections'
+      when 'new'
+        assign resolved_url = collections['new-arrivals'].url | default: '/collections/new-arrivals'
+      else
+        if handle != blank
+          assign resolved_url = '/collections/' | append: handle
+        else
+          assign resolved_url = routes.all_products_collection_url
+        endif
+    endcase
+  endif
+-%}{{- resolved_url -}}
