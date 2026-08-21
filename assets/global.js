@@ -1520,7 +1520,9 @@ if (!customElements.get("f-scrolling-promotion")) {
           (entries, _observer) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                this.scrollingPlay();
+                if (!this.querySelector(".f-promotion-testimonial.is-expanded")) {
+                  this.scrollingPlay();
+                }
               } else {
                 this.scrollingPause();
               }
@@ -1530,6 +1532,43 @@ if (!customElements.get("f-scrolling-promotion")) {
         );
 
         observer.observe(this);
+      }
+
+      this.initTestimonialReadMore();
+    }
+
+    initTestimonialReadMore() {
+      this.querySelectorAll(".f-promotion-testimonial__text").forEach((text) => {
+        const wrap = text.closest(".f-promotion-testimonial__text-wrap");
+        const button = wrap && wrap.querySelector(".f-promotion-testimonial__readmore");
+        if (!button) return;
+        if (text.scrollHeight > text.clientHeight + 2) {
+          button.hidden = false;
+        }
+      });
+
+      if (this.dataset.readMoreBound) return;
+      this.dataset.readMoreBound = "true";
+      this.addEventListener("click", this.onTestimonialReadMoreClick.bind(this));
+    }
+
+    onTestimonialReadMoreClick(event) {
+      const button = event.target.closest(".f-promotion-testimonial__readmore");
+      if (!button) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const card = button.closest(".f-promotion-testimonial");
+      if (!card) return;
+
+      const expanded = card.classList.toggle("is-expanded");
+      button.setAttribute("aria-expanded", expanded ? "true" : "false");
+
+      if (expanded) {
+        this.scrollingPause();
+      } else if (!this.querySelector(".f-promotion-testimonial.is-expanded")) {
+        this.scrollingPlay();
       }
     }
 

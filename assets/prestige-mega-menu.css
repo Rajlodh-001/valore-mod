@@ -54,18 +54,19 @@
 }
 
 /* Column heading — Prestige .h6 */
-.prestige-mega-menu__heading {
+.prestige-mega-menu__heading,
+.f-site-nav__dropdown--mega .prestige-mega-menu__heading {
   display: inline-block;
   margin: 0 0 2rem;
   padding: 0;
   color: rgb(var(--color-foreground, 17 17 17)) !important;
-  font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-weight: var(--font-heading-weight);
-  font-size: var(--font-h6-size);
-  letter-spacing: var(--font-heading-spacing, 0);
-  line-height: 1.7;
-  text-transform: var(--font-heading-transform);
+  font-family: var(--font-heading-family) !important;
+  font-style: var(--font-heading-style) !important;
+  font-weight: var(--font-heading-weight) !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.7 !important;
+  text-transform: uppercase !important;
   text-decoration: none;
   transition: opacity 0.2s ease-in-out;
 }
@@ -83,15 +84,18 @@
 }
 
 /* Sub links — Prestige .link-faded */
-.prestige-mega-menu__link {
+.prestige-mega-menu__link,
+.f-site-nav__dropdown--mega .prestige-mega-menu__link {
   display: inline-block;
   color: rgb(var(--color-foreground, 17 17 17) / 0.65) !important;
-  font-family: var(--font-body-family);
-  font-size: var(--font-body-size, 1.4rem);
-  font-weight: var(--font-body-weight);
-  line-height: 1.65;
+  font-family: var(--font-body-family) !important;
+  font-style: var(--font-body-style) !important;
+  font-size: 1.4rem !important;
+  font-weight: var(--font-body-weight) !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
   text-decoration: none;
-  text-transform: none;
+  text-transform: none !important;
   transition: color 0.2s ease-in-out;
 }
 
@@ -208,21 +212,25 @@
 
 .prestige-mega-menu__promo-heading {
   margin: 0;
-  font-family: var(--font-heading-family);
-  font-weight: var(--font-heading-weight);
-  font-size: var(--font-h6-size);
-  letter-spacing: var(--font-heading-spacing, 0);
-  line-height: 1.7;
-  text-transform: var(--font-heading-transform);
+  font-family: var(--font-heading-family) !important;
+  font-style: var(--font-heading-style) !important;
+  font-weight: var(--font-heading-weight) !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.7 !important;
+  text-transform: uppercase !important;
   color: rgb(var(--color-foreground, 17 17 17));
 }
 
 .prestige-mega-menu__promo-text {
   margin: 0.25rem 0 0;
-  font-family: var(--font-body-family);
-  font-size: var(--font-body-size, 1.4rem);
-  line-height: 1.65;
-  text-transform: none;
+  font-family: var(--font-body-family) !important;
+  font-style: var(--font-body-style) !important;
+  font-size: 1.4rem !important;
+  font-weight: var(--font-body-weight) !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
   color: rgb(var(--color-foreground, 17 17 17) / 0.65);
 }
 

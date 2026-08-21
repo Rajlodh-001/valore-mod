@@ -94,7 +94,18 @@
                     </div>
                   {% endif %}
                   {% if block.settings.text != blank %}
-                    <div class="f-promotion-testimonial__text">{{ block.settings.text }}</div>
+                    <div class="f-promotion-testimonial__text-wrap">
+                      <div class="f-promotion-testimonial__text">{{ block.settings.text }}</div>
+                      <button
+                        type="button"
+                        class="f-promotion-testimonial__readmore"
+                        hidden
+                        aria-expanded="false"
+                      >
+                        <span class="f-promotion-testimonial__readmore-more">{{ 'blogs.article.read_more' | t }}</span>
+                        <span class="f-promotion-testimonial__readmore-less">Read less</span>
+                      </button>
+                    </div>
                   {% endif %}
                   <div class="f-promotion-testimonial__inner-bottom flex items-center">
                     {% if block.settings.author != blank %}

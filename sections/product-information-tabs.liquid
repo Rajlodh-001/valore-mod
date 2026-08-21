@@ -2,6 +2,8 @@
 {% liquid
     assign section_id = section.settings.custom_id | default: section.id
     assign custom_class = section.settings.custom_class
+    assign desc_image_cols = section.settings.description_image_columns | default: '4'
+    assign desc_image_limit = section.settings.description_images_initial | default: 4
 
     unless custom_class == blank
         assign custom_class = custom_class | prepend: ' '
@@ -11,12 +13,14 @@
 %}
 {{ 'tabs-component.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'tabs-component.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-tabs-images.js' | asset_url }}" defer="defer"></script>
 <div
     id="{{ section_id }}"
-    class="f-information-tabs{{ custom_class }} f-section-padding color-{{ section.settings.color_schema }}"
+    class="f-information-tabs f-information-tabs--images-{{ desc_image_cols }}{{ custom_class }} f-section-padding color-{{ section.settings.color_schema }}"
     data-section-type="products-information-tabs"
     data-section-id="{{ section.id }}"
-    style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+    data-desc-image-cols="{{ desc_image_cols }}"
+    style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px; --f-rte-image-cols: {{ desc_image_cols }};"
 >
     <div class="{{ container }}">
         {% if section.blocks.size > 0 %}
@@ -41,7 +45,17 @@
                                 </span>
                             </button>
                             <div class="f-tabs__content-inner" data-content>
-                              <div class="rte py-sm">
+                              {% if block.type == 'description' %}
+                                <div class="f-rte-cols-switch" role="group" aria-label="Image grid columns" hidden>
+                                  <span class="f-rte-cols-switch__label">Grid</span>
+                                  <button type="button" class="f-rte-cols-switch__btn{% if desc_image_cols == '2' %} is-active{% endif %}" data-cols="2" aria-pressed="{% if desc_image_cols == '2' %}true{% else %}false{% endif %}">2</button>
+                                  <button type="button" class="f-rte-cols-switch__btn{% if desc_image_cols == '4' %} is-active{% endif %}" data-cols="4" aria-pressed="{% if desc_image_cols == '4' %}true{% else %}false{% endif %}">4</button>
+                                </div>
+                              {% endif %}
+                              <div
+                                class="rte py-sm{% if block.type == 'description' %} f-rte--collapse-images{% endif %}"
+                                {% if block.type == 'description' %}data-image-limit="{{ desc_image_limit }}"{% endif %}
+                              >
                                 {% case block.type %}
                                   {% when 'description' %}
                                     {{ product.description }}
@@ -130,6 +144,36 @@
       "id": "color_schema",
       "label": "t:sections.common.color_schema.label",
       "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Description images"
+    },
+    {
+      "type": "select",
+      "id": "description_image_columns",
+      "label": "Image grid columns",
+      "info": "On desktop / XL. Mobile always shows 2 columns. 4-column keeps the same image size as the current 2-column tiles.",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "description_images_initial",
+      "label": "Images shown before Show more",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
     },
     {
       "type": "header",

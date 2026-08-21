@@ -1,0 +1,236 @@
+/* Prestige-style product info panel (visual only, no data changes) */
+
+.template-product .f-single-product--information {
+  --column-gap: 7.2rem;
+  align-items: flex-start;
+}
+
+.template-product .f-product-single__info {
+  max-width: 52rem;
+}
+
+.template-product .f-product-single__blocks {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.template-product .f-product-single__block {
+  margin: 0;
+}
+
+.template-product .f-product-single__title {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.template-product .f-product-single__block--price .f-price {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: 0.01em;
+}
+
+.template-product .f-product-single__block-tax {
+  color: rgb(var(--color-foreground) / 0.6);
+  font-size: 1.4rem;
+}
+
+.template-product .f-product__description {
+  color: rgb(var(--color-foreground) / 0.78);
+  line-height: 1.65;
+}
+
+.template-product .variant-picker__field .form__label,
+.template-product .f-quantity__wrapper .form-label {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.2rem;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.template-product .variant-picker__field-wrapper + .variant-picker__field-wrapper {
+  margin-top: 2rem;
+}
+
+.template-product .variant-picker__option-values {
+  gap: 0.8rem;
+}
+
+.template-product .variant-picker__option-button--button {
+  min-width: 4.2rem;
+  min-height: 4.2rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-body);
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.template-product .variant-picker__input input[type=radio] + label:hover.variant-picker__option-button--button {
+  background: var(--color-btn-bg);
+  border-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+}
+
+.template-product .variant-picker__input input[type=radio]:checked + label.variant-picker__option-button--button {
+  background: var(--color-btn-bg);
+  border-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+}
+
+.template-product .variant-picker__option-button--color {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.template-product .variant-picker__input select.form-control {
+  min-width: 22rem;
+  border-radius: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  padding-inline: 1.4rem 3.8rem;
+  min-height: 4.8rem;
+}
+
+.template-product .f-quantity {
+  min-height: 4.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+}
+
+.template-product .f-quantity__button {
+  width: 4.2rem;
+  min-height: 4.2rem;
+}
+
+.template-product .f-quantity__input {
+  min-height: 4.2rem;
+  font-size: 1.5rem;
+}
+
+.template-product .f-product-single__block--buy_buttons {
+  margin-top: 0.8rem;
+}
+
+.template-product .f-product-form__buttons,
+.template-product .sticky-atc-bar .f-product-form__buttons {
+  gap: 1rem !important;
+}
+
+.template-product .f-product-form__submit.btn,
+.template-product .sticky-atc-bar .f-product-form__submit.btn {
+  min-height: 4.8rem;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  font-size: 1.2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/*
+  ATC is often btn--secondary when Buy It Now is on.
+  Theme hover paints ::after with --color-btn-bg-hover (black) while
+  secondary label stays dark → invisible text. Force dark fill + white label.
+*/
+.template-product .f-product-form__submit.btn,
+.template-product .f-product-form__submit.btn--primary,
+.template-product .f-product-form__submit.btn--secondary,
+.template-product .sticky-atc-bar .f-product-form__submit.btn,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary {
+  background: #111111 !important;
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border: 1px solid #111111 !important;
+  --color-border: #111111;
+  --color-btn-bg-hover: #000000;
+  --color-btn-text-hover: #ffffff;
+  --color-btn-before: #333333;
+}
+
+.template-product .f-product-form__submit.btn span,
+.template-product .f-product-form__submit.btn--primary span,
+.template-product .f-product-form__submit.btn--secondary span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary span {
+  color: #ffffff !important;
+}
+
+.template-product .f-product-form__submit.btn:hover,
+.template-product .f-product-form__submit.btn--primary:hover,
+.template-product .f-product-form__submit.btn--secondary:hover,
+.template-product .f-product-form__submit.btn:focus,
+.template-product .f-product-form__submit.btn--primary:focus,
+.template-product .f-product-form__submit.btn--secondary:focus,
+.template-product .sticky-atc-bar .f-product-form__submit.btn:hover,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary:hover,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary:hover,
+.template-product .sticky-atc-bar .f-product-form__submit.btn:focus,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary:focus,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary:focus {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+.template-product .f-product-form__submit.btn:hover span,
+.template-product .f-product-form__submit.btn--primary:hover span,
+.template-product .f-product-form__submit.btn--secondary:hover span,
+.template-product .f-product-form__submit.btn:focus span,
+.template-product .f-product-form__submit.btn--primary:focus span,
+.template-product .f-product-form__submit.btn--secondary:focus span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn:hover span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary:hover span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary:hover span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn:focus span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--primary:focus span,
+.template-product .sticky-atc-bar .f-product-form__submit.btn--secondary:focus span {
+  color: #ffffff !important;
+}
+
+.template-product .shopify-payment-button__button,
+.template-product .sticky-atc-bar .shopify-payment-button__button {
+  min-height: 4.8rem !important;
+  border-radius: 0 !important;
+  font-family: var(--font-heading-family) !important;
+  font-style: var(--font-heading-style) !important;
+  font-weight: var(--font-heading-weight) !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.template-product .f-product-single__addon-buttons {
+  gap: 2.2rem;
+  padding-top: 0.2rem;
+}
+
+.template-product .f-product-single__addon-buttons .btn {
+  padding: 0 !important;
+  color: var(--color-text-body);
+}
+
+.template-product .f-product-single__addon-buttons .btn:hover {
+  color: var(--color-link-hover, var(--color-text-body));
+}
+
+@media (max-width: 767.98px) {
+  .template-product .f-product-single__info {
+    max-width: 100%;
+  }
+
+  .template-product .f-product-single__title {
+    letter-spacing: 0.05em;
+  }
+}

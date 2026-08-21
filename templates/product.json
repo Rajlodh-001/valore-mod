@@ -211,6 +211,8 @@
       "settings": {
         "container": "container-fluid",
         "color_schema": "",
+        "description_image_columns": "4",
+        "description_images_initial": 4,
         "padding_top": 40,
         "padding_bottom": 40,
         "custom_id": "",

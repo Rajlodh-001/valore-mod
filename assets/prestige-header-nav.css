@@ -7,6 +7,17 @@
  * Values below are converted so spacing matches Prestige visually.
  */
 
+/* Prestige type tokens (h6 headings + body links) */
+.f-section-header,
+.f-mobile-nav,
+.prestige-mega-menu {
+  --prestige-h6-size: 1.2rem;
+  --prestige-h6-tracking: 0.18em;
+  --prestige-h6-leading: 1.7;
+  --prestige-link-size: 1.4rem;
+  --prestige-link-leading: 1.65;
+}
+
 /* --- Header bar --- */
 .site-header:not(.site-header--transparent) {
   background: #fff;
@@ -118,6 +129,49 @@
   display: none !important;
 }
 
+/* Solid white bar when header reappears on scroll up (dark text, needs background) */
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent {
+  background: #fff !important;
+  box-shadow: 0 -1px rgb(0 0 0 / 0.12) inset !important;
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav__item,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav__item:hover,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav__item:focus-within,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav__item--current,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .f-site-nav__link,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-header__link,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-header__link:hover,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-header__search-toggle:hover,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-logo__text {
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .country-switcher--prestige .f-disclosure__toggle,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .country-switcher--prestige .f-disclosure__toggle:hover,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .country-switcher--prestige .country-switcher__static {
+  color: rgb(0 0 0 / 0.65) !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-header .f-icon-svg {
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .mobile-nav-toggle .btn,
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .mobile-nav-toggle .btn:hover {
+  color: var(--color-text-body) !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .with-transparent .site-logo--default {
+  display: block !important;
+}
+
+.template-index .site-header--sticky:not(.site-header--hidden) .site-header--transparent .site-logo--transparent {
+  display: none !important;
+}
+
 .template-index .f-section-header .site-header__placeholder {
   display: none;
   height: 0;
@@ -175,7 +229,12 @@
 
 .site-header--design-2 .site-header__left {
   justify-self: start;
-  min-width: 0;
+  min-width: min-content;
+}
+
+.site-header--design-2 .site-header__left .f-site-nav {
+  width: max-content;
+  max-width: 100%;
 }
 
 .site-header--design-2 .site-header__center,
@@ -215,11 +274,12 @@
 }
 
 .f-site-nav__list {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 1rem 2rem;
   margin: 0;
   height: auto;
+  white-space: nowrap;
 }
 
 @media (min-width: 1150px) {
@@ -234,23 +294,25 @@
   --nav-item-px: 0;
 }
 
-.f-site-nav__link,
-.f-site-nav summary.f-site-nav__link {
-  font-family: var(--font-heading-family);
-  font-style: normal;
-  font-weight: var(--font-heading-weight);
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.7;
-  padding: 0;
-  height: auto;
+/* Prestige h6-style primary nav */
+.site-header .f-site-nav__link,
+.site-header .f-site-nav summary.f-site-nav__link,
+.site-header .f-site-nav__item {
+  font-family: var(--font-heading-family) !important;
+  font-style: var(--font-heading-style) !important;
+  font-weight: var(--font-heading-weight) !important;
+  font-size: var(--prestige-h6-size) !important;
+  letter-spacing: var(--prestige-h6-tracking) !important;
+  text-transform: uppercase !important;
+  line-height: var(--prestige-h6-leading) !important;
+  height: auto !important;
 }
 
-.f-site-nav__link > span:first-child {
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+.site-header .f-site-nav__link > span:first-child,
+.site-header .f-site-nav summary.f-site-nav__link > span:first-child {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
 }
 
 .f-site-nav a[class*='link'] > span:not(.f-site-nav__arrow):after,
@@ -282,11 +344,13 @@
 
 .f-site-nav__item:not(.f-site-nav__item--mega) .f-site-nav__sub-link {
   padding: 0.6rem 2.5rem;
-  font-family: var(--font-body-family);
-  font-size: 1.4rem;
-  font-weight: var(--font-body-weight);
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--font-body-family) !important;
+  font-style: var(--font-body-style) !important;
+  font-size: var(--prestige-link-size) !important;
+  font-weight: var(--font-body-weight) !important;
+  line-height: var(--prestige-link-leading) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: rgb(0 0 0 / 0.65);
   transition: color 0.2s ease-in-out;
 }
@@ -365,12 +429,12 @@
   column-gap: 0.625rem;
   display: inline-flex;
   font-family: var(--font-heading-family);
-  font-style: normal;
+  font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  font-size: 1rem;
-  letter-spacing: 0.18em;
+  font-size: var(--prestige-h6-size);
+  letter-spacing: var(--prestige-h6-tracking);
   text-transform: uppercase;
-  line-height: 1.7;
+  line-height: var(--prestige-h6-leading);
   color: rgb(0 0 0 / 0.65);
   transition: color 0.2s ease-in-out;
   padding: 0;
@@ -461,25 +525,26 @@
 }
 
 .f-mobile-nav__link {
-  font-family: var(--font-heading-family);
-  font-style: normal;
-  font-weight: var(--font-heading-weight);
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.7;
+  font-family: var(--font-heading-family) !important;
+  font-style: var(--font-heading-style) !important;
+  font-weight: var(--font-heading-weight) !important;
+  font-size: var(--prestige-h6-size) !important;
+  letter-spacing: var(--prestige-h6-tracking) !important;
+  text-transform: uppercase !important;
+  line-height: var(--prestige-h6-leading) !important;
   padding-block: 1.6rem;
 }
 
 .f-mobile-nav__sub-link {
-  font-family: var(--font-body-family);
-  font-size: 1.4rem;
-  font-weight: var(--font-body-weight);
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--font-body-family) !important;
+  font-style: var(--font-body-style) !important;
+  font-size: var(--prestige-link-size) !important;
+  font-weight: var(--font-body-weight) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: rgb(0 0 0 / 0.65);
   transition: color 0.2s ease-in-out;
-  line-height: 1.65;
+  line-height: var(--prestige-link-leading) !important;
   padding-block: 0.8rem;
 }
 
