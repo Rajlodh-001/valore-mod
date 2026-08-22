@@ -46,8 +46,10 @@
   endunless
 
   assign flickity_class = ''
-  if mobile_thumbnails == 'hide'
-    assign flickity_class = 'flickity-controls-group-mb flickity-controls-group-mb__bottom flickity-static' | prepend: ' '
+  if media_layout == 'carousel' and product.media.size > 1
+    assign flickity_class = ' valore-gallery-mobile-dots flickity-controls-group-mb flickity-controls-group-mb__bottom flickity-static'
+  elsif mobile_thumbnails == 'hide'
+    assign flickity_class = ' flickity-controls-group-mb flickity-controls-group-mb__bottom flickity-static'
   endif
 
   assign has_only_one_image = false
@@ -57,6 +59,11 @@
 
   if product.media.size < 3
     assign flickity_class = flickity_class | append: ' flickity-controls-group-mb__inner'
+  endif
+
+  assign gallery_page_dots = false
+  if media_layout == 'carousel' and product.media.size > 1
+    assign gallery_page_dots = true
   endif
 
   capture styles
@@ -110,18 +117,123 @@
     </a>
     <div
       id="GalleryViewer-{{ section.id }}"
-      class="f-product__media-viewer{% if has_only_one_image %} f-product__media-only--image{% endif %} f-product__media-viewer--{{ media_layout }} f-product__media-viewer--thumbs-{{ mobile_thumbnails }}"
+      class="gallery f-product__media-viewer valore-pdp-stage{% if has_only_one_image %} f-product__media-only--image{% endif %} f-product__media-viewer--{{ media_layout }} f-product__media-viewer--thumbs-{{ mobile_thumbnails }}"
       style="--media-aspect-ratio: {{ aspect_ratio }}"
     >
+      {%- if product.media.size > 1 and media_layout == 'carousel' or mobile_thumbnails == 'show' -%}
+        {% liquid
+          assign transition = ''
+          assign thumb_loop = true
+
+          if product.media.size < 6
+            assign thumb_loop = false
+            assign transition = ' md:disable-transition'
+          endif
+          if product.media.size < 5
+            assign transition = ' disable-transition'
+          endif
+        %}
+        <div class="f-product__media-thumbnails-wrapper thumbs hidden md:block">
+          <flickity-component
+            id="GalleryThumbnails-{{ section.id }}"
+            class="f-flex f-grid--gap-none no-js-hidden f-product__media-thumbnails flickity-button-initialized{{ thumb_class }}{{ transition }}"
+            data-slider-columns="5"
+            data-enable-slider="{{ enable_slider }}"
+            data-disable-pointer-move="false"
+            data-slider-options='{"pageDots": false, "asNavFor": "#Media-Gallery-{{ section.id }}", "prevNextButtons": false, "cellAlign": "{{ cell_align }}", "setGallerySize": false, "freeScroll": true, "wrapAround": {{ thumb_loop }}}'
+            style="--column-gap: 6px;--aspect-ratio: 5;"
+          >
+            {%- for media in product.media -%}
+              {% liquid
+                assign thumb_index = forloop.index | prepend: '00' | slice: -2, 2
+              %}
+              <div
+                id="GalleryThumbnailItem-{{ section.id }}-{{ forloop.index }}"
+                data-media-id="{{ media.id }}"
+                data-media-type="{{ media.media_type }}"
+                data-thumbnail-type="{{ media.media_type }}"
+                class="thumb f-column f-product__media-thumbnails-item{% if forloop.first %} active{% endif %}"
+                data-thumbnail-index="{{ forloop.index0 }}"
+              >
+                <div
+                  class="f-product__media-thumbnails-item-wrap block w-full{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                  {% if animated %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {%- if media.media_type == 'model' -%}
+                    <span class="f-product__media-badge" aria-hidden="true">
+                      {% comment %} theme-check-disable {% endcomment %}
+                      {{ 'icon-3d-model.svg' | inline_asset_content }}
+                      {% comment %} theme-check-enable {% endcomment %}
+                    </span>
+                  {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
+                    <span class="f-product__media-badge" aria-hidden="true">
+                      {% comment %} theme-check-disable {% endcomment %}
+                      {{ 'icon-play.svg' | inline_asset_content }}
+                      {% comment %} theme-check-enable {% endcomment %}
+                    </span>
+                  {%- endif -%}
+                  <span class="idx" aria-hidden="true">{{ thumb_index }}</span>
+                  <responsive-image
+                    data-image-id="{{ media.id }}"
+                    class="f-image"
+                    data-image-loading
+                    style="--aspect-ratio: 0.75"
+                  >
+                    <img
+                      srcset="
+                        {% if media.preview_image.width >= 54 %}{{ media.preview_image | image_url: width: 54 }} 54w,{% endif %}
+                        {% if media.preview_image.width >= 74 %}{{ media.preview_image | image_url: width: 74 }} 74w,{% endif %}
+                        {% if media.preview_image.width >= 104 %}{{ media.preview_image | image_url: width: 104 }} 104w,{% endif %}
+                        {% if media.preview_image.width >= 162 %}{{ media.preview_image | image_url: width: 162 }} 162w,{% endif %}
+                        {% if media.preview_image.width >= 208 %}{{ media.preview_image | image_url: width: 208 }} 208w,{% endif %},
+                        {{ media.preview_image | image_url: width: 208 }} 208w
+                      "
+                      src="{{ media.preview_image | image_url: width: 100 }}"
+                      sizes="68px"
+                      alt="{{ media.alt | escape }}"
+                      height="120"
+                      width="90"
+                      loading="lazy"
+                    >
+                  </responsive-image>
+                </div>
+              </div>
+            {%- endfor -%}
+          </flickity-component>
+        </div>
+      {%- endif -%}
       {% if product.media.size > 0 %}
+        {% liquid
+          assign media_total = product.media.size
+          assign callout_text = product.metafields.valore_pdp.callout_text.value
+          assign callout_left = product.metafields.valore_pdp.callout_left.value | default: '46'
+          assign callout_top = product.metafields.valore_pdp.callout_top.value | default: '30'
+        %}
         <div
           data-media-viewer
-          {% if animated and media_layout == 'carousel' %}
-            class="f-scroll-trigger animate--{{ animation_effect }}"
-          {% endif %}
+          class="stage valore-pdp-stage__main{% if animated and media_layout == 'carousel' %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
         >
+          <span class="stage-tag" data-stage-tag aria-live="polite">
+            <span data-stage-current>01</span>
+            <span aria-hidden="true"> / </span>
+            <span data-stage-total>{{ media_total | prepend: '00' | slice: -2, 2 }}</span>
+          </span>
+          {% if callout_text != blank %}
+            <div
+              class="callout"
+              data-valore-tag="pdp-min-extras"
+              style="--callout-left: {{ callout_left }}%; --callout-top: {{ callout_top }}%;"
+            >
+              <div class="dot" aria-hidden="true"></div>
+              <div class="leader" aria-hidden="true"></div>
+              <div class="note">{{ callout_text | escape }}</div>
+            </div>
+          {% endif %}
           <flickity-component
-            data-slider-options='{"pageDots": false, "prevNextButtons": true, "adaptiveHeight": true, "cellAlign": "center", "setGallerySize": false, "wrapAround": true, "cellSelector": ".f-product__media"}'
+            data-slider-options='{"pageDots": {{ gallery_page_dots }}, "prevNextButtons": true, "adaptiveHeight": true, "cellAlign": "left", "setGallerySize": false, "wrapAround": true, "cellSelector": ".f-product__media"}'
             data-enable-slider="{{ enable_slider }}"
             data-slider-columns="1"
             id="Media-Gallery-{{ section.id }}"
@@ -142,14 +254,6 @@
                 media_width: media_width
               %}
             {%- endfor -%}
-            {% if mobile_thumbnails == 'hide' and product.media.size > 1 %}
-              <div class="flickity-page-counter no-js-hidden md:hidden">
-                <span class="flickity-counter--current">1</span>
-                <span aria-hidden="true"> / </span>
-                <span class="visually-hidden">{{ 'sections.slideshow.of' | t }}</span>
-                <span class="flickity-counter--total">{{ product.media.size }}</span>
-              </div>
-            {% endif %}
           </flickity-component>
         </div>
       {% else %}
@@ -174,89 +278,6 @@
           <span>{{ 'products.product.xr_button' | t }}</span>
         </button>
       {%- endif -%}
-      {%- if product.media.size > 1 and media_layout == 'carousel' or mobile_thumbnails == 'show' -%}
-        {% liquid
-          assign transition = ''
-          assign thumb_loop = true
-
-          if product.media.size < 6
-            assign thumb_loop = false
-            assign transition = ' md:disable-transition'
-          endif
-          if product.media.size < 5
-            assign transition = ' disable-transition'
-          endif
-        %}
-        <div class="f-product__media-thumbnails-wrapper{% if mobile_thumbnails == 'hide' %} hidden md:block{% endif %}">
-          <flickity-component
-            id="GalleryThumbnails-{{ section.id }}"
-            class="f-flex f-grid--gap-none no-js-hidden f-product__media-thumbnails flickity-button-initialized{{ thumb_class }}{{ transition }}"
-            data-slider-columns="5"
-            data-enable-slider="{{ enable_slider }}"
-            data-disable-pointer-move="false"
-            data-slider-options='{"pageDots": false, "asNavFor": "#Media-Gallery-{{ section.id }}", "prevNextButtons": false, "cellAlign": "{{ cell_align }}", "setGallerySize": false, "freeScroll": true, "wrapAround": {{ thumb_loop }}}'
-            style="--column-gap: 6px;--aspect-ratio: 5;"
-          >
-            {%- for media in product.media -%}
-              <div
-                id="GalleryThumbnailItem-{{ section.id }}-{{ forloop.index }}"
-                data-media-id="{{ media.id }}"
-                data-media-type="{{ media.media_type }}"
-                data-thumbnail-type="{{ media.media_type }}"
-                class="f-column f-product__media-thumbnails-item"
-                data-thumbnail-index="{{ forloop.index0 }}"
-              >
-                <div
-                  class="f-product__media-thumbnails-item-wrap block w-full{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
-                  {% if animated %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {%- if media.media_type == 'model' -%}
-                    <span class="f-product__media-badge" aria-hidden="true">
-                      {% comment %} theme-check-disable {% endcomment %}
-                      {{ 'icon-3d-model.svg' | inline_asset_content }}
-                      {% comment %} theme-check-enable {% endcomment %}
-                    </span>
-                  {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
-                    <span class="f-product__media-badge" aria-hidden="true">
-                      {% comment %} theme-check-disable {% endcomment %}
-                      {{ 'icon-play.svg' | inline_asset_content }}
-                      {% comment %} theme-check-enable {% endcomment %}
-                    </span>
-                  {%- endif -%}
-                  <responsive-image
-                    data-image-id="{{ image.id }}"
-                    class="f-image"
-                    data-image-loading
-                    style="--aspect-ratio: 1"
-                  >
-                    <img
-                      srcset="
-                        {% if media.preview_image.width >= 54 %}{{ media.preview_image | image_url: width: 54 }} 54w,{% endif %}
-                        {% if media.preview_image.width >= 74 %}{{ media.preview_image | image_url: width: 74 }} 74w,{% endif %}
-                        {% if media.preview_image.width >= 104 %}{{ media.preview_image | image_url: width: 104 }} 104w,{% endif %}
-                        {% if media.preview_image.width >= 162 %}{{ media.preview_image | image_url: width: 162 }} 162w,{% endif %}
-                        {% if media.preview_image.width >= 208 %}{{ media.preview_image | image_url: width: 208 }} 208w,{% endif %}
-                        {% if media.preview_image.width >= 324 %}{{ media.preview_image | image_url: width: 324 }} 324w,{% endif %}
-                        {% if media.preview_image.width >= 416 %}{{ media.preview_image | image_url: width: 416 }} 416w,{% endif %},
-                        {{ media.preview_image | image_url }} {{ media.preview_image.width }}w
-                      "
-                      src="{{ media.preview_image | image_url: width: 100 }}"
-                      sizes="(min-width: {{ settings.container_width }}px) calc(({{ settings.container_width | minus: 100 | times: 0.45 | round }} - 4rem) / 4), (min-width: 990px) calc(({{ 0.45 | times: 100 }}vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
-                      alt="{{ media.alt | escape }}"
-                      height="100"
-                      width="100"
-                      loading="lazy"
-                    >
-                  </responsive-image>
-                </div>
-              </div>
-            {%- endfor -%}
-          </flickity-component>
-        </div>
-      {% endif %}
     </div>
     <script type="application/json">
       {{ product.variants | json }}

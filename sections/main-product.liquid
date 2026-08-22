@@ -1,7 +1,7 @@
 {% comment %}theme-check-disable TemplateLength{% endcomment %}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'prestige-product-gallery.css' | asset_url | stylesheet_tag }}
-{{ 'prestige-product-info.css' | asset_url | stylesheet_tag }}
+{{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
 {% liquid
   assign enable_rtl = settings.enable_rtl
   assign language_support_rtl = settings.language_support_rtl
@@ -75,7 +75,7 @@
         %}
       </div>
       <div
-        class="f-column f-product-single__info md:flex-1{% if enable_sticky_info %} f-product-single__info--sticky{% endif %}{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+        class="f-column f-product-single__info valore-pdp-info md:flex-1{% if enable_sticky_info %} f-product-single__info--sticky{% endif %}{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
         {% if animated %}
           data-cascade
         {% endif %}

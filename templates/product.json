@@ -32,7 +32,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "price": {
@@ -158,6 +158,7 @@
         "c67b7c41-4a92-419d-85c6-c970bb43bf2d",
         "title",
         "price",
+        "doran_product_reviews_rating_widget_GFHcLi",
         "c9d012f0-f3f5-4c1b-b197-e7c8f9de13ac",
         "59ca3415-b1aa-4301-b178-ad6e434ba477",
         "variant_picker",
@@ -168,8 +169,7 @@
         "4813cc96-81ff-4094-bd6a-4bf96eab69e9",
         "f11043ac-1746-42ad-a36b-91ff4cc9f432",
         "e303936e-d82d-4e37-8b83-e227d48fbb3d",
-        "addons",
-        "doran_product_reviews_rating_widget_GFHcLi"
+        "addons"
       ],
       "custom_css": [],
       "settings": {
@@ -178,7 +178,7 @@
         "enable_sticky_info": true,
         "media_layout": "carousel",
         "media_size": "medium",
-        "mobile_thumbnails": "show",
+        "mobile_thumbnails": "hide",
         "enable_image_zoom": true,
         "enable_video_looping": false,
         "show_featured_media": false
@@ -703,11 +703,11 @@
     "main",
     "product_information_tabs_p7BegR",
     "1757472451fc7201d4",
-    "73c8e618-10a0-43bf-b1d9-fa6707a4b913",
     "8996604a-6390-4d3a-934f-c182420f74f1",
     "1fa24f8a-d231-4188-aace-4cc0966e2b73",
     "65ac5e18-3ef9-40e4-8c86-05a3a9d4d488",
     "ca424d80-c6dd-4d8e-81a4-bd4599587c4c",
+    "73c8e618-10a0-43bf-b1d9-fa6707a4b913",
     "product-recommendations",
     "1757472591c3a85656"
   ]

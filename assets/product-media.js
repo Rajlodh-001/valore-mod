@@ -14,6 +14,7 @@ if (!customElements.get('media-gallery')) {
 				medias: ['.f-product__media'],
 				xrButton: '[data-first-xr-button]',
 				sliderCounter: '.flickity-counter--current',
+				stageTagCurrent: '[data-stage-current]',
 				toggleZoom: ['.js-photoswipe--zoom']
 			}
 
@@ -304,6 +305,17 @@ if (!customElements.get('media-gallery')) {
 
 			if (this.domNodes.sliderCounter) {
 				this.domNodes.sliderCounter.textContent = index + 1
+			}
+
+			if (this.domNodes.stageTagCurrent) {
+				this.domNodes.stageTagCurrent.textContent = String(index + 1).padStart(2, '0')
+			}
+
+			const thumbItems = this.domNodes.viewer && this.domNodes.viewer.querySelectorAll('.thumb')
+			if (thumbItems && thumbItems.length) {
+				thumbItems.forEach((thumb, thumbIndex) => {
+					thumb.classList.toggle('active', thumbIndex === index)
+				})
 			}
 
 			this.domNodes.mediaGallery.classList.remove('pointer-move')

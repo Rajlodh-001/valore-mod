@@ -1,0 +1,182 @@
+{% comment %}
+  Unique tag: pdp-min-extras
+  Metafields: valore_pdp.feature_image, feature_heading, feature_text, feature_image_position
+{% endcomment %}
+{{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign feature_image = product.metafields.valore_pdp.feature_image.value
+  assign feature_heading = product.metafields.valore_pdp.feature_heading.value
+  assign feature_text = product.metafields.valore_pdp.feature_text.value
+  assign position_meta = product.metafields.valore_pdp.feature_image_position.value | default: '' | downcase
+
+  assign image_position = section.settings.image_position
+  if position_meta == 'left' or position_meta == 'right'
+    assign image_position = position_meta
+  endif
+
+  assign has_content = false
+  if feature_image != blank or feature_heading != blank or feature_text != blank
+    assign has_content = true
+  endif
+
+  assign container = section.settings.container
+  assign section_id = section.settings.custom_id | default: section.id
+  assign eyebrow = section.settings.eyebrow
+%}
+
+{% if has_content %}
+  <div
+    id="{{ section_id }}"
+    class="valore-pdp-feature valore-pdp-tag--extras valore-pdp-feature--image-{{ image_position }} f-section-padding color-{{ section.settings.color_schema }}"
+    data-valore-tag="pdp-min-extras"
+    data-section-type="valore-pdp-feature-panel"
+    data-section-id="{{ section.id }}"
+    style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="{{ container }}">
+      <div class="valore-pdp-feature__inner">
+        {% if feature_image != blank %}
+          {% assign feature_alt = feature_image.alt | default: feature_heading | default: product.title %}
+          <figure class="valore-pdp-feature__media">
+            {{
+              feature_image
+              | image_url: width: 2000
+              | image_tag:
+                loading: 'lazy',
+                widths: '550, 750, 1100, 1500, 2000',
+                sizes: '(min-width: 900px) 50vw, 100vw',
+                alt: feature_alt
+            }}
+          </figure>
+        {% endif %}
+        <div class="valore-pdp-feature__content">
+          {% if eyebrow != blank %}
+            <p class="valore-pdp-feature__eyebrow">{{ eyebrow | escape }}</p>
+          {% endif %}
+          {% if feature_heading != blank %}
+            <h2 class="valore-pdp-feature__heading {{ section.settings.heading_size }}">
+              {{ feature_heading | escape }}
+            </h2>
+          {% endif %}
+          {% if feature_text != blank %}
+            <div class="valore-pdp-feature__text rte">
+              {{ feature_text | newline_to_br }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "PDP feature panel",
+  "class": "valore-pdp-tag--extras",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Tag pdp-min-extras. Uses metafields valore_pdp.feature_*. Hidden when empty."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Product detail"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "Small"
+        },
+        {
+          "value": "h2",
+          "label": "Medium"
+        },
+        {
+          "value": "h1",
+          "label": "Large"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Fixed"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Stretched"
+        },
+        {
+          "value": "container-full",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_schema",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP feature panel"
+    }
+  ]
+}
+{% endschema %}
