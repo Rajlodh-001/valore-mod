@@ -1,0 +1,154 @@
+{% comment %}
+  Unique tag: pdp-min-extras
+  Metafields: valore_pdp.ride_details_title, discipline, temperature, compression, fit, wearing_feel
+{% endcomment %}
+{{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign title = product.metafields.valore_pdp.ride_details_title.value
+  assign discipline = product.metafields.valore_pdp.discipline.value
+  assign temperature = product.metafields.valore_pdp.temperature.value
+  assign compression = product.metafields.valore_pdp.compression.value
+  assign fit = product.metafields.valore_pdp.fit.value
+  assign wearing_feel = product.metafields.valore_pdp.wearing_feel.value
+
+  assign has_content = false
+  if title != blank or discipline != blank or temperature != blank or compression != blank or fit != blank or wearing_feel != blank
+    assign has_content = true
+  endif
+
+  assign container = section.settings.container
+  assign section_id = section.settings.custom_id | default: section.id
+%}
+
+{% if has_content %}
+  <section
+    id="{{ section_id }}"
+    class="ride-section valore-pdp-tag--extras color-{{ section.settings.color_schema }}"
+    data-valore-tag="pdp-min-extras"
+    data-section-type="valore-pdp-ride-details"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="ride-wrap">
+      <div class="ride-head">
+        <div class="ride-eyebrow">{{ section.settings.eyebrow | default: '03 — Ride Details' | escape }}</div>
+        {% if title != blank %}
+          <h3 class="ride-heading">{{ title | escape }}</h3>
+        {% endif %}
+      </div>
+      
+      <div class="ride-strip">
+        {% if discipline != blank %}
+          <div class="ride-cell">
+            <div class="ride-label">Discipline</div>
+            <div class="ride-value">{{ discipline | escape }}</div>
+          </div>
+        {% endif %}
+
+        {% if temperature != blank %}
+          <div class="ride-cell">
+            <div class="ride-label">Temperature</div>
+            <div class="ride-value">{{ temperature | escape }}</div>
+          </div>
+        {% endif %}
+
+        {% if compression != blank %}
+          <div class="ride-cell">
+            <div class="ride-label">Compression</div>
+            <div class="ride-value">{{ compression | escape }}</div>
+          </div>
+        {% endif %}
+
+        {% if fit != blank %}
+          <div class="ride-cell">
+            <div class="ride-label">Fit</div>
+            <div class="ride-value">{{ fit | escape }}</div>
+          </div>
+        {% endif %}
+
+        {% if wearing_feel != blank %}
+          <div class="ride-cell">
+            <div class="ride-label">Wearing feel</div>
+            <div class="ride-value">{{ wearing_feel | escape }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "PDP ride details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header title",
+      "default": "RIDE DETAILS"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "03 — Ride Details"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Fixed"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Stretched"
+        },
+        {
+          "value": "container-full",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_schema",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP ride details"
+    }
+  ]
+}
+{% endschema %}

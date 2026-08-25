@@ -22,7 +22,7 @@
 
   assign container = section.settings.container
   assign section_id = section.settings.custom_id | default: section.id
-  assign eyebrow = section.settings.eyebrow
+  assign eyebrow = section.settings.eyebrow | default: '01 — Product Detail'
 %}
 
 {% if has_content %}
@@ -83,7 +83,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Product detail"
+      "default": "01 — Product Detail"
     },
     {
       "type": "select",

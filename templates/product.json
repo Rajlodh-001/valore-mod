@@ -202,10 +202,18 @@
             "content_page": "",
             "default_open": false
           }
+        },
+        "gallery_info_pdp": {
+          "type": "gallery",
+          "settings": {
+            "header": "Product Gallery & Information",
+            "default_open": false
+          }
         }
       },
       "block_order": [
         "description_Lqm8Mx",
+        "gallery_info_pdp",
         "custom_kWdK4Y"
       ],
       "settings": {
@@ -697,11 +705,71 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "valore_pdp_editorial_strip": {
+      "type": "valore-pdp-editorial-strip",
+      "settings": {
+        "container": "container-full",
+        "color_schema": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "valore_pdp_feature_panel": {
+      "type": "valore-pdp-feature-panel",
+      "settings": {
+        "eyebrow": "DETAILS",
+        "image_position": "left",
+        "container": "container",
+        "color_schema": "background-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "valore_pdp_features_benefits": {
+      "type": "valore-pdp-features-benefits",
+      "settings": {
+        "header_title": "FEATURES & BENEFITS",
+        "eyebrow": "02 — Features & Benefits",
+        "container": "container",
+        "color_schema": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "valore_pdp_ride_details": {
+      "type": "valore-pdp-ride-details",
+      "settings": {
+        "header_title": "RIDE DETAILS",
+        "eyebrow": "03 — Ride Details",
+        "container": "container",
+        "color_schema": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "valore_pdp_product_guide": {
+      "type": "valore-pdp-product-guide",
+      "settings": {
+        "eyebrow": "04 — Product Guide",
+        "heading": "Product Guide",
+        "shipping_text": "Free shipping on orders over $180. In stock and ready to ship.",
+        "returns_text": "30 days to change your mind - exchange within 30 days of delivery.",
+        "container": "container",
+        "color_schema": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
     "product_information_tabs_p7BegR",
+    "valore_pdp_features_benefits",
+    "valore_pdp_ride_details",
+    "valore_pdp_product_guide",
+    "valore_pdp_editorial_strip",
+    "valore_pdp_feature_panel",
     "1757472451fc7201d4",
     "8996604a-6390-4d3a-934f-c182420f74f1",
     "1fa24f8a-d231-4188-aace-4cc0966e2b73",

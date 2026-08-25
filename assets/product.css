@@ -1565,3 +1565,69 @@ product-modal .f-modal__content {
     padding-right: 2rem;
   }
 }
+
+/* Custom Size Chips layout from samplerefrence.html */
+.variant-picker__input .field-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-body-alpha60, #767A73);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  width: 100%;
+}
+.variant-picker__input .field-label a,
+.variant-picker__input .field-label button {
+  color: var(--color-text-body, #12171A);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+}
+.variant-picker__input .sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.variant-picker__input .size-chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 10px 6px;
+  min-width: 46px;
+  text-align: center;
+  border: 1px solid var(--color-border, #DEDBD3);
+  color: var(--color-text-body, #12171A);
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+.variant-picker__input .size-chip:hover {
+  border-color: var(--color-text-body, #12171A);
+  color: var(--color-text-body, #12171A) !important;
+}
+.variant-picker__input input[type=radio]:checked + .size-chip:hover {
+  color: var(--color-background, #F6F5F1) !important;
+}
+.variant-picker__input input[type=radio] {
+  display: none !important;
+}
+.variant-picker__input input[type=radio]:checked + .size-chip {
+  background: var(--color-text-body, #12171A);
+  border-color: var(--color-text-body, #12171A);
+  color: var(--color-background, #F6F5F1);
+}
+.variant-picker__input input[type=radio]:disabled + .size-chip {
+  color: var(--color-border, #DEDBD3);
+  border-color: var(--color-border, #DEDBD3);
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+

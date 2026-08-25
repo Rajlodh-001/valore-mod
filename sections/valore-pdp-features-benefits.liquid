@@ -1,0 +1,313 @@
+{% comment %}
+  Unique tag: pdp-min-extras
+  Metafields: valore_pdp.features_section_title, features_section_sub, feature_1_title/text/image to feature_6_title/text/image
+{% endcomment %}
+{{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign sec_title = product.metafields.valore_pdp.features_section_title.value
+  assign sec_sub = product.metafields.valore_pdp.features_section_sub.value
+
+  assign f1_title = product.metafields.valore_pdp.feature_1_title.value
+  assign f1_text = product.metafields.valore_pdp.feature_1_text.value
+  assign f1_img = product.metafields.valore_pdp.feature_1_image.value
+
+  assign f2_title = product.metafields.valore_pdp.feature_2_title.value
+  assign f2_text = product.metafields.valore_pdp.feature_2_text.value
+  assign f2_img = product.metafields.valore_pdp.feature_2_image.value
+
+  assign f3_title = product.metafields.valore_pdp.feature_3_title.value
+  assign f3_text = product.metafields.valore_pdp.feature_3_text.value
+  assign f3_img = product.metafields.valore_pdp.feature_3_image.value
+
+  assign f4_title = product.metafields.valore_pdp.feature_4_title.value
+  assign f4_text = product.metafields.valore_pdp.feature_4_text.value
+  assign f4_img = product.metafields.valore_pdp.feature_4_image.value
+
+  assign f5_title = product.metafields.valore_pdp.feature_5_title.value
+  assign f5_text = product.metafields.valore_pdp.feature_5_text.value
+  assign f5_img = product.metafields.valore_pdp.feature_5_image.value
+
+  assign f6_title = product.metafields.valore_pdp.feature_6_title.value
+  assign f6_text = product.metafields.valore_pdp.feature_6_text.value
+  assign f6_img = product.metafields.valore_pdp.feature_6_image.value
+
+  assign has_content = false
+  if sec_title != blank or f1_title != blank or f2_title != blank or f3_title != blank or f4_title != blank or f5_title != blank or f6_title != blank
+    assign has_content = true
+  endif
+
+  assign container = section.settings.container
+  assign section_id = section.settings.custom_id | default: section.id
+%}
+
+{% if has_content %}
+  <div
+    id="{{ section_id }}"
+    class="valore-pdp-features-benefits valore-pdp-tag--extras f-section-padding color-{{ section.settings.color_schema }}"
+    data-valore-tag="pdp-min-extras"
+    data-section-type="valore-pdp-features-benefits"
+    data-section-id="{{ section.id }}"
+    style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="{{ container }}">
+      
+
+      <div class="valore-pdp-features-benefits__content">
+        <div class="valore-pdp-features-benefits__head">
+          <div>
+            <div class="valore-pdp-features-benefits__eyebrow">{{ section.settings.eyebrow | default: '02 — Features & Benefits' | escape }}</div>
+            {% if sec_title != blank %}
+              <h3 class="valore-pdp-features-benefits__heading">{{ sec_title | escape }}</h3>
+            {% endif %}
+          </div>
+          {% if sec_sub != blank %}
+            <p class="valore-pdp-features-benefits__sub">{{ sec_sub | escape }}</p>
+          {% endif %}
+        </div>
+
+        <div class="valore-pdp-features-benefits__grid">
+          
+          {% comment %} Card 1 {% endcomment %}
+          {% if f1_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">01</span>
+                {% if f1_img != blank %}
+                  {{ f1_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f1_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 12 C14 24, 14 40, 18 52 C24 56, 40 56, 46 52 C50 40, 50 24, 46 12 C40 8, 24 8, 18 12 Z"/>
+                      <path d="M20 14 C20 26, 20 38, 20 50" stroke-dasharray="1 5"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f1_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f1_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% comment %} Card 2 {% endcomment %}
+          {% if f2_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">02</span>
+                {% if f2_img != blank %}
+                  {{ f2_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f2_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round">
+                      <line x1="12" y1="20" x2="52" y2="20"/>
+                      <line x1="12" y1="28" x2="52" y2="28"/>
+                      <line x1="12" y1="36" x2="52" y2="36"/>
+                      <line x1="12" y1="44" x2="52" y2="44"/>
+                      <path d="M12 20 C12 30, 12 34, 12 44 M52 20 C52 30, 52 34, 52 44" stroke="none"/>
+                      <path d="M18 14 C14 24, 14 40, 18 50" />
+                      <path d="M46 14 C50 24, 50 40, 46 50" />
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f2_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f2_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% comment %} Card 3 {% endcomment %}
+          {% if f3_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">03</span>
+                {% if f3_img != blank %}
+                  {{ f3_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f3_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round">
+                      <circle cx="20" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="32" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="44" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="20" cy="28" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="32" cy="28" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="44" cy="28" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="20" cy="38" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="32" cy="38" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="44" cy="38" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="20" cy="48" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="32" cy="48" r="1.6" fill="currentColor" stroke="none"/>
+                      <circle cx="44" cy="48" r="1.6" fill="currentColor" stroke="none"/>
+                      <rect x="12" y="10" width="40" height="44" rx="2"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f3_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f3_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% comment %} Card 4 {% endcomment %}
+          {% if f4_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">04</span>
+                {% if f4_img != blank %}
+                  {{ f4_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f4_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10 C14 16, 12 26, 14 34 C16 44, 20 50, 26 54"/>
+                      <path d="M30 10 C24 18, 22 28, 24 36 C26 44, 30 50, 34 54"/>
+                      <path d="M38 8 C46 16, 50 28, 46 38 C43 46, 38 52, 32 56"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f4_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f4_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% comment %} Card 5 {% endcomment %}
+          {% if f5_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">05</span>
+                {% if f5_img != blank %}
+                  {{ f5_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f5_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round">
+                      <rect x="10" y="26" width="44" height="12" rx="1"/>
+                      <line x1="14" y1="26" x2="14" y2="38"/>
+                      <line x1="20" y1="26" x2="20" y2="38"/>
+                      <line x1="26" y1="26" x2="26" y2="38"/>
+                      <line x1="32" y1="26" x2="32" y2="38"/>
+                      <line x1="38" y1="26" x2="38" y2="38"/>
+                      <line x1="44" y1="26" x2="44" y2="38"/>
+                      <line x1="50" y1="26" x2="50" y2="38"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f5_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f5_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% comment %} Card 6 {% endcomment %}
+          {% if f6_title != blank %}
+            <div class="valore-pdp-features-benefits__card">
+              <div class="valore-pdp-features-benefits__media">
+                <span class="valore-pdp-features-benefits__index">06</span>
+                {% if f6_img != blank %}
+                  {{ f6_img | image_url: width: 800 | image_tag: loading: 'lazy', alt: f6_title }}
+                {% else %}
+                  <div class="icon-fallback">
+                    <svg viewBox="0 0 64 64" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M32 8 C42 12, 50 14, 50 14 C50 30, 46 44, 32 54 C18 44, 14 30, 14 14 C14 14, 22 12, 32 8 Z"/>
+                      <path d="M32 18 C36 20, 40 21, 40 21 C40 30, 38 38, 32 44 C26 38, 24 30, 24 21 C24 21, 28 20, 32 18 Z"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="valore-pdp-features-benefits__card-body">
+                <div class="valore-pdp-features-benefits__card-title">{{ f6_title | escape }}</div>
+                <p class="valore-pdp-features-benefits__card-text">{{ f6_text | escape }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "PDP features & benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header title",
+      "default": "FEATURES & BENEFITS"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "02 — Features & Benefits"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Fixed"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Stretched"
+        },
+        {
+          "value": "container-full",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_schema",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP features & benefits"
+    }
+  ]
+}
+{% endschema %}

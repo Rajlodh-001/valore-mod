@@ -360,7 +360,7 @@ if (!customElements.get('media-gallery')) {
 			const selectedMedia = this.domNodes.mediaGallery.querySelector(`[data-media-id="${mediaId}"]`)
 			if (!selectedMedia) return
 			const mediaIndex = Number(selectedMedia.dataset.mediaIndex)
-			this.mediaGallery && this.mediaGallery.select(mediaIndex, true, false)
+			this.mediaGallery && this.mediaGallery.select(mediaIndex, true, true)
 
 			this.scrollIntoView(selectedMedia)
 			this.preventStickyHeader()
@@ -375,7 +375,7 @@ if (!customElements.get('media-gallery')) {
 		scrollIntoView(selectedMedia) {
 			if (this.mediaLayout !== 'stacked' || FoxThemeSettings.isMobile) return;
 			selectedMedia.scrollIntoView({
-				behavior: 'smooth'
+				behavior: 'auto'
 			})
 		}
 	})

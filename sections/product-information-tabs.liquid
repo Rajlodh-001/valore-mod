@@ -1,114 +1,163 @@
-
 {% liquid
-    assign section_id = section.settings.custom_id | default: section.id
-    assign custom_class = section.settings.custom_class
-    assign desc_image_cols = section.settings.description_image_columns | default: '4'
-    assign desc_image_limit = section.settings.description_images_initial | default: 4
+  assign section_id = section.settings.custom_id | default: section.id
+  assign custom_class = section.settings.custom_class
+  assign desc_image_cols = section.settings.description_image_columns | default: '4'
+  assign desc_image_limit = section.settings.description_images_initial | default: 4
 
-    unless custom_class == blank
-        assign custom_class = custom_class | prepend: ' '
-    endunless
+  unless custom_class == blank
+    assign custom_class = custom_class | prepend: ' '
+  endunless
 
-    assign container = section.settings.container
+  assign container = section.settings.container
 %}
 {{ 'tabs-component.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'tabs-component.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-tabs-images.js' | asset_url }}" defer="defer"></script>
 <div
-    id="{{ section_id }}"
-    class="f-information-tabs f-information-tabs--images-{{ desc_image_cols }}{{ custom_class }} f-section-padding color-{{ section.settings.color_schema }}"
-    data-section-type="products-information-tabs"
-    data-section-id="{{ section.id }}"
-    data-desc-image-cols="{{ desc_image_cols }}"
-    style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px; --f-rte-image-cols: {{ desc_image_cols }};"
+  id="{{ section_id }}"
+  class="f-information-tabs f-information-tabs--images-{{ desc_image_cols }}{{ custom_class }} f-section-padding color-{{ section.settings.color_schema }}"
+  data-section-type="products-information-tabs"
+  data-section-id="{{ section.id }}"
+  data-desc-image-cols="{{ desc_image_cols }}"
+  style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px; --f-rte-image-cols: {{ desc_image_cols }};"
 >
-    <div class="{{ container }}">
-        {% if section.blocks.size > 0 %}
-        <div class="f-product-tabs__wrapper">
-            <tabs-component class="f-tabs f-tabs--collapsible" data-selected="0">
-                <div class="f-tabs__header no-js-hidden hidden md:flex justify-center" role="tablist" aria-label="{{ 'accessibility.product_information_tabs' | t }}">
-                  <div class="f-tabs__header-group">
-                    {% for block in section.blocks %}
-                        <button class="f-tabs__nav focus-inset" role="tab" id="{{- block.id -}}" data-tab-type="{{ block.type }}">{{ block.settings.header }}</button>
-                    {% endfor %}
+  <div class="{{ container }}">
+    {% if section.blocks.size > 0 %}
+      <div class="f-product-tabs__wrapper">
+        <tabs-component class="f-tabs f-tabs--collapsible" data-selected="0">
+          <div
+            class="f-tabs__header no-js-hidden hidden md:flex justify-center"
+            role="tablist"
+            aria-label="{{ 'accessibility.product_information_tabs' | t }}"
+          >
+            <div class="f-tabs__header-group">
+              {% for block in section.blocks %}
+                <button
+                  class="f-tabs__nav focus-inset"
+                  role="tab"
+                  id="{{- block.id -}}"
+                  data-tab-type="{{ block.type }}"
+                >
+                  {{ block.settings.header }}
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="f-product-tabs__blocks" data-collapsible-parent>
+            {% for block in section.blocks %}
+              <div
+                class="f-tabs__content"
+                id="tab-{{ block.id }}"
+                {% unless forloop.first %}
+                  hidden
+                {% endunless %}
+                role="tabpanel"
+                {{ block.shopify_attributes }}
+              >
+                <collapsible-tab class="collapsible__item no-js-hidden" open="{{ block.settings.default_open }}">
+                  <button class="collapsible__button" data-trigger>
+                    <span>{{- block.settings.header -}}</span>
+                    <span class="no-js-hidden" data-collapsible-icon>
+                      <svg width="1.5" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <svg width="1.5" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="f-tabs__content-inner" data-content>
+                    {% if block.type == 'gallery' %}
+                      <div class="f-rte-cols-switch" role="group" aria-label="Image grid columns" hidden>
+                        <span class="f-rte-cols-switch__label">Grid</span>
+                        <button
+                          type="button"
+                          class="f-rte-cols-switch__btn{% if desc_image_cols == '2' %} is-active{% endif %}"
+                          data-cols="2"
+                          aria-pressed="{% if desc_image_cols == '2' %}true{% else %}false{% endif %}"
+                        >
+                          2
+                        </button>
+                        <button
+                          type="button"
+                          class="f-rte-cols-switch__btn{% if desc_image_cols == '4' %} is-active{% endif %}"
+                          data-cols="4"
+                          aria-pressed="{% if desc_image_cols == '4' %}true{% else %}false{% endif %}"
+                        >
+                          4
+                        </button>
+                      </div>
+                    {% endif %}
+                    <div
+                      class="rte py-sm{% if block.type == 'gallery' %} f-rte--collapse-images{% endif %}"
+                      {% if block.type == 'gallery' %}
+                        data-image-limit="{{ desc_image_limit }}"
+                      {% endif %}
+                    >
+                      {% case block.type %}
+                        {% when 'description' %}
+                          <p class="valore-pdp-feature__eyebrow" style="margin: 0 0 1.2rem; font-size: 1.15rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(var(--color-foreground) / 0.45);">01 — Product Detail</p>
+                          {{ product.description }}
+                        {% when 'gallery' %}
+                          {{ product.description }}
+                        {% when 'reviews' %}
+                          <div id="shopify-product-reviews" data-id="{{ product.id }}">
+                            {{ product.metafields.spr.reviews }}
+                          </div>
+                        {% when 'custom' %}
+                          {{ block.settings.content }}
+                          {{ block.settings.content_page.content }}
+                        {% when 'liquid' %}
+                          {{ block.settings.custom_liquid }}
+                        {% else %}
+
+                      {% endcase %}
+                    </div>
                   </div>
-                </div>
-                <div class="f-product-tabs__blocks" data-collapsible-parent>
-                    {% for block in section.blocks %}
-                        <div class="f-tabs__content" id="tab-{{ block.id }}" {% unless forloop.first %} hidden{% endunless %} role="tabpanel" {{ block.shopify_attributes }}>
-                          <collapsible-tab class="collapsible__item no-js-hidden" open="{{ block.settings.default_open }}">
-                            <button class="collapsible__button" data-trigger>
-                              <span>{{- block.settings.header -}}</span>
-                              <span class="no-js-hidden" data-collapsible-icon>
-                                    <svg width="1.5" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                    <svg width="1.5" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </span>
-                            </button>
-                            <div class="f-tabs__content-inner" data-content>
-                              {% if block.type == 'description' %}
-                                <div class="f-rte-cols-switch" role="group" aria-label="Image grid columns" hidden>
-                                  <span class="f-rte-cols-switch__label">Grid</span>
-                                  <button type="button" class="f-rte-cols-switch__btn{% if desc_image_cols == '2' %} is-active{% endif %}" data-cols="2" aria-pressed="{% if desc_image_cols == '2' %}true{% else %}false{% endif %}">2</button>
-                                  <button type="button" class="f-rte-cols-switch__btn{% if desc_image_cols == '4' %} is-active{% endif %}" data-cols="4" aria-pressed="{% if desc_image_cols == '4' %}true{% else %}false{% endif %}">4</button>
-                                </div>
-                              {% endif %}
-                              <div
-                                class="rte py-sm{% if block.type == 'description' %} f-rte--collapse-images{% endif %}"
-                                {% if block.type == 'description' %}data-image-limit="{{ desc_image_limit }}"{% endif %}
-                              >
-                                {% case block.type %}
-                                  {% when 'description' %}
-                                    {{ product.description }}
-                                  {% when 'reviews' %}
-                                    <div id="shopify-product-reviews" data-id="{{ product.id }}">
-                                      {{ product.metafields.spr.reviews }}
-                                    </div>
-                                  {% when 'custom' %}
-                                    {{ block.settings.content }}
-                                    {{ block.settings.content_page.content }}
-                                  {% when 'liquid' %}
-                                    {{ block.settings.custom_liquid }}
-                                  {% else %}
-                                {% endcase %}
-                              </div>
+                </collapsible-tab>
+                <noscript>
+                  <details class="collapsible__item">
+                    <summary class="collapsible__button">
+                      <span>{{- block.settings.header -}}</span>
+                      <span data-collapsible-icon>
+                        <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div class="f-tabs__content-inner" data-content>
+                      <div class="rte py-sm">
+                        {% case block.type %}
+                          {% when 'description' %}
+                            {{ product.description }}
+                          {% when 'gallery' %}
+                            {{ product.description }}
+                          {% when 'reviews' %}
+                            <div id="shopify-product-reviews" data-id="{{ product.id }}">
+                              {{ product.metafields.spr.reviews }}
                             </div>
-                          </collapsible-tab>
-                          <noscript>
-                            <details class="collapsible__item">
-                              <summary class="collapsible__button">
-                                <span>{{- block.settings.header -}}</span>
-                                <span data-collapsible-icon>
-                                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                  <svg width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.333v9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </span>
-                              </summary>
-                              <div class="f-tabs__content-inner" data-content>
-                                <div class="rte py-sm">
-                                  {% case block.type %}
-                                    {% when 'description' %}
-                                      {{ product.description }}
-                                    {% when 'reviews' %}
-                                      <div id="shopify-product-reviews" data-id="{{ product.id }}">
-                                        {{ product.metafields.spr.reviews }}
-                                      </div>
-                                    {% when 'custom' %}
-                                      {{ block.settings.content }}
-                                      {{ block.settings.content_page.content }}
-                                    {% when 'liquid' %}
-                                      {{ block.settings.custom_liquid }}
-                                    {% else %}
-                                  {% endcase %}
-                                </div>
-                              </div>
-                            </details>
-                          </noscript>
-                        </div>
-                    {% endfor %}
-                </div>
-            </tabs-component>
-        </div>
-        {% endif %}
-    </div>
+                          {% when 'custom' %}
+                            {{ block.settings.content }}
+                            {{ block.settings.content_page.content }}
+                          {% when 'liquid' %}
+                            {{ block.settings.custom_liquid }}
+                          {% else %}
+
+                        {% endcase %}
+                      </div>
+                    </div>
+                  </details>
+                </noscript>
+              </div>
+            {% endfor %}
+          </div>
+        </tabs-component>
+      </div>
+    {% endif %}
+  </div>
 </div>
 
 {% schema %}
@@ -314,11 +363,28 @@
           "default": false
         }
       ]
+    },
+    {
+      "type": "gallery",
+      "name": "Product Gallery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Tab Heading",
+          "default": "Product Gallery & Information"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
     }
   ],
-  "templates": [
-    "product"
-  ],
+  "templates": ["product"],
   "presets": [
     {
       "name": "t:sections.product-information-tabs.presets.name",

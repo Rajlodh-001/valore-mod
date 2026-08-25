@@ -208,9 +208,6 @@
       {% if product.media.size > 0 %}
         {% liquid
           assign media_total = product.media.size
-          assign callout_text = product.metafields.valore_pdp.callout_text.value
-          assign callout_left = product.metafields.valore_pdp.callout_left.value | default: '46'
-          assign callout_top = product.metafields.valore_pdp.callout_top.value | default: '30'
         %}
         <div
           data-media-viewer
@@ -221,17 +218,6 @@
             <span aria-hidden="true"> / </span>
             <span data-stage-total>{{ media_total | prepend: '00' | slice: -2, 2 }}</span>
           </span>
-          {% if callout_text != blank %}
-            <div
-              class="callout"
-              data-valore-tag="pdp-min-extras"
-              style="--callout-left: {{ callout_left }}%; --callout-top: {{ callout_top }}%;"
-            >
-              <div class="dot" aria-hidden="true"></div>
-              <div class="leader" aria-hidden="true"></div>
-              <div class="note">{{ callout_text | escape }}</div>
-            </div>
-          {% endif %}
           <flickity-component
             data-slider-options='{"pageDots": {{ gallery_page_dots }}, "prevNextButtons": true, "adaptiveHeight": true, "cellAlign": "left", "setGallerySize": false, "wrapAround": true, "cellSelector": ".f-product__media"}'
             data-enable-slider="{{ enable_slider }}"
