@@ -1,0 +1,169 @@
+/**
+ * Prestige-style product cards for collection listing.
+ * Reference: valore-prestige/assets/theme.css (.product-card)
+ * Keeps FoxTheme color-swatch hover behavior; hides ATC / Choose options chrome.
+ */
+
+.prestige-collection .product-card {
+  --pdc-padding-bottom: 0;
+  padding-bottom: 0;
+}
+
+.prestige-collection .product-card__wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 0;
+}
+
+.prestige-collection .product-card__image-wrapper {
+  overflow: hidden;
+  background: transparent;
+  /* Slightly smaller image without collapsing aspect-ratio box */
+  padding-inline: 7%;
+}
+
+.prestige-collection .product-card__image-wrapper .f-image,
+.prestige-collection .product-card__image-wrapper .f-image img {
+  border-radius: 0;
+}
+
+/* Keep theme image sizing (do not override object-fit — that hid images) */
+
+/* Secondary image: soft fade on hover */
+.prestige-collection .product-card__image--main {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.prestige-collection .product-card__image--second {
+  transform: none !important;
+  mix-blend-mode: normal;
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) and (pointer: fine) {
+  .prestige-collection
+    .product-card__image-wrapper:not(.product-card__image-wrapper--main-only):hover
+    .product-card__image--main {
+    opacity: 0;
+  }
+
+  .prestige-collection
+    .product-card__image-wrapper:not(.product-card__image-wrapper--main-only):hover
+    .product-card__image--second {
+    opacity: 1;
+    visibility: visible;
+    transform: none !important;
+  }
+}
+
+/* Hide any residual action overlays (ATC / Choose options / Quick view) */
+.prestige-collection .product-card__actions {
+  display: none !important;
+}
+
+/* Badges — quiet, top-left like Prestige */
+.prestige-collection .product-card__badge {
+  left: 0.4rem;
+  top: 0.4rem;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+/* Centered info stack */
+.prestige-collection .product-card__info {
+  margin-top: 0;
+  padding-block-start: 1.25rem;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.prestige-collection .product-card__info .product-card__title {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.prestige-collection .product-card__info .product-card__title a {
+  text-decoration: none;
+}
+
+.prestige-collection .product-card__vendor {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.prestige-collection .product-card__info .f-price,
+.prestige-collection .product-card__info .price {
+  justify-content: center;
+  margin: 0;
+}
+
+.prestige-collection .product-card__reviews {
+  margin: 0;
+}
+
+/* Color swatches — larger for readable variant thumbnails */
+.prestige-collection .product-card__options,
+.prestige-collection .product-card__swatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.2rem;
+  width: 100%;
+}
+
+.prestige-collection .product-card .color-swatch {
+  --color-swatch-item-width: 3.2rem;
+  column-gap: 0.8rem;
+  row-gap: 0.8rem;
+  justify-content: center;
+}
+
+.prestige-collection .product-card .color-swatch__item {
+  width: var(--color-swatch-item-width);
+  height: var(--color-swatch-item-width);
+}
+
+@media (max-width: 767.98px) {
+  .prestige-collection .product-card .color-swatch {
+    --color-swatch-item-width: 2.8rem;
+    column-gap: 0.65rem;
+  }
+}
+
+/* Grid breathing room closer to Prestige */
+.prestige-collection .product-grid.f-grid--gap-extra-small {
+  row-gap: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .prestige-collection .product-grid.f-grid--gap-extra-small {
+    row-gap: 3rem;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .prestige-collection .product-grid.f-grid--gap-extra-small {
+    row-gap: 3.6rem;
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .prestige-collection .product-card__info {
+    padding-block-start: 1rem;
+    gap: 0.55rem;
+  }
+
+  .prestige-collection .product-grid.f-grid--gap-extra-small {
+    row-gap: 2rem;
+  }
+}

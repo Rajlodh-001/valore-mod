@@ -73,6 +73,9 @@ class FacetFiltersForm extends HTMLElement {
 		elementContainer.innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector(el).innerHTML;
 		FacetFiltersForm.loading = new window.FoxTheme.AnimateLoading(document.body, {overlay: document.querySelector(selector)})
 		__reInitTooltip(elementContainer);
+		if (typeof window.initPrestigeCollectionToolbars === 'function') {
+			window.initPrestigeCollectionToolbars(elementContainer);
+		}
 	}
 
 	static renderProductCount(html) {
@@ -108,8 +111,10 @@ class FacetFiltersForm extends HTMLElement {
 
 		activeFacetElementSelectors.forEach((selector) => {
 			const activeFacetsElement = html.querySelector(selector)
-			if (!activeFacetsElement) return;
-			document.querySelector(selector).innerHTML = activeFacetsElement.innerHTML
+			const destination = document.querySelector(selector)
+			if (!activeFacetsElement || !destination) return;
+			destination.innerHTML = activeFacetsElement.innerHTML
+			destination.classList.toggle('is-empty', activeFacetsElement.children.length === 0)
 		})
 
 	}

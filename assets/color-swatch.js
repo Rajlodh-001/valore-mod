@@ -40,7 +40,7 @@ if (!customElements.get('color-swatch')) {
 						if (!optionImage && !customColor) {
 							optNode.style = `background-image: url(${ getSizedImageUrl(variantImage, '60x')}) !important;`
 						}
-						optNode.setAttribute('data-src', getSizedImageUrl(variantImage, '900x'))
+						optNode.setAttribute('data-src', getSizedImageUrl(variantImage, '1200x'))
 						optNode.setAttribute('data-srcset', getSrcset(variantImage))
 					}
 				}

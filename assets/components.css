@@ -212,11 +212,76 @@ button,
 .btn--plain:hover {
   color: var(--color-link-hover);
 }
-.btn--white {
-  background-color: #fff;
-  border-color: #fff;
-  color: var(--color-button-white, #333);
-  border: none;
+.f-slideshow .btn::after,
+.f-slideshow .btn::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* --- Exact Prestige Theme Button Transition Animation --- */
+.btn--prestige-women,
+.btn--prestige-men {
+  --transform-origin-start: left;
+  --transform-origin-end: right;
+  -webkit-appearance: none;
+  appearance: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-shadow: none;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 2.2rem !important;
+  min-width: 130px;
+  display: inline-flex;
+  position: relative;
+  font-family: var(--font-body-family), 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  background-color: transparent !important;
+  background-size: 101% 101%, 0 101% !important;
+  background-repeat: no-repeat !important;
+  transition: background-size 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-position 0.45s step-end, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+}
+
+/* WOMEN (Solid White -> Hover Slide Wipe to Transparent Hollow) */
+.btn--prestige-women {
+  --initial-gradient: linear-gradient(#ffffff, #ffffff);
+  --hover-gradient: linear-gradient(transparent, transparent);
+  --initial-background-position: right;
+  --hover-background-position: left;
+  color: #111111 !important;
+  border: 1px solid #ffffff !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-position: var(--initial-background-position) !important;
+}
+
+.btn--prestige-women:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
+}
+
+/* MEN (Solid Dark -> Hover Slide Wipe to Transparent Hollow) */
+.btn--prestige-men {
+  --initial-gradient: linear-gradient(#111111, #111111);
+  --hover-gradient: linear-gradient(transparent, transparent);
+  --initial-background-position: right;
+  --hover-background-position: left;
+  color: #ffffff !important;
+  border: 1px solid #111111 !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-position: var(--initial-background-position) !important;
+}
+
+.btn--prestige-men:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
 }
 .btn--underline, .btn--link {
   position: relative;

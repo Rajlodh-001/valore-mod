@@ -7,80 +7,94 @@
   endif
 
   assign sort_by = results.sort_by | default: results.default_sort_by
+  assign active_values_count = 0
+  assign show_filter_group_name = section.settings.show_filter_group_name
+
+  for filter in results.filters
+    if filter.type == 'price_range'
+      if filter.min_value.value != null or filter.max_value.value != null
+        assign active_values_count = active_values_count | plus: 1
+      endif
+    else
+      assign active_values_count = active_values_count | plus: filter.active_values.size
+    endif
+  endfor
 %}
 
-<div class="active-facets">
-  {%- for filter in results.filters -%}
-    {%- for value in filter.active_values -%}
-      <facet-remove>
-        <a
-          href="{{ value.url_to_remove }}"
-          class="active-facets__button btn btn--small"
-          data-tippy-content="{{ 'products.facets.clear_with_label' | t: label: value.label | escape }}"
-          data-tippy-theme="color-background-1"
-          data-tippy-placement="top"
-        >
-          <span class="active-facets__button-inner">
-            {{ value.label | escape }}
-            {% comment %} theme-check-disable {% endcomment %}
-            {{ 'icon-close-small.svg' | inline_asset_content }}
-            {% comment %} theme-check-enable {% endcomment %}
-          </span>
-        </a>
-      </facet-remove>
-    {%- endfor -%}
-    {% if filter.type == 'price_range' %}
-      {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+{% unless prestige_style %}
+  <div class="active-facets">
+    {%- for filter in results.filters -%}
+      {%- for value in filter.active_values -%}
         <facet-remove>
-          <a href="{{ filter.url_to_remove }}" class="active-facets__button btn btn--small">
+          <a
+            href="{{ value.url_to_remove }}"
+            class="active-facets__button btn btn--small"
+            data-tippy-content="{{ 'products.facets.clear_with_label' | t: label: value.label | escape }}"
+            data-tippy-theme="color-background-1"
+            data-tippy-placement="top"
+          >
             <span class="active-facets__button-inner">
-              {%- if filter.min_value.value -%}
-                {{ filter.min_value.value | money }}
-              {%- else -%}
-                {{ 0 | money }}
-              {%- endif -%}
-              -
-              {%- if filter.max_value.value -%}
-                {{ filter.max_value.value | money }}
-              {%- else -%}
-                {{ filter.range_max | money }}
-              {%- endif -%}
+              {{ value.label | escape }}
               {% comment %} theme-check-disable {% endcomment %}
               {{ 'icon-close-small.svg' | inline_asset_content }}
               {% comment %} theme-check-enable {% endcomment %}
-              <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
             </span>
           </a>
         </facet-remove>
-      {%- endif -%}
-    {% endif %}
-  {%- endfor -%}
-  <facet-remove>
-    <a href="{{ results_url }}" class="active-facets__button btn btn--small btn--underline active-facets__button-clear">
-      <span>{{ 'products.facets.clear_all' | t }}</span>
-    </a>
-  </facet-remove>
-</div>
+      {%- endfor -%}
+      {% if filter.type == 'price_range' %}
+        {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+          <facet-remove>
+            <a href="{{ filter.url_to_remove }}" class="active-facets__button btn btn--small">
+              <span class="active-facets__button-inner">
+                {%- if filter.min_value.value -%}
+                  {{ filter.min_value.value | money }}
+                {%- else -%}
+                  {{ 0 | money }}
+                {%- endif -%}
+                -
+                {%- if filter.max_value.value -%}
+                  {{ filter.max_value.value | money }}
+                {%- else -%}
+                  {{ filter.range_max | money }}
+                {%- endif -%}
+                {% comment %} theme-check-disable {% endcomment %}
+                {{ 'icon-close-small.svg' | inline_asset_content }}
+                {% comment %} theme-check-enable {% endcomment %}
+                <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+              </span>
+            </a>
+          </facet-remove>
+        {%- endif -%}
+      {% endif %}
+    {%- endfor -%}
+    <facet-remove>
+      <a href="{{ results_url }}" class="active-facets__button btn btn--small btn--underline active-facets__button-clear">
+        <span>{{ 'products.facets.clear_all' | t }}</span>
+      </a>
+    </facet-remove>
+  </div>
+{% endunless %}
 
 {% if enable_product_count or enable_sorting or enable_filtering %}
   {% if prestige_style %}
     <div class="prestige-collection-toolbar" data-prestige-collection-toolbar>
       <div class="prestige-collection-toolbar__layouts no-js-hidden">
+        <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn hidden md:inline-flex" data-prestige-desktop-columns="2" aria-label="2 column grid">
+          <svg viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="7" height="7"/><rect x="10" y="1" width="7" height="7"/><rect x="1" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/></svg>
+        </button>
+        <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn hidden md:inline-flex is-active" data-prestige-desktop-columns="3" aria-label="3 column grid" aria-selected="true">
+          <svg viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="4" height="4"/><rect x="7" y="1" width="4" height="4"/><rect x="13" y="1" width="4" height="4"/><rect x="1" y="7" width="4" height="4"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/><rect x="1" y="13" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><rect x="13" y="13" width="4" height="4"/></svg>
+        </button>
         <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn hidden md:inline-flex" data-prestige-desktop-columns="4" aria-label="Compact grid">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3" height="3"/><rect x="6" y="1" width="3" height="3"/><rect x="11" y="1" width="3" height="3"/><rect x="1" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="11" y="6" width="3" height="3"/></svg>
-        </button>
-        <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn hidden md:inline-flex" data-prestige-desktop-columns="3" aria-label="Medium grid">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="4" height="4"/><rect x="6" y="1" width="4" height="4"/><rect x="11" y="1" width="4" height="4"/><rect x="1" y="7" width="4" height="4"/><rect x="6" y="7" width="4" height="4"/><rect x="11" y="7" width="4" height="4"/></svg>
-        </button>
-        <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn hidden md:inline-flex" data-prestige-desktop-columns="2" aria-label="Large grid">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4h14M2 9h14M2 14h14"/></svg>
         </button>
         <div class="column-switcher flex no-js-hidden items-center md:hidden">
           <button class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn" data-column="1" aria-label="1 column">
-            <svg width="12" height="12" fill="currentColor" viewBox="0 0 12.5 9.5"><path d="M12.5.75a.76.76 0 01-.75.75h-11A.76.76 0 010 .75.76.76 0 01.75 0h11a.76.76 0 01.75.75zM12.5 4.75a.76.76 0 01-.75.75h-11A.76.76 0 010 4.75.76.76 0 01.75 4h11a.76.76 0 01.75.75zM12.5 8.75a.76.76 0 01-.75.75h-11A.76.76 0 010 8.75.76.76 0 01.75 8h11a.76.76 0 01.75.75z"/></svg>
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4h14M2 9h14M2 14h14"/></svg>
           </button>
           <button class="prestige-collection-toolbar__btn prestige-collection-toolbar__layout-btn is-active" aria-selected="true" data-column="2" aria-label="2 columns">
-            <svg width="12" height="12" fill="currentColor" viewBox="0 0 5.5 12.5"><path d="M.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 01.75 0zM4.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 014.75 0z"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 18 18" aria-hidden="true"><rect x="1" y="1" width="7" height="7"/><rect x="10" y="1" width="7" height="7"/><rect x="1" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/></svg>
           </button>
         </div>
       </div>
@@ -94,8 +108,8 @@
       <div class="prestige-collection-toolbar__actions">
         {% if enable_sorting %}
           <div class="prestige-sort no-js-hidden">
-            <button type="button" class="prestige-collection-toolbar__btn" data-prestige-sort-toggle aria-expanded="false" aria-controls="PrestigeSortPanel">
-              {{ 'products.facets.sort_by_label' | t | upcase }}
+            <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__btn--sort" data-prestige-sort-toggle aria-expanded="false" aria-controls="PrestigeSortPanel">
+              SORT BY
               <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
             </button>
             <div id="PrestigeSortPanel" class="prestige-sort__panel" data-prestige-sort-panel hidden>
@@ -125,12 +139,75 @@
 
         {% if enable_filtering %}
           <drawer-opener data-drawer="#Drawer-Facets" class="no-js-hidden">
-            <button type="button" class="prestige-collection-toolbar__btn" aria-label="{{ 'products.facets.filter_button' | t }}">
-              {{ 'products.facets.filter_button' | t | upcase }}
+            <button type="button" class="prestige-collection-toolbar__btn prestige-collection-toolbar__btn--filter" aria-label="{{ 'products.facets.filter_button' | t }}">
+              FILTER{% if active_values_count > 0 %} ({{ active_values_count }}){% endif %}
             </button>
           </drawer-opener>
         {% endif %}
       </div>
+    </div>
+
+    <div class="active-facets active-facets--prestige{% if active_values_count == 0 %} is-empty{% endif %}">
+      {%- if active_values_count > 0 -%}
+        {%- for filter in results.filters -%}
+          {%- if filter.type == 'price_range' -%}
+            {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+              <div class="removable-facet">
+                <facet-remove>
+                  <a
+                    href="{{ filter.url_to_remove }}"
+                    class="removable-facet__remove"
+                    aria-label="{{ 'products.facets.clear_filter' | t }}"
+                  >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg>
+                  </a>
+                </facet-remove>
+                <span class="removable-facet__label">
+                  {%- if show_filter_group_name -%}
+                    {{- filter.label }}:
+                    {{ filter.min_value.value | default: 0 | money_without_trailing_zeros }}
+                    -
+                    {{ filter.max_value.value | default: filter.range_max | money_without_trailing_zeros -}}
+                  {%- else -%}
+                    {{- filter.min_value.value | default: 0 | money_without_trailing_zeros }}
+                    -
+                    {{ filter.max_value.value | default: filter.range_max | money_without_trailing_zeros -}}
+                  {%- endif -%}
+                </span>
+              </div>
+            {%- endif -%}
+          {%- else -%}
+            {%- for active_value in filter.active_values -%}
+              <div class="removable-facet">
+                <facet-remove>
+                  <a
+                    href="{{ active_value.url_to_remove }}"
+                    class="removable-facet__remove"
+                    aria-label="{{ 'products.facets.clear_with_label' | t: label: active_value.label | escape }}"
+                  >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg>
+                  </a>
+                </facet-remove>
+                <span class="removable-facet__label">
+                  {%- if show_filter_group_name or filter.type == 'boolean' -%}
+                    {{- filter.label }}: {{ active_value.label -}}
+                  {%- else -%}
+                    {{- active_value.label -}}
+                  {%- endif -%}
+                </span>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if active_values_count > 1 -%}
+          <facet-remove>
+            <a href="{{ results_url }}" class="facets-clear-all">
+              <span class="facets-clear-all__link">{{ 'products.facets.clear_all' | t }}</span>
+            </a>
+          </facet-remove>
+        {%- endif -%}
+      {%- endif -%}
     </div>
   {% else %}
     <div class="product-grid__header flex items-center justify-between">

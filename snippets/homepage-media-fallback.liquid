@@ -13,13 +13,13 @@
   assign lookup = id | split: '__' | last
 
   case lookup
-    when 'slide_Q9QMzA'
+    when 'slide_Q9QMzA', 'slide_2_hero'
       if variant == 'mobile'
         assign homepage_fallback_file = '20260415-valore-banner-cinetico-1200-x-960-2.jpg'
       else
         assign homepage_fallback_file = '20260415-valore-banner-cinetico-2560-x-1200-2.jpg'
       endif
-    when 'slide_EVeMYC'
+    when 'slide_EVeMYC', 'slide_3_hero'
       if variant == 'mobile'
         assign homepage_fallback_file = '20260415-valore-banner-cinetico-1200-x-960-3.jpg'
       else
@@ -41,7 +41,7 @@
       assign homepage_fallback_file = 'oneline-support.jpg'
     when 'column_V74dnk'
       assign homepage_fallback_file = 'flexible-payment.png'
-    when 'video_W9K8bm', 'video_hero_pWKkdn'
+    when 'video_W9K8bm', 'video_hero_pWKkdn', 'slide_1_hero'
       assign homepage_fallback_file = '26ss-horizontal-version-usa-outdoor-video.mp4'
   endcase
 -%}

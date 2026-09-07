@@ -99,7 +99,11 @@
                           <p class="valore-pdp-feature__eyebrow" style="margin: 0 0 1.2rem; font-size: 1.15rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(var(--color-foreground) / 0.45);">01 — Product Detail</p>
                           {{ product.description }}
                         {% when 'gallery' %}
-                          {{ product.description }}
+                          {% if product.metafields.custom.gallery_information.value != blank %}
+                            {{ product.metafields.custom.gallery_information.value | markdown }}
+                          {% else %}
+                            {{ product.description }}
+                          {% endif %}
                         {% when 'reviews' %}
                           <div id="shopify-product-reviews" data-id="{{ product.id }}">
                             {{ product.metafields.spr.reviews }}
@@ -134,7 +138,11 @@
                           {% when 'description' %}
                             {{ product.description }}
                           {% when 'gallery' %}
-                            {{ product.description }}
+                            {% if product.metafields.custom.gallery_information.value != blank %}
+                              {{ product.metafields.custom.gallery_information.value | markdown }}
+                            {% else %}
+                              {{ product.description }}
+                            {% endif %}
                           {% when 'reviews' %}
                             <div id="shopify-product-reviews" data-id="{{ product.id }}">
                               {{ product.metafields.spr.reviews }}
@@ -159,6 +167,27 @@
     {% endif %}
   </div>
 </div>
+
+<script>
+  function movePdpSectionsToDescTab() {
+    const descTab = document.querySelector('.f-tabs__content[id*="description"] .f-tabs__content-inner');
+    if (!descTab) return;
+    
+    // Select elements dynamically
+    const f1Panel = document.querySelector('.valore-pdp-feature') || document.querySelector('[id*="valore_pdp_feature_panel"]');
+    const f2Benefits = document.querySelector('.valore-pdp-features-benefits') || document.querySelector('[id*="valore_pdp_features_benefits"]');
+    const f3Ride = document.querySelector('.ride-section') || document.querySelector('.valore-pdp-ride-details') || document.querySelector('[id*="valore_pdp_ride_details"]');
+    const f4Guide = document.querySelector('.valore-pdp-product-guide') || document.querySelector('[id*="valore_pdp_product_guide"]');
+    
+    // Append them sequentially inside description tab container
+    if (f2Benefits) descTab.appendChild(f2Benefits);
+    if (f3Ride) descTab.appendChild(f3Ride);
+    if (f4Guide) descTab.appendChild(f4Guide);
+    if (f1Panel) descTab.appendChild(f1Panel);
+  }
+  document.addEventListener('DOMContentLoaded', movePdpSectionsToDescTab);
+  document.addEventListener('shopify:section:load', movePdpSectionsToDescTab);
+</script>
 
 {% schema %}
 {

@@ -116,7 +116,7 @@
       <flickity-component
         id="f-slideshow-{{ section.id }}"
         class="f-slideshow__slides overflow-hidden w-full flickity-button-initialized flickity-controls-group flickity-controls-group__bottom flickity-controls-group__bottom--{{ controls_position }} flickity-pagination--{{ pagination_style }}{{ flickityClass }} {{ pagination_class }}"
-        data-slider-options='{"pageDots": {{ isPageDots }}, "dragThreshold": 20, "prevNextButtons": {{ show_nav }}, "autoPlay": {{ autoplay }}, "wrapAround": true, "fade": true, "adaptiveHeight": true, "setGallerySize": false, "cellSelector": ".f-slideshow__slide"}'
+        data-slider-options='{"pageDots": {{ isPageDots }}, "dragThreshold": 20, "prevNextButtons": {{ show_nav }}, "autoPlay": {{ autoplay }}, "pauseAutoPlayOnHover": false, "wrapAround": true, "fade": true, "adaptiveHeight": true, "setGallerySize": false, "cellSelector": ".f-slideshow__slide"}'
         aria-live="polite"
         aria-atomic="true"
         data-enable-slider="true"
@@ -328,7 +328,7 @@
             {{ block.shopify_attributes }}
           >
             <div
-              class="f-slideshow__content f-text-blocks hidden text-{{ text_alignment_mobile }} sm:text-{{ text_alignment }}"
+              class="f-slideshow__content f-text-blocks hidden text-{{ text_alignment_mobile }} sm:text-{{ text_alignment }}{% if forloop.index == 3 or block.settings.enable_frame %} f-slideshow__content--framed{% endif %}"
               style="--slide-content-text-color: {{ text_color }};"
             >
               {% unless block.settings.subheading == blank %}

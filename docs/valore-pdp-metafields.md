@@ -21,6 +21,7 @@ These product metafields power the optional editorial strip and feature panel on
 | `valore_pdp` | `callout_text`          | Single line text          | Gallery callout note (e.g. zip detail) |
 | `valore_pdp` | `callout_left`          | Single line text          | Callout left position % (default `46`) |
 | `valore_pdp` | `callout_top`           | Single line text          | Callout top position % (default `30`) |
+| `valore_pdp` | `product_detail`        | Multi-line text           | PDP Product detail (upgrade to rich text later if needed) |
 
 Storefront access must be **Storefronts: Read**.
 

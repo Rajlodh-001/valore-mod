@@ -62,9 +62,13 @@
           class="f-drawer__close btn btn--plain"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          {% comment %} theme-check-disable {% endcomment %}
-          {{ 'icon-close.svg' | inline_asset_content }}
-          {% comment %} theme-check-enable {% endcomment %}
+          {%- if prestige_style -%}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+          {%- else -%}
+            {% comment %} theme-check-disable {% endcomment %}
+            {{ 'icon-close.svg' | inline_asset_content }}
+            {% comment %} theme-check-enable {% endcomment %}
+          {%- endif -%}
         </button>
       </div>
     {% endif %}
@@ -155,11 +159,11 @@
                       assign is_color = true
                     endif
 
-                    assign sorted_values = filter.values
+                    assign sorted_values = filter.values | sort_natural: 'label'
                     # Keep the selected values grouped together when operator is AND
                     if filter.operator == 'AND'
-                      assign active_filter_values = filter.values | where: 'active', true
-                      assign inactive_filter_values = filter.values | where: 'active', false
+                      assign active_filter_values = sorted_values | where: 'active', true
+                      assign inactive_filter_values = sorted_values | where: 'active', false
                       assign sorted_values = active_filter_values | concat: inactive_filter_values
                     endif
                   %}
@@ -178,7 +182,7 @@
                       {% endunless %}
                     >
                       <button class="f-facets__block-header font-body-bolder focus-inset" data-trigger>
-                        <h5 class="{{ heading_size }}">
+                        <h5 class="{% if prestige_style %}prestige-filter-title{% else %}{{ heading_size }}{% endif %}">
                           {{- filter.label | escape -}}
                         </h5>
                         {% if group_collapsible %}

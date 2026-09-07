@@ -59,7 +59,11 @@
               {{ feature_heading | escape }}
             </h2>
           {% endif %}
-          {% if feature_text != blank %}
+          {% if product.metafields.custom.gallery_information.value != blank %}
+            <div class="valore-pdp-feature__text rte">
+              {{ product.metafields.custom.gallery_information.value | markdown }}
+            </div>
+          {% elsif feature_text != blank %}
             <div class="valore-pdp-feature__text rte">
               {{ feature_text | newline_to_br }}
             </div>

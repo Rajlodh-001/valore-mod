@@ -23,6 +23,7 @@
 {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
 {{ 'collection.css' | asset_url | stylesheet_tag }}
 {{ 'prestige-collection.css' | asset_url | stylesheet_tag }}
+{{ 'valore-prestige-product-card.css' | asset_url | stylesheet_tag }}
 <link
   id="ModalComponent"
   rel="stylesheet"
@@ -109,7 +110,9 @@
                         section_index: 1,
                         index: forloop.index,
                         animated: animated,
-                        animation_effect: animation_effect
+                        animation_effect: animation_effect,
+                        enable_quick_add: false,
+                        enable_quick_view: false
                       -%}
                     </div>
                   {%- endfor -%}
@@ -250,6 +253,13 @@
       "default": true,
       "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
       "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filter_group_name",
+      "label": "Show filter group name on applied filters",
+      "info": "When enabled, applied filter chips show the group label (e.g. Color: Black).",
+      "default": false
     },
     {
       "type": "checkbox",

@@ -53,6 +53,11 @@ if (!customElements.get("slideshow-component")) {
       if (this.domNodes.pageCounter && sliderCounterCurrent) {
         sliderCounterCurrent.textContent = index + 1
       }
+
+      // Resume autoplay timer on manual slide click
+      if (this.slider && this.slider.options.autoPlay) {
+        this.slider.playPlayer();
+      }
       
       this.playVideo()
     }

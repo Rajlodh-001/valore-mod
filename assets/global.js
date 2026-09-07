@@ -421,7 +421,7 @@ function getCookie(cname) {
   return "";
 }
 
-function getSrcset(src, sizes = ["360", "533", "720", "940", "1066"]) {
+function getSrcset(src, sizes = ["533", "720", "940", "1200", "1500", "1800"]) {
   sizes = sizes.map((size) => {
     return `${getSizedImageUrl(src, size + "x")} ${size}w`;
   });

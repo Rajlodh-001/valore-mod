@@ -21,12 +21,17 @@ class PrestigeCollectionToolbar {
       this.sortPanel.hidden = expanded;
     });
 
-    document.addEventListener('click', (event) => {
+    this.onDocumentClick = (event) => {
+      if (!this.root.isConnected) {
+        document.removeEventListener('click', this.onDocumentClick);
+        return;
+      }
       if (!this.root.contains(event.target)) {
         this.sortToggle.setAttribute('aria-expanded', 'false');
         this.sortPanel.hidden = true;
       }
-    });
+    };
+    document.addEventListener('click', this.onDocumentClick);
 
     this.sortOptions.forEach((button) => {
       button.addEventListener('click', () => {
@@ -57,6 +62,7 @@ class PrestigeCollectionToolbar {
   }
 
   setDesktopColumns(columns) {
+    this.productGrid = document.querySelector('[data-products-grid]');
     if (!this.productGrid) return;
     this.productGrid.dataset.desktopColumns = columns;
     localStorage.setItem(this.storageKey, columns);
@@ -66,14 +72,21 @@ class PrestigeCollectionToolbar {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-prestige-collection-toolbar]').forEach((toolbar) => {
+function initPrestigeCollectionToolbars(scope) {
+  const root = scope || document;
+  root.querySelectorAll('[data-prestige-collection-toolbar]').forEach((toolbar) => {
+    if (toolbar.dataset.prestigeInit === 'true') return;
+    toolbar.dataset.prestigeInit = 'true';
     new PrestigeCollectionToolbar(toolbar);
   });
+}
+
+window.initPrestigeCollectionToolbars = initPrestigeCollectionToolbars;
+
+document.addEventListener('DOMContentLoaded', () => {
+  initPrestigeCollectionToolbars();
 });
 
 document.addEventListener('shopify:section:load', (event) => {
-  event.target.querySelectorAll('[data-prestige-collection-toolbar]').forEach((toolbar) => {
-    new PrestigeCollectionToolbar(toolbar);
-  });
+  initPrestigeCollectionToolbars(event.target);
 });
