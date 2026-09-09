@@ -283,13 +283,15 @@
   flex-direction: column;
   gap: 1.2rem;
   width: 100%;
+  max-width: 38rem;
 }
 
 .template-product .valore-pdp-info .cart-bar {
   display: flex;
   align-items: stretch;
   width: 100%;
-  height: 5.8rem;
+  height: 4.2rem !important;
+  min-height: 4.2rem !important;
   border: 1px solid #12171a;
   background: transparent;
   overflow: hidden;
@@ -298,7 +300,7 @@
 .template-product .valore-pdp-info .cart-bar .qty {
   display: flex;
   align-items: stretch;
-  width: 13.2rem;
+  width: 10.5rem;
   flex-shrink: 0;
   border-right: 1px solid #12171a;
 }
@@ -316,7 +318,7 @@
 }
 
 .template-product .valore-pdp-info .cart-bar .qty .f-quantity__button {
-  width: 4rem;
+  width: 3.2rem;
   min-height: 100%;
   height: auto;
   padding: 0;
@@ -367,6 +369,7 @@
   flex: 1 1 auto;
   min-width: 0;
   display: flex;
+  height: 100%;
 }
 
 .template-product .valore-pdp-info .cart-bar .add-cart.f-product-form__submit,
@@ -375,26 +378,34 @@
 .template-product .valore-pdp-info .cart-bar .add-cart.btn--secondary {
   flex: 1 1 auto;
   width: 100%;
-  height: 100%;
-  min-height: 100%;
+  height: 100% !important;
+  min-height: 100% !important;
   margin: 0;
   padding: 0 1.6rem;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #12171a !important;
-  color: #f6f5f1 !important;
+  --initial-gradient: linear-gradient(transparent, transparent);
+  --hover-gradient: linear-gradient(#12171a, #12171a);
+  --initial-background-position: left;
+  --hover-background-position: right;
+  background-color: transparent !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-size: 101% 101%, 0 101% !important;
+  background-position: var(--initial-background-position) !important;
+  background-repeat: no-repeat !important;
+  color: #12171a !important;
   box-shadow: none !important;
-  font-size: 1.35rem !important;
+  font-size: 1.2rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.06em !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  --color-btn-bg-hover: #000000;
-  --color-btn-text-hover: #f6f5f1;
-  --color-btn-before: transparent;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: background-size 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-position 0.45s step-end, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
 }
 
 .template-product .valore-pdp-info .cart-bar .add-cart.f-product-form__submit::before,
@@ -402,21 +413,31 @@
   display: none !important;
 }
 
-.template-product .valore-pdp-info .cart-bar .add-cart span {
-  color: #f6f5f1 !important;
+.template-product .valore-pdp-info .cart-bar .add-cart * {
+  color: inherit !important;
   position: relative;
   z-index: 1;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
 }
 
 .template-product .valore-pdp-info .cart-bar .add-cart:hover,
 .template-product .valore-pdp-info .cart-bar .add-cart:focus {
-  background: #000000 !important;
-  color: #f6f5f1 !important;
+  color: #ffffff !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
+}
+
+.template-product .valore-pdp-info .cart-bar .add-cart:hover *,
+.template-product .valore-pdp-info .cart-bar .add-cart:focus * {
+  color: #ffffff !important;
 }
 
 .template-product .valore-pdp-info .cart-bar .add-cart .arrow {
   display: inline-block;
-  transition: transform 0.15s ease;
+  color: inherit !important;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.15s ease, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
 }
 
 .template-product .valore-pdp-info .cart-bar .add-cart:hover .arrow {
@@ -433,27 +454,62 @@
 }
 
 .template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button,
-.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded {
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--hidden {
   width: 100% !important;
-  min-height: 5.8rem !important;
-  height: 5.8rem !important;
+  min-height: 4.2rem !important;
+  height: 4.2rem !important;
   margin: 0 !important;
   border: 1px solid #12171a !important;
   border-radius: 0 !important;
-  background: transparent !important;
-  color: #12171a !important;
+  --initial-gradient: linear-gradient(#12171a, #12171a);
+  --hover-gradient: linear-gradient(transparent, transparent);
+  --initial-background-position: left;
+  --hover-background-position: right;
+  background-color: transparent !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-size: 101% 101%, 0 101% !important;
+  background-position: var(--initial-background-position) !important;
+  background-repeat: no-repeat !important;
+  color: #ffffff !important;
   box-shadow: none !important;
-  font-size: 1.35rem !important;
+  font-size: 1.2rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.06em !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: background-size 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-position 0.45s step-end, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border-color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+}
+
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button *,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded * {
+  color: inherit !important;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+}
+
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button::before,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button::after,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded::before,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded::after {
+  display: none !important;
 }
 
 .template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button:hover,
-.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded:hover {
-  background: #12171a !important;
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded:hover,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button:focus,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded:focus {
+  color: #12171a !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
   border-color: #12171a !important;
-  color: #f6f5f1 !important;
+}
+
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button:hover *,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded:hover *,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button:focus *,
+.template-product .valore-pdp-info .buy-now-wrap .shopify-payment-button__button--unbranded:focus * {
+  color: #12171a !important;
 }
 
 @media (max-width: 479.98px) {

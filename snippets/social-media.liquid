@@ -5,7 +5,10 @@
 {%- enddoc -%}
 
 {%- capture social_media -%}
-  {%- assign facebook_url = settings.social_facebook | default: shop.brand.metafields.social_links.facebook | default: 'https://www.facebook.com/profile.php?id=61571476015562' -%}
+  {%- assign facebook_url = settings.social_facebook -%}
+  {%- if facebook_url == blank -%}
+    {%- assign facebook_url = 'https://www.facebook.com/profile.php?id=61571476015562' -%}
+  {%- endif -%}
   {%- if facebook_url != blank -%}
     <li class="social-media__item branding-colors--facebook">
       <a href="{{ facebook_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="Facebook">
@@ -14,7 +17,7 @@
     </li>
   {%- endif -%}
 
-  {%- assign twitter_url = settings.social_twitter | default: shop.brand.metafields.social_links.twitter -%}
+  {%- assign twitter_url = settings.social_twitter -%}
   {%- if twitter_url != blank -%}
     <li class="social-media__item branding-colors--twitter">
       <a href="{{ twitter_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="Twitter">
@@ -23,7 +26,10 @@
     </li>
   {%- endif -%}
 
-  {%- assign instagram_url = settings.social_instagram | default: shop.brand.metafields.social_links.instagram | default: 'https://www.instagram.com/valoreaoe/' -%}
+  {%- assign instagram_url = settings.social_instagram -%}
+  {%- if instagram_url == blank -%}
+    {%- assign instagram_url = 'https://www.instagram.com/valoreaoe/' -%}
+  {%- endif -%}
   {%- if instagram_url != blank -%}
     <li class="social-media__item branding-colors--instagram">
       <a href="{{ instagram_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="Instagram">
@@ -32,7 +38,10 @@
     </li>
   {%- endif -%}
 
-  {%- assign youtube_url = settings.social_youtube | default: shop.brand.metafields.social_links.youtube | default: 'https://www.youtube.com/@valoreaoe/' -%}
+  {%- assign youtube_url = settings.social_youtube -%}
+  {%- if youtube_url == blank -%}
+    {%- assign youtube_url = 'https://www.youtube.com/@valoreaoe/' -%}
+  {%- endif -%}
   {%- if youtube_url != blank -%}
     <li class="social-media__item branding-colors--youtube">
       <a href="{{ youtube_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="YouTube">
@@ -41,7 +50,16 @@
     </li>
   {%- endif -%}
 
-  {%- assign vimeo_url = settings.social_vimeo | default: shop.brand.metafields.social_links.vimeo -%}
+  {%- assign tiktok_url = settings.social_tiktok -%}
+  {%- if tiktok_url != blank -%}
+    <li class="social-media__item branding-colors--tiktok">
+      <a href="{{ tiktok_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="TikTok">
+        {%- render 'icon' with 'tiktok' -%}
+      </a>
+    </li>
+  {%- endif -%}
+
+  {%- assign vimeo_url = settings.social_vimeo -%}
   {%- if vimeo_url != blank -%}
     <li class="social-media__item branding-colors--vimeo">
       <a href="{{ vimeo_url }}" class="tap-area" target="_blank" rel="noopener" aria-label="Vimeo">

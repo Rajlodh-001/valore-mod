@@ -1457,5 +1457,65 @@
         "default": "inverse"
       }
     ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social Accounts"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter",
+        "label": "X (formerly Twitter)"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
+      },
+      {
+        "type": "url",
+        "id": "social_pinterest",
+        "label": "Pinterest"
+      },
+      {
+        "type": "url",
+        "id": "social_vimeo",
+        "label": "Vimeo"
+      },
+      {
+        "type": "url",
+        "id": "social_whatsapp",
+        "label": "WhatsApp"
+      },
+      {
+        "type": "url",
+        "id": "social_linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "url",
+        "id": "social_threads",
+        "label": "Threads"
+      }
+    ]
   }
 ]
+

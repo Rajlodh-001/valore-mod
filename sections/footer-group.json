@@ -9,32 +9,32 @@
           "type": "item",
           "settings": {
             "icon": "picto-delivery-truck",
-            "title": "EXPRESS DELIVERY",
-            "content": "<p>DHL express delivery worldwide</p>"
+            "title": "FREE SHIPPING",
+            "content": "<p>Exclusive deal on orders $180+</p>"
           }
         },
         "icon-2": {
           "type": "item",
           "settings": {
             "icon": "picto-return",
-            "title": "FREE RETURNS",
-            "content": "<p>Free return for 30 days for any order delivered in France</p>"
+            "title": "EASY REFUND",
+            "content": "<p>Within 30 days of purchase</p>"
           }
         },
         "icon-3": {
           "type": "item",
           "settings": {
             "icon": "picto-customer-support",
-            "title": "AVAILABLE CUSTOMER SERVICE",
-            "content": "<p>Available via Whatsapp on +33123456789</p>"
+            "title": "ONLINE SUPPORT",
+            "content": "<p>24 hours a day, 7 days a week</p>"
           }
         },
         "icon-4": {
           "type": "item",
           "settings": {
             "icon": "picto-credit-card",
-            "title": "PAYMENT IN 3X",
-            "content": "<p>Take advantage of a payment in 3x without fees from $100 of purchase</p>"
+            "title": "FLEXIBLE PAYMENT",
+            "content": "<p>Paypal</p>"
           }
         }
       },

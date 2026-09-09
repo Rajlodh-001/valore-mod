@@ -24,8 +24,7 @@
                   {{- block.settings.custom_icon | image_url: width: block.settings.custom_icon.width | image_tag: loading: loading_strategy, sizes: sizes, widths: widths, class: 'constrained-image', style: style -}}
                 {%- else -%}
                   <div style="{% render 'surface', text_color: section.settings.icon_color %}">
-                    {%- render 'icon' with block.settings.icon, width: block.settings.mobile_icon_width, class: 'sm:hidden' -%}
-                    {%- render 'icon' with block.settings.icon, width: block.settings.icon_width, class: 'hidden sm:block' -%}
+                    {%- render 'icon' with block.settings.icon, width: block.settings.icon_width -%}
                   </div>
                 {%- endif -%}
 

@@ -20,6 +20,7 @@ if (!customElements.get('sticky-atc-bar')) {
 				const selectedVariantId = this.querySelector(this.selectors.variantIdSelect).value
 				this.currentVariant = this.variantData.find(variant => variant.id === Number(selectedVariantId))
 				this.updatePrice()
+				this.updateImage()
 				this.updateButton(true, '', false)
 				if (!this.currentVariant) {
 					this.updateButton(true, '', true)
@@ -27,6 +28,36 @@ if (!customElements.get('sticky-atc-bar')) {
 					this.updateButton(!this.currentVariant.available, window.FoxThemeStrings.soldOut)
 				}
 			})
+		}
+
+		updateImage() {
+			if (!this.currentVariant) return
+			const imgEl = this.querySelector('.sticky-atc-bar__product-image img')
+			if (!imgEl) return
+
+			let src = null
+			let alt = null
+
+			if (this.currentVariant.featured_image) {
+				if (typeof this.currentVariant.featured_image === 'string') {
+					src = this.currentVariant.featured_image
+				} else if (this.currentVariant.featured_image.src) {
+					src = this.currentVariant.featured_image.src
+					alt = this.currentVariant.featured_image.alt
+				}
+			} else if (this.currentVariant.featured_media) {
+				if (this.currentVariant.featured_media.src) {
+					src = this.currentVariant.featured_media.src
+				} else if (this.currentVariant.featured_media.preview_image && this.currentVariant.featured_media.preview_image.src) {
+					src = this.currentVariant.featured_media.preview_image.src
+				}
+			}
+
+			if (src) {
+				imgEl.removeAttribute('srcset')
+				imgEl.src = src
+				if (alt) imgEl.alt = alt
+			}
 		}
 
 		getVariantData() {
@@ -159,6 +190,7 @@ if (!customElements.get('sticky-atc-bar')) {
 				this.currentVariant = variant
 				variantInput.value = variant.id
 				this.updatePrice()
+				this.updateImage()
 				this.updateButton(true, '', false)
 				if (!variant) {
 					this.updateButton(true, '', true)
