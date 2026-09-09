@@ -1,4 +1,4 @@
-{% if section_settings.heading != blank or section_settings.description != blank %}
+{% if section_settings.heading != blank or section_settings.description != blank or section_settings.subheading != blank %}
   {% liquid
     if header_alignment == blank
       assign header_alignment = settings.section_header_alignment

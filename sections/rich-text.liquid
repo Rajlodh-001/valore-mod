@@ -28,6 +28,32 @@
       <div class="rich-text__content f-text-blocks text-{{ section.settings.text_alignment }}">
         {%- for block in section.blocks -%}
           {% case block.type %}
+            {%- when 'image' -%}
+              <div
+                class="rich-text__image flex justify-center mb-10 pb-4{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                {% if animated %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.image != blank %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 300
+                    | image_tag: loading: 'lazy', class: 'h-auto max-w-full'
+                  }}
+                {% else %}
+                  <img
+                    src="{{ 'cycle-icon.svg' | asset_url }}"
+                    alt="Valore Cycle Icon"
+                    width="140"
+                    height="78"
+                    class="h-auto max-w-full"
+                    style="max-height: 80px; width: 140px; margin-bottom: 35px;"
+                  />
+                {% endif %}
+              </div>
             {%- when 'heading' -%}
               <h2
                 class="rich-text__heading {{ block.settings.heading_size }}{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}"
@@ -376,6 +402,17 @@
             }
           ],
           "default": ""
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image / Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }

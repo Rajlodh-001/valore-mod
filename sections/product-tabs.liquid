@@ -106,7 +106,7 @@
                     <div class="f-tabs__content" id="tab-{{ block.id }}" data-index="{{ forloop.index0 }}" role="tabpanel"{% unless forloop.first %} hidden{% endunless %} {{ block.shopify_attributes }}>
                         <flickity-component 
                           class="f-grid f-grid-{{ section.settings.column_mobile }}-cols md:f-grid-{{ medium_cols }}-cols xl:f-grid-{{ columns }}-cols f-grid--row-gap-{{ section.settings.row_gap }} f-grid--gap-{{ section.settings.column_gap }} flickity-disable{% if enable_slider %} md:flickity-enable{% endif %}{% if enable_swipe_mobile %} f-swiper f-swiper--no-scrollbar f-swiper--{{ section.settings.column_mobile }}-cols{% endif %}" 
-                          data-slider-options='{"pageDots": {{ show_dots }}, "prevNextButtons": {{ show_nav }}, "groupCells": {{ columns }}, "cellSelector": ".f-column", "wrapAround": true}'
+                          data-slider-options='{"pageDots": {{ show_dots }}, "prevNextButtons": {{ show_nav }}, "freeScroll": true, "contain": true, "cellAlign": "left", "wrapAround": false, "draggable": true, "cellSelector": ".f-column"}'
                           data-slider-columns="{{ columns }}"
                           data-enable-slider="{{ enable_slider }}"
                           data-calc-button-position="true"
@@ -124,9 +124,10 @@
                                 {% endfor %}
                             {% endfor %}
                         </flickity-component>
-                        {% if section.settings.button_label != blank %}
+                        {% assign btn_text = block.settings.button_label | default: section.settings.button_label %}
+                        {% if btn_text != blank %}
                         <div class="f-tabs__view-all flex items-center justify-center">
-                          <a href="{{ collection.url }}" class="btn {{ section.settings.button_style }}">{{ section.settings.button_label }}</a>
+                          <a href="{{ collection.url }}" class="btn {{ section.settings.button_style }}">{{ btn_text }}</a>
                         </div>
                         {% endif %}
                     </div>
@@ -204,6 +205,11 @@
         }
       ],
       "default": "vertical"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.common.header.subheading"
     },
     {
       "type": "text",
@@ -530,6 +536,11 @@
           "type": "collection",
           "label": "t:sections.product-tabs.blocks.tab.settings.collection.label",
           "id": "collection"
+        },
+        {
+          "type": "text",
+          "label": "Button label",
+          "id": "button_label"
         }
       ]
     }

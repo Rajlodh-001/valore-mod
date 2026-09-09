@@ -50,12 +50,22 @@
         }}
       </div>
     {% else %}
-      {% liquid
-        capture current
-          cycle 1, 2, 3, 4, 5, 6
-        endcapture
-      %}
-      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      {% capture homepage_lookbook_cover %}
+        {% render 'homepage-media-fallback', id: block.id, kind: 'image', alt: section.settings.heading, class: 'w-full h-full object-cover block' %}
+      {% endcapture %}
+      {% assign homepage_lookbook_cover = homepage_lookbook_cover | strip %}
+      {% if homepage_lookbook_cover != blank %}
+        <div class="f-image" style="--aspect-ratio: {{ image_aspect_ratio }};">
+          {{ homepage_lookbook_cover }}
+        </div>
+      {% else %}
+        {% liquid
+          capture current
+            cycle 1, 2, 3, 4, 5, 6
+          endcapture
+        %}
+        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
     {% endif %}
 
     {% liquid

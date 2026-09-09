@@ -610,9 +610,7 @@ class SliderComponent extends HTMLElement {
   connectedCallback() {
     const { sliderColumns, enableSlider } = this.dataset;
     if (enableSlider !== "true") return;
-    if (this.classList.contains("f-recently-viewed-flickity")) {
-      this.initSlider();
-    } else if (this.childElementCount > parseInt(sliderColumns)) {
+    if (this.classList.contains("f-recently-viewed-flickity") || this.childElementCount > 1) {
       this.initSlider();
     } else if (this.childElementCount <= parseInt(sliderColumns)) {
       // Fix slider hidden.

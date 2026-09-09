@@ -110,35 +110,6 @@
       }
     },
     "content_for_index": [],
-    "blocks": {
-      "776302416715791028": {
-        "type": "shopify://apps/bucks/blocks/app-embed/4f0a9b06-9da4-4a49-b378-2de9d23a3af3",
-        "disabled": false,
-        "settings": {}
-      },
-      "8856629154746250496": {
-        "type": "shopify://apps/foxify-page-builder/blocks/app-embed/4e19e422-f550-4994-9ea0-84f23728223d",
-        "disabled": false,
-        "settings": {}
-      },
-      "13766566558402285670": {
-        "type": "shopify://apps/doran-product-reviews/blocks/app-embed/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
-        "disabled": false,
-        "settings": {
-          "isJSONLD": true,
-          "isPopup": false,
-          "isPop": false,
-          "customCSS": "",
-          "is_use_shopify_font": false,
-          "pop_shopify_font": "helvetica_n4"
-        }
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      }
-    },
     "color_schemes": {
       "background-1": {
         "settings": {

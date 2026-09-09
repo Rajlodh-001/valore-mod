@@ -20,7 +20,7 @@
 <div
   id="{{ section_id }}"
   class="f-scrolling-promotion__wrapper f-section-padding color-{{ section.settings.color_schema }}{{ custom_class }}"
-  style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px; overflow: hidden !important; width: 100% !important;"
 >
   <div class="{{ container }}">
     {% render 'index-section-header',
@@ -74,9 +74,19 @@
                     >
                   </div>
                 {% else %}
-                  <svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.3 158.3">
-                    <path d="M50.7 83.8H43v-17c0-.3-.3-.6-.6-.6h-2.8c-.3 0-.6.3-.6.6v20.1c0 .3.2.6.6.6h11.1c.3 0 .6-.3.6-.6v-2.5c-.1-.4-.3-.6-.6-.6zm12.7-17.9c-6.1 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.9 10.9 10.9 6.1 0 10.9-4.8 10.9-10.9 0-6-4.8-10.9-10.9-10.9zm0 17.9c-3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-7 6.9-7s7 3.2 7 7c0 3.7-3.2 6.9-7 6.9zm31.7-6.9h-5.8c-.3 0-.6.2-.6.6v2.4c0 .3.2.5.6.5h2.4V83c-.6.2-1.9.8-3.6.8-3.8 0-6.8-3.2-6.8-6.9 0-3.8 3-7 6.8-7 1.7 0 3.3.6 4.6 1.8.3.2.5.2.8 0l1.9-2c.2-.2.2-.6 0-.8-2.1-1.8-4.7-2.8-7.4-2.8-6 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.8 10.9 10.8 4.4 0 7.5-2 7.5-2 .1-.1.2-.2.2-.5v-7.8c-.1-.3-.3-.6-.6-.6zm14.5-11c-6.1 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.9 10.9 10.9 6.1 0 10.9-4.8 10.9-10.9 0-6-4.8-10.9-10.9-10.9zm0 17.9c-3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-7 6.9-7s7 3.2 7 7c0 3.7-3.2 6.9-7 6.9z"></path>
-                  </svg>
+                  {% capture homepage_fallback %}
+                    {% render 'homepage-media-fallback', id: block.id, kind: 'image', alt: shop.name, class: 'w-full h-full object-cover', loading: 'lazy' %}
+                  {% endcapture %}
+                  {% assign homepage_fallback = homepage_fallback | strip %}
+                  {% if homepage_fallback != blank %}
+                    <div class="f-image" style="width: calc(var(--image-height, 45px) * 1.3); height: var(--image-height, 45px); border-radius: 0px; overflow: hidden; display: inline-block;">
+                      {{ homepage_fallback }}
+                    </div>
+                  {% else %}
+                    <svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.3 158.3">
+                      <path d="M50.7 83.8H43v-17c0-.3-.3-.6-.6-.6h-2.8c-.3 0-.6.3-.6.6v20.1c0 .3.2.6.6.6h11.1c.3 0 .6-.3.6-.6v-2.5c-.1-.4-.3-.6-.6-.6zm12.7-17.9c-6.1 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.9 10.9 10.9 6.1 0 10.9-4.8 10.9-10.9 0-6-4.8-10.9-10.9-10.9zm0 17.9c-3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-7 6.9-7s7 3.2 7 7c0 3.7-3.2 6.9-7 6.9zm31.7-6.9h-5.8c-.3 0-.6.2-.6.6v2.4c0 .3.2.5.6.5h2.4V83c-.6.2-1.9.8-3.6.8-3.8 0-6.8-3.2-6.8-6.9 0-3.8 3-7 6.8-7 1.7 0 3.3.6 4.6 1.8.3.2.5.2.8 0l1.9-2c.2-.2.2-.6 0-.8-2.1-1.8-4.7-2.8-7.4-2.8-6 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.8 10.9 10.8 4.4 0 7.5-2 7.5-2 .1-.1.2-.2.2-.5v-7.8c-.1-.3-.3-.6-.6-.6zm14.5-11c-6.1 0-10.9 4.9-10.9 10.9 0 6.1 4.8 10.9 10.9 10.9 6.1 0 10.9-4.8 10.9-10.9 0-6-4.8-10.9-10.9-10.9zm0 17.9c-3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-7 6.9-7s7 3.2 7 7c0 3.7-3.2 6.9-7 6.9z"></path>
+                    </svg>
+                  {% endif %}
                 {% endif %}
                 {% if block.settings.image_link != blank %}</a>{% endif %}
               </div>

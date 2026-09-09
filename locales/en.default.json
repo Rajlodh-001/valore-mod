@@ -40,6 +40,23 @@
         "spotify": "Spotify"
       }
     },
+    "newsletter": {
+      "email": "E-mail",
+      "subscribe": "Subscribe",
+      "notify_me": "Notify me",
+      "subscribed_successfully": "You have been subscribed to our newsletter."
+    },
+    "localization": {
+      "country": "Country",
+      "language": "Language",
+      "change_country_accessibility_text": "Change country or currency",
+      "change_language_accessibility_text": "Change language"
+    },
+    "accessibility": {
+      "item_nth_of_count": "Item {{ index }} of {{ count }}",
+      "go_to_item": "Go to item {{ index }}",
+      "skip_to_content": "Skip to content"
+    },
     "continue_shopping": "Continue shopping",
     "back_to_home": "Back to Home page",
     "pagination": {

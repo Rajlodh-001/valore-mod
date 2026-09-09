@@ -6,19 +6,6 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- *
- * DEV STORE TEMP FIX:
- * shopify_video is empty here so this store can upload/preview.
- * Origin files are in theme assets as local fallbacks.
- *
- * RESTORE on original store:
- *   Copy _theme-backups/valore-modify/index.json.original over this file.
- *   That restores:
- *   - slideshow_CH788z > video_W9K8bm > shopify_video:
- *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
- *   - video_hero section > shopify_video:
- *     "shopify://files/videos/26ss-horizontal-version-usa-outdoor-video.mp4"
- * ------------------------------------------------------------
  */
 {
   "sections": {
@@ -28,15 +15,15 @@
         "slide_1_hero": {
           "type": "video",
           "settings": {
-            "shopify_video": "",
+            "shopify_video": "shopify://files/videos/Website Hero Video.mp4",
             "video_alt_text": "Valore AOE",
-            "image_overlay_opacity": 15,
+            "image_overlay_opacity": 20,
             "content_position": "center-center",
             "text_alignment": "center",
             "text_color": "#ffffff",
             "title": "BEAUTIES",
             "heading_size": "h-xl",
-            "subheading": "NEW COLLECTION",
+            "subheading": "Valore",
             "description": "",
             "desc_size": "text-desc-base",
             "button_text_1": "WOMEN",
@@ -52,9 +39,8 @@
         "slide_2_hero": {
           "type": "slide",
           "settings": {
-            "background": "shopify://shop_images/20260415-valore-banner-cinetico-2560-x-1200-2.jpg",
-            "mb_background": "shopify://shop_images/20260415-valore-banner-cinetico-1200-x-960-2.jpg",
-            "image_overlay_opacity": 15,
+            "background": "shopify://shop_images/20260208_0893_1_1.jpg",
+            "image_overlay_opacity": 20,
             "content_position": "center-center",
             "text_alignment": "center",
             "text_color": "#ffffff",
@@ -76,9 +62,8 @@
         "slide_3_hero": {
           "type": "slide",
           "settings": {
-            "background": "shopify://shop_images/20260415-valore-banner-cinetico-2560-x-1200-1.jpg",
-            "mb_background": "shopify://shop_images/20260415-valore-banner-cinetico-1200-x-960-3.jpg",
-            "image_overlay_opacity": 15,
+            "background": "shopify://shop_images/VALORE2025FW_1049.jpg",
+            "image_overlay_opacity": 20,
             "content_position": "center-center",
             "text_alignment": "center",
             "text_color": "#ffffff",
@@ -94,8 +79,7 @@
             "button_text_2": "",
             "button_link_2": "",
             "button_style_2": "btn--primary",
-            "button_size_2": "",
-            "enable_frame": true
+            "button_size_2": ""
           }
         }
       },
@@ -122,81 +106,162 @@
         "enable_bg_zoom_effect": false
       }
     },
-    "rich_text_xKNFpm": {
+    "product_tabs_best_sellers": {
+      "type": "product-tabs",
+      "blocks": {
+        "tab_spring_summer": {
+          "type": "tab",
+          "settings": {
+            "title": "Spring / Summer",
+            "collection": "spring-summer-made-to-move",
+            "button_label": "VIEW SPRING COLLECTION"
+          }
+        },
+        "tab_autumn_winter": {
+          "type": "tab",
+          "settings": {
+            "title": "Autumn / Winter",
+            "collection": "cycling-jersey-mens",
+            "button_label": "VIEW AUTUMN COLLECTION"
+          }
+        }
+      },
+      "block_order": [
+        "tab_spring_summer",
+        "tab_autumn_winter"
+      ],
+      "settings": {
+        "container": "container",
+        "color_schema": "background-1",
+        "layout": "vertical",
+        "subheading": "OUR BEST SELLERS",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "enable_slider": true,
+        "show_nav": true,
+        "show_dots": false,
+        "pcard_image_ratio": "adapt",
+        "show_vendor": false,
+        "button_label": "VIEW COLLECTION",
+        "button_style": "btn--primary",
+        "enable_swipe_mobile": true,
+        "column_mobile": "2",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "custom_id": "",
+        "custom_class": "best-sellers-product-tabs",
+        "animations": "inherit"
+      }
+    },
+    "hero_backpack": {
+      "type": "hero",
+      "blocks": {
+        "subheading_1": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "NEW PRODUCT"
+          }
+        },
+        "heading_1": {
+          "type": "title",
+          "settings": {
+            "title": "NUOVA LUNA WOMEN'S BIB SHORTS",
+            "heading_size": "h1"
+          }
+        },
+        "button_1": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP",
+            "button_link": "shopify://products/nuova-luna-womens-bib-shorts-cocoa-brown",
+            "button_style": "btn--white",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_1",
+        "heading_1",
+        "button_1"
+      ],
+      "settings": {
+        "container": "container-full",
+        "image_overlay_opacity": 20,
+        "hero_height": "medium",
+        "content_in_container": false,
+        "content_position": "left-bottom",
+        "text_alignment": "left",
+        "text_color": "#ffffff",
+        "hero_height_mobile": "medium",
+        "content_position_mobile": "left-bottom",
+        "show_text_below": false,
+        "text_alignment_mobile": "left",
+        "custom_id": "",
+        "custom_class": "prestige-hero-backpack",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "rich_text_aim": {
       "type": "rich-text",
       "blocks": {
-        "heading_Pi777C": {
+        "logo_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "heading_1": {
           "type": "heading",
           "settings": {
-            "heading": "Purpose in Motion",
-            "heading_size": "h1",
+            "heading": "OUR AIM: OFFER ELEGANT, TIMELESS & FUNCTIONAL PRODUCTS",
+            "heading_size": "h2",
             "highlight_style": "none",
             "enable_highlight_text_color": false
           }
         },
-        "subheading_pY6rdM": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Shop the collection built for balance, endurance, and everyday rides."
-          }
-        },
-        "text_FdFM7b": {
+        "text_1": {
           "type": "text",
           "settings": {
-            "text": "<p>Our cycling apparel is designed to move with you, combining comfort, detail, and lasting performance.</p><p>Whether it’s a winter climb or a summer spin, find your perfect kit.</p>"
-          }
-        },
-        "button_7JXxF9": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Explore Valore",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "btn--primary",
-            "button_size": ""
+            "text": "<p><a href=\"/pages/about-us\" title=\"Our story\"><u>Our story</u></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"/blogs/news\" title=\"Community\"><u>Community</u></a></p>"
           }
         }
       },
       "block_order": [
-        "heading_Pi777C",
-        "subheading_pY6rdM",
-        "text_FdFM7b",
-        "button_7JXxF9"
+        "logo_1",
+        "heading_1",
+        "text_1"
       ],
-      "custom_css": [
-        "h4.h6 {margin-top: 10px;}",
-        ".rich-text__text.mega-description.rte.f-scroll-trigger.animate--fade-in-up {margin-top: 15px;}",
-        ".rte > p:first-child {margin-bottom: 10px;}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "container": "container",
-        "color_schema": "",
-        "text_alignment": "left",
-        "padding_top": 72,
+        "color_schema": "background-1",
+        "text_alignment": "center",
+        "padding_top": 80,
         "padding_bottom": 40,
         "custom_id": "",
-        "custom_class": "",
+        "custom_class": "prestige-rich-text-aim",
         "animations": "inherit"
       }
     },
-    "custom_content_8eV7qg": {
+    "custom_content_aim_grid": {
       "type": "custom-content",
       "blocks": {
-        "image_card_aXahJJ": {
+        "image_card_women": {
           "type": "image_card",
           "settings": {
             "layout": "layout1",
             "text_color": "#ffffff",
-            "image": "shopify://shop_images/20240823_5607_1.png",
-            "image_ratio": "4/5",
-            "image_overlay_opacity": 20,
-            "sub_heading": "NEW ARRIVALS",
-            "heading": "WOMEN",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "sub_heading": "",
+            "heading": "JERSEYS",
             "heading_size": "h1",
-            "description": "<p>Performance cycling apparel engineered for women.</p>",
-            "button_label": "Explore Collection",
-            "button_link": "shopify://collections/cycling-jersey-women",
+            "description": "",
+            "button_label": "",
+            "button_link": "shopify://collections/jerseys",
             "button_style": "btn--white",
             "vertical_content_padding": 40,
             "vertical_content_padding_mobile": 40,
@@ -205,20 +270,40 @@
             "animations": "inherit"
           }
         },
-        "image_card_WdBcAb": {
+        "image_card_men": {
           "type": "image_card",
           "settings": {
             "layout": "layout1",
             "text_color": "#ffffff",
-            "image": "shopify://shop_images/mens-25328.jpg",
-            "image_ratio": "4/5",
-            "image_overlay_opacity": 20,
-            "sub_heading": "NEW ARRIVALS",
-            "heading": "MEN",
-            "heading_size": "h1",
-            "description": "<p>Precision engineering and endurance kit for men.</p>",
-            "button_label": "Explore Collection",
-            "button_link": "shopify://collections/cycling-jersey-mens",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "sub_heading": "",
+            "heading": "BIB SHORTS",
+            "heading_size": "h2",
+            "description": "",
+            "button_label": "",
+            "button_link": "shopify://collections/mens-cycling-bib-shorts",
+            "button_style": "btn--white",
+            "vertical_content_padding": 40,
+            "vertical_content_padding_mobile": 40,
+            "alignment": "center",
+            "width": "50%",
+            "animations": "inherit"
+          }
+        },
+        "image_card_accessories": {
+          "type": "image_card",
+          "settings": {
+            "layout": "layout1",
+            "text_color": "#ffffff",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "sub_heading": "",
+            "heading": "ACCESSORIES",
+            "heading_size": "h2",
+            "description": "",
+            "button_label": "",
+            "button_link": "shopify://collections/accessories",
             "button_style": "btn--white",
             "vertical_content_padding": 40,
             "vertical_content_padding_mobile": 40,
@@ -229,8 +314,9 @@
         }
       },
       "block_order": [
-        "image_card_aXahJJ",
-        "image_card_WdBcAb"
+        "image_card_women",
+        "image_card_men",
+        "image_card_accessories"
       ],
       "settings": {
         "container": "container",
@@ -242,9 +328,322 @@
         "column_gap": "medium",
         "row_gap": "medium",
         "padding_top": 0,
-        "padding_bottom": 40,
+        "padding_bottom": 80,
         "custom_id": "",
-        "custom_class": ""
+        "custom_class": "prestige-aim-grid"
+      }
+    },
+    "scrolling_promotion_marquee_1": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "text_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "NEW: BIB SHORTS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_1": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "text_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "NEW: JERSEYS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_2": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "text_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "NEW: BIB SHORTS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_3": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "scrolling_image_1",
+        "text_2",
+        "scrolling_image_2",
+        "text_3",
+        "scrolling_image_3"
+      ],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "background-1",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "alignment": "center",
+        "direction": "left",
+        "pause_on_hover": false,
+        "speed": 0.2,
+        "item_gap": 50,
+        "item_gap_mobile": 24,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "custom_id": "",
+        "custom_class": "prestige-marquee-top"
+      }
+    },
+    "scrolling_promotion_marquee_2": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "text_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "SHOP NEW ARRIVALS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_4": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "text_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "SHOP NEW ARRIVALS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_5": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "text_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "SHOP NEW ARRIVALS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_6": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "scrolling_image_4",
+        "text_2",
+        "scrolling_image_5",
+        "text_3",
+        "scrolling_image_6"
+      ],
+      "settings": {
+        "container": "container-full",
+        "color_schema": "background-1",
+        "section_header_padding_bottom": "medium",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "alignment": "center",
+        "direction": "right",
+        "pause_on_hover": false,
+        "speed": 0.2,
+        "item_gap": 50,
+        "item_gap_mobile": 24,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "custom_id": "",
+        "custom_class": "prestige-marquee-bottom"
+      }
+    },
+    "video_W9K8bm": {
+      "type": "video",
+      "settings": {
+        "container": "container-full",
+        "section_header_padding_bottom": "medium",
+        "heading": "FINEST HANDMADE",
+        "heading_size": "h1",
+        "description": "",
+        "video_type": "shopify",
+        "video_url": "",
+        "video_ratio": "16:9",
+        "autoplay_video": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": "prestige-video-section",
+        "animations": "inherit"
+      }
+    },
+    "lookbook_kEcaGH": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look-1": {
+          "type": "look",
+          "settings": {
+            "hot_spots_background": "#ffffff",
+            "product_1": "valore-long-sleeve-jersey-sunae-laurel-green",
+            "product_1_horizontal_position": 56,
+            "product_1_vertical_position": 38,
+            "product_2": "valore-monton-mens-bib-shorts-nuova-luna-medium-gray",
+            "product_2_horizontal_position": 45,
+            "product_2_vertical_position": 58
+          }
+        },
+        "look-2": {
+          "type": "look",
+          "settings": {
+            "hot_spots_background": "#ffffff",
+            "product_1": "fingerless-gloves-era-light-gray",
+            "product_1_horizontal_position": 40,
+            "product_1_vertical_position": 40,
+            "product_2": "valore-monton-cycling-socks-era-light-gray",
+            "product_2_horizontal_position": 60,
+            "product_2_vertical_position": 75
+          }
+        }
+      },
+      "block_order": [
+        "look-1",
+        "look-2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "subheading": "SHOP",
+        "title": "OUR LOOKS",
+        "popover_title": "Shop the look"
+      }
+    },
+    "before_after_compare": {
+      "type": "before-after",
+      "blocks": {
+        "before-1": {
+          "type": "before",
+          "settings": {
+            "product": "valore-long-sleeve-jersey-sunae-laurel-green",
+            "text": "ALMOND GREEN LIÉGÉ",
+            "link_text": "View product",
+            "link_url": ""
+          }
+        },
+        "after-1": {
+          "type": "after",
+          "settings": {
+            "product": "valore-monton-mens-bib-shorts-nuova-luna-medium-gray",
+            "text": "BLUE DENIM LIÉGÉ",
+            "link_text": "View product",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "before-1",
+        "after-1"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "subheading": "LE DALIA",
+        "title": "CHOOSE YOUR COLOUR",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
       }
     },
     "1762786887d266c8a6": {
@@ -342,7 +741,6 @@
       "settings": {
         "container": "container-full",
         "video_type": "shopify",
-        "shopify_video": "",
         "video_url": "",
         "image_overlay_opacity": 40,
         "hero_height": "large",
@@ -393,7 +791,6 @@
       "name": "t:sections.hero.presets.name",
       "settings": {
         "container": "container-full",
-        "image": "shopify://shop_images/Valore_1.png",
         "image_overlay_opacity": 40,
         "hero_height": "medium",
         "content_in_container": false,
@@ -460,7 +857,6 @@
       "name": "t:sections.hero.presets.name",
       "settings": {
         "container": "container-full",
-        "image": "shopify://shop_images/Valore_1_1.png",
         "image_overlay_opacity": 0,
         "hero_height": "adapt",
         "content_in_container": false,
@@ -519,14 +915,16 @@
           "type": "tab",
           "settings": {
             "title": "New Arrivals",
-            "collection": "new-arrivals"
+            "collection": "new-arrivals",
+            "button_label": ""
           }
         },
         "tab_T8dWD3": {
           "type": "tab",
           "settings": {
             "title": "Jerseys",
-            "collection": "cycling-jersey-mens"
+            "collection": "cycling-jersey-mens",
+            "button_label": ""
           }
         }
       },
@@ -539,6 +937,7 @@
         "container": "container",
         "color_schema": "background-2",
         "layout": "horizontal",
+        "subheading": "",
         "heading": "Our Products",
         "heading_size": "h2",
         "description": "<p><br/>Elevated essentials, crafted for every ride.<br/><br/></p>",
@@ -603,7 +1002,6 @@
           "type": "collection",
           "settings": {
             "collection": "cycling-jersey-mens",
-            "image": "shopify://shop_images/create-for-style.jpg",
             "heading": "",
             "heading_size": "h4",
             "text": ""
@@ -613,7 +1011,6 @@
           "type": "collection",
           "settings": {
             "collection": "mens-cycling-bib-shorts",
-            "image": "shopify://shop_images/cycling-bib-shorts-men.jpg",
             "heading": "",
             "heading_size": "h4",
             "text": ""
@@ -623,7 +1020,6 @@
           "type": "collection",
           "settings": {
             "collection": "cycling-socks",
-            "image": "shopify://shop_images/2024010600658.jpg",
             "heading": "",
             "heading_size": "h4",
             "text": ""
@@ -742,8 +1138,6 @@
       "disabled": true,
       "settings": {
         "container": "container-full",
-        "image": "shopify://shop_images/2025-410-banner-3.jpg",
-        "image_mobile": "shopify://shop_images/2025-410-banner-3-vertical.jpg",
         "image_overlay_opacity": 40,
         "hero_height": "large",
         "content_in_container": false,
@@ -839,7 +1233,6 @@
             "text": "<p>The design is very attractive. Few brands offer varied colors with innovative designs. Perfect freedom of movement, no tension from the jersey. The new bib shorts fit very well. The strap length is perfect, and there is no particular pressure felt. The padding is very comfortable and of good quality, no complaints. We don't know any brand in Europe with a quality/price ratio like yours. You are unbeatable in this area. </p>",
             "author": "Virginie",
             "product": "valore-long-sleeve-jersey-sunae-light-pink",
-            "image": "shopify://shop_images/1-virginie.jpg",
             "icon": "5-stars"
           }
         },
@@ -849,7 +1242,6 @@
             "text": "<p>The apparel is sleek, functional, and perfectly suited for the demands of Morocco's rugged landscapes. The lightweight, breathable jersey allows for optimal airflow, keeping the rider cool and comfortable even during intense rides under the sun. Meanwhile, the fitted bib shorts provide the necessary support and padding, ensuring comfort over long distances on uneven, rocky trails.</p>",
             "author": "Marouane",
             "product": "",
-            "image": "shopify://shop_images/2-marouane.jpg",
             "icon": "5-stars"
           }
         },
@@ -859,7 +1251,6 @@
             "text": "<p>Training 5 times a week and engaging in races require durable, high-performance gear. The jersey is crafted from breathable fabric, offering excellent moisture-wicking properties, critical for maintaining comfort during long, intense climbs, ideally suited for the challenging alpine climbs. For riders who are committed to pushing their limits and experiencing freedom through cycling, this kit is an excellent choice for challenging climbs like the Col du Galibier.</p>",
             "author": "Morel",
             "product": "",
-            "image": "shopify://shop_images/3-morel.jpg",
             "icon": "5-stars"
           }
         },
@@ -869,7 +1260,6 @@
             "text": "<p>This ultralight jersey is exactly what I need for my rides, especially during the hottest days. I've spent 8 years doing ultra-distance rides and bikepacking, and now that I'm preparing for triathlon races, having lightweight, breathable gear is crucial. <br/><br/>Plus, I love making cycling videos for my YouTube channel, and this kit is not only functional but also looks great on camera. It's a stylish addition to my rides.</p>",
             "author": "Özcan",
             "product": "",
-            "image": "shopify://shop_images/4-ozcan.jpg",
             "icon": "5-stars"
           }
         },
@@ -879,7 +1269,6 @@
             "text": "<p>I've been testing out this ultralight jersey on the roads around my hometown in Ontario, Canada, just east of Toronto. For me, there's nothing better than exploring new locations, especially when there's a great coffee stop mid-ride! This jersey has been a perfect companion on both my solo and social rides. Since I started road racing last year at 50, I've been looking for gear that helps me push out of my comfort zone, and this kit does just that.</p>",
             "author": "Kim",
             "product": "",
-            "image": "shopify://shop_images/5-kim.jpg",
             "icon": "5-stars"
           }
         },
@@ -889,7 +1278,6 @@
             "text": "<p>This weekend, I took it out for a spin in the Wichita Mountains in Oklahoma, and it was exactly what I needed for the ride. The weather was warm, and the sun was strong, but this kit kept me feeling cool and dry throughout. Whether climbing hills or coasting through beautiful wildflower fields, the Valore line offered both comfort and performance. I couldn't have asked for a better combination of function and style!</p>",
             "author": "Kristina",
             "product": "",
-            "image": "shopify://shop_images/6-kristina.jpg",
             "icon": "5-stars"
           }
         },
@@ -899,7 +1287,6 @@
             "text": "<p>I recently took this kit out for a ride in Serra de Sintra, Portugal. I'm a passionate cyclist, spending as much time on the bike as I can—whether on my indoor trainer or out on the road. <br/><br/>This kit really stood out for its comfort during long rides. The breathable fabric was perfect for spending hours on the road. Even after miles and miles, it stayed comfortable, which is crucial when you're pushing through those extra kilometers.<br/></p>",
             "author": "Nelson",
             "product": "",
-            "image": "shopify://shop_images/7-nelson-1080.jpg",
             "icon": "5-stars"
           }
         },
@@ -909,7 +1296,6 @@
             "text": "<p>I'm seriously loving the Valore line from Monton right now—the fit is just perfect, and the fabric is so breathable. It makes all the difference when I'm out riding through New Jersey, especially on those climbs up Bear Mountain or the scenic stretch to Nyack. Having the right kit is a game changer. I'm all about kits with that race fit and breathable fabric. They help keep me cool and comfortable on those long, tough climbs, which is exactly what you need when you're pushing your limits.</p>",
             "author": "Eric",
             "product": "",
-            "image": "shopify://shop_images/8-eric.jpg",
             "icon": "5-stars"
           }
         }
@@ -944,63 +1330,6 @@
         "custom_class": ""
       }
     },
-    "lookbook_kEcaGH": {
-      "type": "lookbook",
-      "blocks": {
-        "lookbook_slider_UmLC3G": {
-          "type": "lookbook-slider",
-          "settings": {
-            "heading": "Shop the look",
-            "heading_size": "h2",
-            "description": "",
-            "image": "shopify://shop_images/lookbook-homepage.jpg",
-            "image_position": "right",
-            "annotation_color": "light",
-            "product_image_ratio": "adapt",
-            "product_card_width": 280,
-            "product_per_slide": "2",
-            "controls_background": "none",
-            "controls_position": "center",
-            "pagination_type": "dots",
-            "top_1": 38,
-            "left_1": 56,
-            "product_1": "valore-long-sleeve-jersey-sunae-laurel-green",
-            "top_2": 45,
-            "left_2": 45,
-            "product_2": "valore-monton-mens-bib-shorts-nuova-luna-medium-gray",
-            "top_3": 51,
-            "left_3": 85,
-            "product_3": "fingerless-gloves-era-light-gray",
-            "top_4": 82,
-            "left_4": 63,
-            "product_4": "valore-monton-cycling-socks-era-light-gray",
-            "top_5": 20,
-            "left_5": 0,
-            "product_5": ""
-          }
-        }
-      },
-      "block_order": [
-        "lookbook_slider_UmLC3G"
-      ],
-      "disabled": true,
-      "settings": {
-        "container": "container",
-        "color_schema": "",
-        "section_header_padding_bottom": "medium",
-        "heading": "Lookbook",
-        "heading_size": "h2",
-        "description": "",
-        "image_aspect_ratio": "3/4",
-        "columns": 2,
-        "column_gap": "medium",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collage_tabs_3MBTHm": {
       "type": "collage-tabs",
       "blocks": {
@@ -1009,7 +1338,6 @@
           "settings": {
             "content_color_schema": "",
             "navigation_title": "Technology",
-            "image": "shopify://shop_images/ss-jersey-men-era-white-gray-06_9e15af0e-cc66-4cf4-885d-f790382753be.jpg",
             "heading": "Lightweight",
             "heading_size": "h2",
             "subheading": "Technology",
@@ -1025,7 +1353,6 @@
           "settings": {
             "content_color_schema": "background-2",
             "navigation_title": "UPF",
-            "image": "shopify://shop_images/upf.jpg",
             "heading": "Sun Protection",
             "heading_size": "h2",
             "subheading": "UPF",
@@ -1041,7 +1368,6 @@
           "settings": {
             "content_color_schema": "",
             "navigation_title": "Padding",
-            "image": "shopify://shop_images/padding.jpg",
             "heading": "Elastic Interface",
             "heading_size": "h2",
             "subheading": "Padding",
@@ -1079,7 +1405,6 @@
         "column_C7Td3E": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/free-shipping.jpg",
             "image_link": "",
             "title": "FREE SHIPPING",
             "heading_size": "h3",
@@ -1092,7 +1417,6 @@
         "column_6Rw3hy": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/easy-refund.jpg",
             "image_link": "",
             "title": "EASY REFUND",
             "heading_size": "h3",
@@ -1105,7 +1429,6 @@
         "column_tgeC8K": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/oneline-support.jpg",
             "image_link": "",
             "title": "ONLINE SUPPORT",
             "heading_size": "h3",
@@ -1118,7 +1441,6 @@
         "column_V74dnk": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/flexible-payment.png",
             "image_link": "",
             "title": "FLEXIBLE PAYMENT",
             "heading_size": "h3",
@@ -1160,8 +1482,15 @@
   },
   "order": [
     "slideshow_CH788z",
-    "rich_text_xKNFpm",
-    "custom_content_8eV7qg",
+    "product_tabs_best_sellers",
+    "hero_backpack",
+    "rich_text_aim",
+    "custom_content_aim_grid",
+    "scrolling_promotion_marquee_1",
+    "scrolling_promotion_marquee_2",
+    "video_W9K8bm",
+    "lookbook_kEcaGH",
+    "before_after_compare",
     "1762786887d266c8a6",
     "video_hero_pWKkdn",
     "hero_kyyH7r",
@@ -1175,7 +1504,6 @@
     "hero_yNnGHN",
     "featured_product_QbyGbz",
     "scrolling_promotion_i3kjyD",
-    "lookbook_kEcaGH",
     "collage_tabs_3MBTHm",
     "multicolumn_ByB3cx"
   ]

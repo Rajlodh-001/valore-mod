@@ -1,0 +1,641 @@
+{%- if section.blocks.size > 0 -%}
+  <style>
+    .shopify-section--shop-the-look {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+    }
+    .stl__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+    .stl__header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .stl__subheading {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 13px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .stl__title {
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Look Carousel Wrapper */
+    .stl__carousel-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .stl__look-item {
+      display: none;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .stl__look-item.is-selected {
+      display: grid;
+      opacity: 1;
+    }
+    @media screen and (min-width: 990px) {
+      .stl__look-item {
+        grid-template-columns: min(550px, 60%) 1fr;
+        gap: 60px;
+      }
+    }
+
+    /* Look Image & Hotspot Pins */
+    .stl__image-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 0px;
+    }
+    .stl__image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .stl__hot-spot-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .stl__hot-spot {
+      --hot-spot-size: 18px;
+      top: calc(var(--stl-hot-spot-top) - (var(--hot-spot-size) / 2));
+      left: calc(var(--stl-hot-spot-left) - (var(--hot-spot-size) / 2));
+      width: var(--hot-spot-size);
+      height: var(--hot-spot-size);
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      padding: 0;
+      cursor: pointer;
+      position: absolute;
+      pointer-events: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+      background-color: #ffffff;
+      z-index: 5;
+      box-sizing: border-box;
+    }
+    .stl__hot-spot:after {
+      --hot-spot-after-size: 36px;
+      content: "";
+      top: calc(50% - var(--hot-spot-after-size) / 2);
+      left: calc(50% - var(--hot-spot-after-size) / 2);
+      width: var(--hot-spot-after-size);
+      height: var(--hot-spot-after-size);
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      position: absolute;
+      animation: stl-ping 2s infinite ease-in-out;
+      pointer-events: none;
+    }
+    @keyframes stl-ping {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .stl__hot-spot[aria-current="true"],
+    .stl__hot-spot:hover {
+      transform: scale(1.4);
+      background-color: #000000;
+      border-color: #ffffff;
+      box-shadow: 0 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    /* Product Card Content & Transitions */
+    .stl__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .stl__product-container {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .stl__product-card-item {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .stl__product-card-item.is-selected {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Fallback Product Card Layout */
+    .stl__fallback-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      padding: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .stl__fallback-image {
+      width: 100%;
+      max-width: 280px;
+      height: 280px;
+      object-fit: cover;
+      margin-bottom: 16px;
+      background: #f7f7f7;
+    }
+    .stl__fallback-title {
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 8px 0;
+      color: #000;
+      line-height: 1.3;
+    }
+    .stl__fallback-price {
+      font-size: 14px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    /* Dynamic View Product Button */
+    .stl__view-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 40px;
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      border: 1px solid #000;
+      transition: all 0.25s ease;
+    }
+    .stl__view-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Navigation Arrows & Dots */
+    .stl__nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      max-width: 44px !important;
+      max-height: 44px !important;
+      flex: 0 0 44px !important;
+      border-radius: 50% !important;
+      background: #ffffff !important;
+      border: 1px solid #e0e0e0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+      line-height: 1 !important;
+      color: #1c1c1c;
+    }
+    .stl__nav-button svg {
+      width: 20px !important;
+      height: 20px !important;
+      flex-shrink: 0 !important;
+      display: block;
+      stroke-width: 2px;
+    }
+    .stl__nav-button:hover {
+      background: #000000 !important;
+      color: #ffffff !important;
+      border-color: #000000 !important;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .stl__nav-prev { left: -22px; }
+    .stl__nav-next { right: -22px; }
+    @media screen and (max-width: 989px) {
+      .stl__nav-prev { left: 10px; }
+      .stl__nav-next { right: 10px; }
+    }
+
+    .stl__dots-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .stl__dot {
+      width: 10px !important;
+      height: 10px !important;
+      min-width: 10px !important;
+      min-height: 10px !important;
+      border-radius: 50% !important;
+      background: #d1d1d1;
+      border: none;
+      cursor: pointer;
+      padding: 0 !important;
+      transition: background 0.25s ease, transform 0.25s ease;
+      flex: 0 0 10px !important;
+    }
+    .stl__dot.is-selected {
+      background: #000000;
+      transform: scale(1.25);
+    }
+  </style>
+
+  <div class="shopify-section--shop-the-look">
+    <div class="stl__container">
+      {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+        <div class="stl__header">
+          {%- if section.settings.subheading != blank -%}
+            <div class="stl__subheading">{{ section.settings.subheading }}</div>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="stl__title">{{ section.settings.title }}</h2>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="stl__carousel-wrapper">
+        {%- if section.blocks.size > 1 -%}
+          <button type="button" class="stl__nav-button stl__nav-prev" onclick="stlChangeLook(-1)" aria-label="Previous look">
+            {% render 'icon-arrow-left' %}
+          </button>
+        {%- endif -%}
+
+        <div class="stl__look-list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign products_count = 0
+              for product_index in (1..4)
+                assign product_id = 'product_' | append: product_index
+                if block.settings[product_id] != blank
+                  assign products_count = products_count | plus: 1
+                endif
+              endfor
+              if products_count == 0
+                assign products_count = 2
+              endif
+            -%}
+
+            <div class="stl__look-item {% if forloop.first %}is-selected{% endif %}" data-look-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              
+              {%- comment -%} Lookbook Image & Hotspot Pins {%- endcomment -%}
+              <div class="stl__image-wrapper">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'image-cover' }}
+                {%- else -%}
+                  {%- capture fallback_img -%}
+                    {%- cycle 'VALORE2025FW_1030.jpg', '20240823_6970.jpg' -%}
+                  {%- endcapture -%}
+                  <img src="{{ fallback_img | strip | asset_url }}" alt="Valore Lookbook" class="image-cover" loading="lazy" width="1200" height="1600">
+                {%- endif -%}
+
+                <div class="stl__hot-spot-list">
+                  {%- for product_index in (1..products_count) -%}
+                    {%- capture horizontal_position_id -%}product_{{ product_index }}_horizontal_position{%- endcapture -%}
+                    {%- capture vertical_position_id -%}product_{{ product_index }}_vertical_position{%- endcapture -%}
+                    {%- capture product_id -%}product_{{ product_index }}{%- endcapture -%}
+                    {%- assign raw_prod = block.settings[product_id] -%}
+                    {%- assign prod = raw_prod -%}
+                    {%- if prod.title == blank and raw_prod != blank -%}
+                      {%- assign prod = all_products[raw_prod] -%}
+                    {%- endif -%}
+
+                    {%- assign prod_target_url = prod.url -%}
+                    {%- if prod_target_url == blank or prod_target_url == '#' -%}
+                      {%- if raw_prod != blank -%}
+                        {%- assign prod_target_url = '/products/' | append: raw_prod -%}
+                      {%- else -%}
+                        {%- assign prod_target_url = '/collections/all' -%}
+                      {%- endif -%}
+                    {%- endif -%}
+
+                    <button type="button" class="stl__hot-spot"
+                      style="--stl-hot-spot-top: {{ block.settings[vertical_position_id] | default: 50 }}%; --stl-hot-spot-left: {{ block.settings[horizontal_position_id] | default: 50 }}%;"
+                      aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                      onclick="stlSelectSpot(this, 'product-card-{{ block.id }}-{{ product_index }}', '{{ prod_target_url }}')">
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+
+              {%- comment -%} Product Cards & Action Button {%- endcomment -%}
+              <div class="stl__content">
+                <div class="stl__product-container">
+                  {%- for product_index in (1..products_count) -%}
+                    {%- capture product_id -%}product_{{ product_index }}{%- endcapture -%}
+                    {%- assign raw_product = block.settings[product_id] -%}
+                    {%- assign current_product = raw_product -%}
+                    {%- if current_product.title == blank and raw_product != blank -%}
+                      {%- assign current_product = all_products[raw_product] -%}
+                    {%- endif -%}
+
+                    <div class="stl__product-card-item {% if forloop.first %}is-selected{% endif %}" id="product-card-{{ block.id }}-{{ product_index }}">
+                      {%- if current_product != blank and current_product.title != blank -%}
+                        {%- render 'product-card', product: current_product, show_vendor: false, show_rating: false -%}
+                      {%- else -%}
+                        <div class="stl__fallback-card">
+                          {%- capture card_fallback_img -%}
+                            {%- cycle 'essentials-jerseys.jpg', 'essentials-bib-shorts.jpg', 'essentials-accessories.jpg' -%}
+                          {%- endcapture -%}
+                          {%- capture card_fallback_title -%}
+                            {%- cycle 'Valore Long Sleeve Jersey', 'Valore Cycling Bib Shorts', 'Valore Accessories' -%}
+                          {%- endcapture -%}
+                          <a href="{% if raw_product != blank %}/products/{{ raw_product }}{% else %}/collections/all{% endif %}">
+                            <img src="{{ card_fallback_img | strip | asset_url }}" alt="{{ card_fallback_title }}" class="stl__fallback-image" loading="lazy">
+                          </a>
+                          <h3 class="stl__fallback-title">
+                            <a href="{% if raw_product != blank %}/products/{{ raw_product }}{% else %}/collections/all{% endif %}" style="color: inherit; text-decoration: none;">
+                              {{ card_fallback_title }}
+                            </a>
+                          </h3>
+                          <div class="stl__fallback-price">$180.00</div>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endfor -%}
+                </div>
+
+                {%- assign raw_init = block.settings.product_1 -%}
+                {%- assign initial_product = raw_init -%}
+                {%- if initial_product.title == blank and raw_init != blank -%}
+                  {%- assign initial_product = all_products[raw_init] -%}
+                {%- endif -%}
+                {%- assign initial_url = initial_product.url -%}
+                {%- if initial_url == blank or initial_url == '#' -%}
+                  {%- if raw_init != blank -%}
+                    {%- assign initial_url = '/products/' | append: raw_init -%}
+                  {%- else -%}
+                    {%- assign initial_url = '/collections/all' -%}
+                  {%- endif -%}
+                {%- endif -%}
+
+                <a href="{{ initial_url }}" class="stl__view-btn">
+                  View product
+                </a>
+              </div>
+
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if section.blocks.size > 1 -%}
+          <button type="button" class="stl__nav-button stl__nav-next" onclick="stlChangeLook(1)" aria-label="Next look">
+            {% render 'icon-arrow-right' %}
+          </button>
+
+          <div class="stl__dots-container">
+            {%- for block in section.blocks -%}
+              <button type="button" class="stl__dot {% if forloop.first %}is-selected{% endif %}" onclick="stlGoToLook({{ forloop.index0 }})" aria-label="Go to look {{ forloop.index }}"></button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      let currentLookIndex = 0;
+
+      window.stlGoToLook = function(index) {
+        const section = document.querySelector('.shopify-section--shop-the-look');
+        if (!section) return;
+        const looks = section.querySelectorAll('.stl__look-item');
+        const dots = section.querySelectorAll('.stl__dot');
+        if (!looks.length) return;
+
+        if (index < 0) index = looks.length - 1;
+        if (index >= looks.length) index = 0;
+        currentLookIndex = index;
+
+        looks.forEach((look, idx) => {
+          if (idx === currentLookIndex) {
+            look.classList.add('is-selected');
+          } else {
+            look.classList.remove('is-selected');
+          }
+        });
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentLookIndex) {
+            dot.classList.add('is-selected');
+          } else {
+            dot.classList.remove('is-selected');
+          }
+        });
+      };
+
+      window.stlChangeLook = function(dir) {
+        stlGoToLook(currentLookIndex + dir);
+      };
+
+      window.stlSelectSpot = function(btn, targetId, targetUrl) {
+        const lookItem = btn.closest('.stl__look-item');
+        if (!lookItem) return;
+
+        // 1. Highlight active hotspot pin
+        lookItem.querySelectorAll('.stl__hot-spot').forEach(s => s.setAttribute('aria-current', 'false'));
+        btn.setAttribute('aria-current', 'true');
+
+        // 2. Switch product cards with smooth transition
+        const cards = lookItem.querySelectorAll('.stl__product-card-item');
+        cards.forEach(card => card.classList.remove('is-selected'));
+
+        const targetCard = lookItem.querySelector('#' + targetId);
+        let finalUrl = targetUrl;
+
+        if (targetCard) {
+          targetCard.classList.add('is-selected');
+          const cardLink = targetCard.querySelector('a[href]');
+          if (cardLink && cardLink.getAttribute('href') && cardLink.getAttribute('href') !== '#') {
+            finalUrl = cardLink.getAttribute('href');
+          }
+        }
+
+        // 3. Update action button link
+        const viewBtn = lookItem.querySelector('.stl__view-btn');
+        if (viewBtn && finalUrl && finalUrl !== '#') {
+          viewBtn.setAttribute('href', finalUrl);
+        }
+      };
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Shop the look",
+  "class": "shopify-section--shop-the-look",
+  "tag": "section",
+  "max_blocks": 5,
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "Separate section with border",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "SHOP"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "OUR LOOKS"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "popover_title",
+      "label": "Popover title",
+      "default": "Shop the look"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Look",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "hot_spots_background",
+          "label": "Hotspots background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "range",
+          "id": "product_1_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 55
+        },
+        {
+          "type": "range",
+          "id": "product_1_vertical_position",
+          "label": "Vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "range",
+          "id": "product_2_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 25
+        },
+        {
+          "type": "range",
+          "id": "product_2_vertical_position",
+          "label": "Vertical position",
+          "min": 10,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 40
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the look",
+      "blocks": [
+        {
+          "type": "look",
+          "settings": {
+            "product_1_horizontal_position": 56,
+            "product_1_vertical_position": 38,
+            "product_2_horizontal_position": 45,
+            "product_2_vertical_position": 58
+          }
+        },
+        {
+          "type": "look",
+          "settings": {
+            "product_1_horizontal_position": 40,
+            "product_1_vertical_position": 40,
+            "product_2_horizontal_position": 60,
+            "product_2_vertical_position": 75
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

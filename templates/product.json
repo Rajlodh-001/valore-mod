@@ -6,19 +6,6 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- *
- * DEV STORE TEMP FIX (aeie4i-1i): variant_picker repeater/size_title removed
- * because color-pattern metaobjects exist only on the live Valore store.
- *
- * RESTORE on original store:
- *   Copy templates/product.json.original over this file, OR restore:
- *   - variant_picker > repeater:
- *     "{{ product.metafields.shopify[\"color-pattern\"].value }}"
- *   - variant_picker > settings > size_title:
- *     "{{ block.repeater.label.value }}"
- *
- * Full original backup: _theme-backups/valore-modify/product.json.original
- * ------------------------------------------------------------
  */
 {
   "sections": {
@@ -141,24 +128,12 @@
             "show_share": true,
             "show_ask_question": true
           }
-        },
-        "doran_product_reviews_rating_widget_GFHcLi": {
-          "type": "shopify://apps/doran-product-reviews/blocks/rating-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
-          "settings": {
-            "is_hide_detail": false,
-            "is_display_questions": false,
-            "class_name": "",
-            "is_hide_if_no_reviews": false,
-            "is_use_shopify_font": false,
-            "shopify_font": "sans_serif_n4"
-          }
         }
       },
       "block_order": [
         "c67b7c41-4a92-419d-85c6-c970bb43bf2d",
         "title",
         "price",
-        "doran_product_reviews_rating_widget_GFHcLi",
         "c9d012f0-f3f5-4c1b-b197-e7c8f9de13ac",
         "59ca3415-b1aa-4301-b178-ad6e434ba477",
         "variant_picker",
@@ -229,21 +204,6 @@
     },
     "1757472451fc7201d4": {
       "type": "apps",
-      "blocks": {
-        "doran_product_reviews_product_widget_rdKyrY": {
-          "type": "shopify://apps/doran-product-reviews/blocks/product-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
-          "settings": {
-            "topPadding": 36,
-            "bottomPadding": 36,
-            "is_hide_if_no_reviews": false,
-            "is_use_shopify_font": false,
-            "shopify_font": "sans_serif_n4"
-          }
-        }
-      },
-      "block_order": [
-        "doran_product_reviews_product_widget_rdKyrY"
-      ],
       "settings": {
         "container": "container",
         "color_schema": "",
@@ -682,20 +642,6 @@
     },
     "1757472591c3a85656": {
       "type": "apps",
-      "blocks": {
-        "doran_product_reviews_question_widget_cjzatB": {
-          "type": "shopify://apps/doran-product-reviews/blocks/question-widget/ca90c3ee-bc39-4c25-90cd-fdf0519c6d11",
-          "settings": {
-            "topPadding": 36,
-            "bottomPadding": 36,
-            "is_use_shopify_font": false,
-            "shopify_font": "sans_serif_n4"
-          }
-        }
-      },
-      "block_order": [
-        "doran_product_reviews_question_widget_cjzatB"
-      ],
       "settings": {
         "container": "container",
         "color_schema": "",

@@ -44,47 +44,6 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px ; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="{{ container }}">
-    {% render 'index-section-header',
-      animation_effect: animation_effect,
-      section_settings: section.settings,
-      spacing: section.settings.section_header_padding_bottom
-    %}
-    <div class="f-video__wrapper relative{% if animated %} f-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-      <noscript>
-        <div class="f-video__media">
-          <a
-            href="{{ section.settings.video_url }}"
-            class="video-section__poster"
-            style="--aspect-ratio: {{ video_aspect_ratio }}"
-          >
-            {% if cover_image != blank %}
-              {%- liquid
-                assign image_height = cover_image.width | divided_by: cover_image.aspect_ratio
-                assign image_alt = 'sections.video.load_video' | t: description: section.settings.description | escape
-              -%}
-              {{
-                cover_image
-                | image_url: width: 1500
-                | image_tag:
-                  loading: loading,
-                  fetchpriority: fetchpriority,
-                  width: cover_image.width,
-                  height: image_height,
-                  sizes: '100vw',
-                  widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                  alt: image_alt
-              }}
-            {%- else -%}
-              {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg placeholder h-full w-full' }}
-            {%- endif -%}
-            <span class="deferred-media__poster-button motion-reduce">
-              {% comment %} theme-check-disable {% endcomment %}
-              {{ 'icon-play.svg' | inline_asset_content }}
-              {% comment %} theme-check-enable {% endcomment %}
-            </span>
-          </a>
-        </div>
-      </noscript>
       <deferred-media
         class="f-video__media deferred-media no-js-hidden"
         data-media-id="{{ section.settings.video_url.id }}"
@@ -92,34 +51,33 @@
         style="--aspect-ratio: {{ video_aspect_ratio }}"
       >
         <button
-          id="Deferred-Poster-Modal-{{ section.settings.video_url.id }}"
+          id="Deferred-Poster-{{ section.id }}"
           class="f-video__poster media deferred-media__poster{% if animation_effect == 'zoom-fade' %} f-image{% endif %}"
           type="button"
           aria-label="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
         >
+          {% render 'index-section-header',
+            animation_effect: animation_effect,
+            section_settings: section.settings,
+            spacing: section.settings.section_header_padding_bottom
+          %}
           {% if cover_image != blank %}
-            <div class="f-video__cover bg-image">
-              {%- liquid
-                assign image_height = cover_image.width | divided_by: cover_image.aspect_ratio
-              -%}
-              <div class="f-image" style="--aspect-ratio: {{ video_aspect_ratio }}">
-                {{
-                  cover_image
-                  | image_url: width: 1500
-                  | image_tag:
-                    loading: loading,
-                    fetchpriority: fetchpriority,
-                    width: cover_image.width,
-                    height: image_height,
-                    sizes: '100vw',
-                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                    alt: cover_image.alt
-                  | escape
-                }}
-              </div>
-            </div>
+            <img
+              src="{{ cover_image | image_url: width: 2000 }}"
+              alt="{{ cover_image.alt | default: section.settings.heading | escape }}"
+              class="w-full h-full object-cover block"
+              loading="lazy"
+            >
           {%- else -%}
-            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg placeholder h-full w-full' }}
+            {% capture homepage_video_cover %}
+              {% render 'homepage-media-fallback', id: section.id, kind: 'image', alt: section.settings.heading, class: 'w-full h-full object-cover block' %}
+            {% endcapture %}
+            {% assign homepage_video_cover = homepage_video_cover | strip %}
+            {% if homepage_video_cover != blank %}
+              {{ homepage_video_cover }}
+            {% else %}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg placeholder h-full w-full' }}
+            {% endif %}
           {%- endif -%}
           <span class="deferred-media__poster-button motion-reduce">
             {% comment %} theme-check-disable {% endcomment %}
@@ -157,6 +115,8 @@
                 assign autoplay = true
               endif
             %}
+            {% capture fallback_video_url %}{% render 'homepage-media-fallback', id: section.id, kind: 'src' %}{% endcapture %}
+            {% assign fallback_video_url = fallback_video_url | strip %}
             {% if section.settings.shopify_video %}
               {{-
                 section.settings.shopify_video
@@ -168,14 +128,19 @@
                   controls: true,
                   image_size: '800x'
               -}}
+            {% elsif fallback_video_url != blank %}
+              <video
+                src="{{ fallback_video_url }}"
+                playsinline
+                controls
+                autoplay
+              ></video>
             {% else %}
               <video
                 src="https://cdn.shopify.com/videos/c/o/v/fbb140fd46e3429eba459e1549dbbe38.mp4"
                 playsinline
                 controls
-                {% if section.settings.autoplay_video %}
-                  autoplay loop muted
-                {% endif %}
+                autoplay
               ></video>
             {% endif %}
           {%- endif -%}

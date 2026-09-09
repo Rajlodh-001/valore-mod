@@ -25,12 +25,24 @@
       else
         assign homepage_fallback_file = '20260415-valore-banner-cinetico-2560-x-1200-1.jpg'
       endif
-    when 'image_card_aXahJJ'
-      assign homepage_fallback_file = '20250303_448_2_1.jpg'
-    when 'image_card_WdBcAb'
+    when 'image_card_aXahJJ', 'image_card_women', 'image_card_jerseys'
+      assign homepage_fallback_file = 'essentials-jerseys.jpg'
+    when 'image_card_WdBcAb', 'image_card_men', 'image_card_bib_shorts'
+      assign homepage_fallback_file = 'essentials-bib-shorts.jpg'
+    when 'image_card_accessories'
+      assign homepage_fallback_file = 'essentials-accessories.jpg'
+    when 'scrolling_image_1', 'scrolling_image_3', 'scrolling_image_5'
+      assign homepage_fallback_file = 'essentials-accessories.jpg'
+    when 'scrolling_image_2', 'scrolling_image_4', 'scrolling_image_6'
+      assign homepage_fallback_file = 'essentials-jerseys.jpg'
+    when 'hero_tL6Wk6', 'hero_backpack', 'lookbook_kEcaGH', 'lookbook_slider_UmLC3G'
       assign homepage_fallback_file = '20240823_6970.jpg'
-    when 'hero_tL6Wk6'
-      assign homepage_fallback_file = 'Valore_1_1.png'
+    when 'video_W9K8bm'
+      if kind == 'src'
+        assign homepage_fallback_file = 'website-hero-video.mp4'
+      else
+        assign homepage_fallback_file = 'VALORE2025FW_1030.jpg'
+      endif
     when 'hero_kyyH7r'
       assign homepage_fallback_file = 'Valore_1.jpg'
     when 'column_C7Td3E'
@@ -41,8 +53,8 @@
       assign homepage_fallback_file = 'oneline-support.jpg'
     when 'column_V74dnk'
       assign homepage_fallback_file = 'flexible-payment.png'
-    when 'video_W9K8bm', 'video_hero_pWKkdn', 'slide_1_hero'
-      assign homepage_fallback_file = '26ss-horizontal-version-usa-outdoor-video.mp4'
+    when 'video_hero_pWKkdn', 'slide_1_hero'
+      assign homepage_fallback_file = 'website-hero-video.mp4'
   endcase
 -%}
 {%- if homepage_fallback_file != blank -%}
