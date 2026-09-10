@@ -107,11 +107,15 @@ class ProductGridContainer extends HTMLElement {
 		const productGrid = document.querySelector(this.selectors.productGrid)
 		if (!productGrid) return
 		const target = this.querySelector('.column-switcher button[data-column="'+ column +'"]')
-		const selected = this.querySelector('.column-switcher button[aria-selected="true"]')
-		if (selected) {
-			selected.removeAttribute('aria-selected')
+		const allButtons = this.querySelectorAll('.column-switcher button')
+		allButtons.forEach(btn => {
+			btn.removeAttribute('aria-selected')
+			btn.classList.remove('is-active')
+		})
+		if (target) {
+			target.setAttribute('aria-selected', 'true')
+			target.classList.add('is-active')
 		}
-		target.setAttribute('aria-selected', true)
 
 		if (column === '2') {
 			productGrid.classList.add('f-grid-2-cols');

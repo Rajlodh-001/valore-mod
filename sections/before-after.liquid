@@ -156,6 +156,29 @@
     opacity: 0.6;
   }
 
+  @media screen and (max-width: 699px) {
+    .before-after__content-wrapper {
+      bottom: 12px;
+      gap: 2px;
+    }
+    .before-after__before-image .before-after__content-wrapper {
+      left: 12px;
+    }
+    .before-after__after-image .before-after__content-wrapper {
+      right: 12px;
+    }
+    .before-after__label {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+    .before-after__link {
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+      text-underline-offset: 3px;
+    }
+  }
+
   /* Prestige Center Drag Handle (< > arrows circle) */
   .before-after__cursor {
     pointer-events: auto;

@@ -5,74 +5,92 @@
 {{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign feature_image = product.metafields.valore_pdp.feature_image.value
-  assign feature_heading = product.metafields.valore_pdp.feature_heading.value
-  assign feature_text = product.metafields.valore_pdp.feature_text.value
-  assign position_meta = product.metafields.valore_pdp.feature_image_position.value | default: '' | downcase
-
-  assign image_position = section.settings.image_position
-  if position_meta == 'left' or position_meta == 'right'
-    assign image_position = position_meta
+  assign feature_image_1 = product.metafields.valore_pdp.feature_image.value
+  if feature_image_1 == blank and product.images.size > 0
+    assign feature_image_1 = product.images[0]
+  endif
+  if feature_image_1 == blank
+    assign feature_image_1 = '2024010600161.jpg' | asset_url
   endif
 
-  assign has_content = false
-  if feature_image != blank or feature_heading != blank or feature_text != blank
-    assign has_content = true
+  assign feature_image_2 = product.metafields.valore_pdp.feature_image_2.value
+  if feature_image_2 == blank and product.images.size > 1
+    assign feature_image_2 = product.images[1]
+  elsif feature_image_2 == blank
+    assign feature_image_2 = '1-2024010600020.jpg' | asset_url
+  endif
+
+  assign feature_heading = product.metafields.valore_pdp.feature_heading.value | default: section.settings.fallback_heading
+  if feature_heading == blank
+    assign feature_heading = 'PERFORMANCE FABRIC & AERODYNAMICS'
+  endif
+
+  assign feature_text = product.metafields.valore_pdp.feature_text.value | default: section.settings.fallback_text
+  if feature_text == blank
+    assign feature_text = 'Engineered with ultra-lightweight, moisture-wicking Italian fabric for maximum breathability and drag reduction during intense rides.'
   endif
 
   assign container = section.settings.container
   assign section_id = section.settings.custom_id | default: section.id
-  assign eyebrow = section.settings.eyebrow | default: '01 — Product Detail'
+  assign eyebrow = section.settings.eyebrow | default: '01 — PRODUCT DETAIL'
 %}
 
-{% if has_content %}
-  <div
-    id="{{ section_id }}"
-    class="valore-pdp-feature valore-pdp-tag--extras valore-pdp-feature--image-{{ image_position }} f-section-padding color-{{ section.settings.color_schema }}"
-    data-valore-tag="pdp-min-extras"
-    data-section-type="valore-pdp-feature-panel"
-    data-section-id="{{ section.id }}"
-    style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
-  >
-    <div class="{{ container }}">
-      <div class="valore-pdp-feature__inner">
-        {% if feature_image != blank %}
-          {% assign feature_alt = feature_image.alt | default: feature_heading | default: product.title %}
-          <figure class="valore-pdp-feature__media">
-            {{
-              feature_image
-              | image_url: width: 2000
-              | image_tag:
-                loading: 'lazy',
-                widths: '550, 750, 1100, 1500, 2000',
-                sizes: '(min-width: 900px) 50vw, 100vw',
-                alt: feature_alt
-            }}
-          </figure>
+<div
+  id="{{ section_id }}"
+  class="valore-pdp-feature valore-pdp-tag--extras f-section-padding color-{{ section.settings.color_schema }}"
+  data-valore-tag="pdp-min-extras"
+  data-section-type="valore-pdp-feature-panel"
+  data-section-id="{{ section.id }}"
+  style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="{{ container }}">
+    <div class="valore-pdp-feature__inner valore-pdp-feature__inner--staggered">
+      
+      {% comment %} Text Content on Left {% endcomment %}
+      <div class="valore-pdp-feature__content">
+        {% if eyebrow != blank %}
+          <p class="valore-pdp-feature__eyebrow">{{ eyebrow | escape }}</p>
         {% endif %}
-        <div class="valore-pdp-feature__content">
-          {% if eyebrow != blank %}
-            <p class="valore-pdp-feature__eyebrow">{{ eyebrow | escape }}</p>
-          {% endif %}
-          {% if feature_heading != blank %}
-            <h2 class="valore-pdp-feature__heading {{ section.settings.heading_size }}">
-              {{ feature_heading | escape }}
-            </h2>
-          {% endif %}
-          {% if product.metafields.custom.gallery_information.value != blank %}
-            <div class="valore-pdp-feature__text rte">
-              {{ product.metafields.custom.gallery_information.value | markdown }}
-            </div>
-          {% elsif feature_text != blank %}
-            <div class="valore-pdp-feature__text rte">
-              {{ feature_text | newline_to_br }}
-            </div>
-          {% endif %}
-        </div>
+        {% if feature_heading != blank %}
+          <h2 class="valore-pdp-feature__heading {{ section.settings.heading_size }}">
+            {{ feature_heading | escape }}
+          </h2>
+        {% endif %}
+        {% if product.metafields.custom.gallery_information.value != blank %}
+          <div class="valore-pdp-feature__text rte">
+            {{ product.metafields.custom.gallery_information.value | markdown }}
+          </div>
+        {% elsif feature_text != blank %}
+          <div class="valore-pdp-feature__text rte">
+            {{ feature_text | newline_to_br }}
+          </div>
+        {% endif %}
       </div>
+
+      {% comment %} 2 Staggered Images on Right {% endcomment %}
+      <div class="valore-pdp-feature__staggered-media">
+        <figure class="valore-pdp-feature__media-card valore-pdp-feature__media-card--primary">
+          {% if feature_image_1.aspect_ratio %}
+            {{ feature_image_1 | image_url: width: 1200 | image_tag: loading: 'lazy', alt: feature_heading }}
+          {% else %}
+            {% assign img_src_1 = feature_image_1.src | default: feature_image_1 %}
+            <img src="{{ img_src_1 }}" alt="{{ feature_heading }}" loading="lazy">
+          {% endif %}
+        </figure>
+        
+        <figure class="valore-pdp-feature__media-card valore-pdp-feature__media-card--secondary">
+          {% if feature_image_2.aspect_ratio %}
+            {{ feature_image_2 | image_url: width: 1200 | image_tag: loading: 'lazy', alt: feature_heading }}
+          {% else %}
+            {% assign img_src_2 = feature_image_2.src | default: feature_image_2 %}
+            <img src="{{ img_src_2 }}" alt="{{ feature_heading }}" loading="lazy">
+          {% endif %}
+        </figure>
+      </div>
+
     </div>
   </div>
-{% endif %}
+</div>
 
 {% schema %}
 {

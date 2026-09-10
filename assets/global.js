@@ -903,8 +903,10 @@ class QuantityInput extends HTMLElement {
   onButtonClick(event) {
     event.preventDefault();
     const previousValue = this.input.value;
+    const button = event.currentTarget || event.target.closest('button');
+    const buttonName = button ? (button.getAttribute('name') || button.name) : event.target.name;
 
-    event.target.name === "plus" ? this.input.stepUp() : this.input.stepDown();
+    buttonName === "plus" ? this.input.stepUp() : this.input.stepDown();
     if (previousValue !== this.input.value)
       this.input.dispatchEvent(this.changeEvent);
   }

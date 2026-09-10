@@ -328,7 +328,7 @@
             {{ block.shopify_attributes }}
           >
             <div
-              class="f-slideshow__content f-text-blocks hidden text-{{ text_alignment_mobile }} sm:text-{{ text_alignment }}{% if forloop.index == 3 or block.settings.enable_frame %} f-slideshow__content--framed{% endif %}"
+              class="f-slideshow__content f-text-blocks hidden text-{{ text_alignment_mobile }} sm:text-{{ text_alignment }}{% if block.settings.enable_frame %} f-slideshow__content--framed{% endif %}"
               style="--slide-content-text-color: {{ text_color }};"
             >
               {% unless block.settings.subheading == blank %}

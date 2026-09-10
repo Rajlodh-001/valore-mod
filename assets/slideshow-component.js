@@ -25,14 +25,39 @@ if (!customElements.get("slideshow-component")) {
           clearInterval(this.check)
           this.removeAttribute('data-media-loading')
           this.slider.on('change', this.handleChange.bind(this))
-          this.domNodes.contents[0].classList.add('selected')
+      this.domNodes.contents[0].classList.add('selected')
           this.handleScreenChange()
           this.playVideo()
+          this.manageSlideTimer(0)
           if (this.domNodes.pageCounter) {
             this.domNodes.flickity.insertBefore(this.domNodes.pageCounter, null)
           }
         }
       }, 100)
+    }
+
+    manageSlideTimer(index) {
+      if (!this.slider || !this.slider.options.autoPlay) return;
+      if (this.customTimer) clearTimeout(this.customTimer);
+      
+      const defaultDelay = typeof this.slider.options.autoPlay === 'number' ? this.slider.options.autoPlay : 6000;
+      const currentDelay = (index === 0) ? 22000 : defaultDelay;
+
+      // Update dot animation duration dynamically
+      const dots = this.querySelectorAll('.flickity-page-dots .dot');
+      dots.forEach((dot, idx) => {
+        const dotDuration = (idx === 0) ? '22s' : (defaultDelay / 1000) + 's';
+        dot.setAttribute('data-duration', dotDuration);
+        dot.style.setProperty('--slide-duration', dotDuration);
+      });
+
+      // Pause standard flickity player to handle custom duration per slide
+      this.slider.stopPlayer();
+      this.customTimer = setTimeout(() => {
+        if (this.slider) {
+          this.slider.next();
+        }
+      }, currentDelay);
     }
 
     handleChange(index) {
@@ -54,10 +79,7 @@ if (!customElements.get("slideshow-component")) {
         sliderCounterCurrent.textContent = index + 1
       }
 
-      // Resume autoplay timer on manual slide click
-      if (this.slider && this.slider.options.autoPlay) {
-        this.slider.playPlayer();
-      }
+      this.manageSlideTimer(index);
       
       this.playVideo()
     }

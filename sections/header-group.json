@@ -52,11 +52,11 @@
             "image_1": "shopify://shop_images/mens-25328.jpg",
             "image_1_heading": "Cycling jersey",
             "image_1_text": "Mens",
-            "image_1_link": "shopify://collections/cycling-jersey-mens",
+            "image_1_link": "shopify://collections/jerseys",
             "image_2": "shopify://shop_images/mens-25328.jpg",
             "image_2_heading": "Bibs & Shorts",
             "image_2_text": "Mens",
-            "image_2_link": "shopify://collections/mens-cycling-bib-shorts"
+            "image_2_link": "shopify://collections/bib-shorts"
           }
         },
         "mega_menu_women": {
@@ -69,11 +69,11 @@
             "image_1": "shopify://shop_images/20240823_5607_1.png",
             "image_1_heading": "Cycling jersey",
             "image_1_text": "Womens",
-            "image_1_link": "shopify://collections/cycling-jersey-women",
+            "image_1_link": "shopify://collections/jerseys",
             "image_2": "shopify://shop_images/20240823_5607_1.png",
             "image_2_heading": "Bibs & Shorts",
             "image_2_text": "Womens",
-            "image_2_link": "shopify://collections/womens-cycling-bib-shorts"
+            "image_2_link": "shopify://collections/bib-shorts"
           }
         },
         "mega_menu_shop": {
@@ -86,11 +86,11 @@
             "image_1": "shopify://shop_images/mens-25328.jpg",
             "image_1_heading": "Cycling jersey",
             "image_1_text": "Mens",
-            "image_1_link": "shopify://collections/cycling-jersey-mens",
+            "image_1_link": "shopify://collections/jerseys",
             "image_2": "shopify://shop_images/20240823_5607_1.png",
             "image_2_heading": "Cycling jersey",
             "image_2_text": "Womens",
-            "image_2_link": "shopify://collections/cycling-jersey-women"
+            "image_2_link": "shopify://collections/jerseys"
           }
         }
       },

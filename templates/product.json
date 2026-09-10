@@ -217,203 +217,155 @@
     "73c8e618-10a0-43bf-b1d9-fa6707a4b913": {
       "type": "scrolling-promotion",
       "blocks": {
-        "74dc4299-fedb-45c6-9455-f3dd358440e7": {
-          "type": "image",
+        "text_1": {
+          "type": "announcement",
           "settings": {
-            "image": "shopify://shop_images/pc-banner--1.jpg",
-            "image_height": 24,
-            "image_link": "",
-            "use_custom_spacing": true,
-            "margin_left": 0,
+            "text": "NEW: BIB SHORTS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
             "margin_right": 10,
-            "margin_left_mobile": 0,
+            "margin_left_mobile": 10,
             "margin_right_mobile": 10
           }
         },
-        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to Valore",
-            "font_family": "body",
-            "text_size": 20,
-            "text_link": "",
-            "use_custom_spacing": true,
-            "margin_left": 0,
-            "margin_right": 60,
-            "margin_left_mobile": 0,
-            "margin_right_mobile": 40
-          }
-        },
-        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a": {
+        "scrolling_image_1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1-2024010600161.jpg",
-            "image_height": 24,
+            "image_height": 46,
             "image_link": "",
-            "use_custom_spacing": true,
-            "margin_left": 0,
+            "use_custom_spacing": false,
+            "margin_left": 10,
             "margin_right": 10,
-            "margin_left_mobile": 0,
+            "margin_left_mobile": 10,
             "margin_right_mobile": 10
           }
         },
-        "8d95b262-4168-4c7f-9457-5897c7935129": {
+        "text_2": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our Valore",
-            "font_family": "body",
-            "text_size": 20,
+            "text": "NEW: JERSEYS",
+            "font_family": "heading",
+            "text_size": 48,
             "text_link": "",
-            "use_custom_spacing": true,
-            "margin_left": 0,
-            "margin_right": 60,
-            "margin_left_mobile": 0,
-            "margin_right_mobile": 40
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_2": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "text_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "NEW: BIB SHORTS",
+            "font_family": "heading",
+            "text_size": 48,
+            "text_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
+          }
+        },
+        "scrolling_image_3": {
+          "type": "image",
+          "settings": {
+            "image_height": 46,
+            "image_link": "",
+            "use_custom_spacing": false,
+            "margin_left": 10,
+            "margin_right": 10,
+            "margin_left_mobile": 10,
+            "margin_right_mobile": 10
           }
         }
       },
       "block_order": [
-        "74dc4299-fedb-45c6-9455-f3dd358440e7",
-        "c31917cb-ef90-4fe6-8c66-6d4f3a7d8874",
-        "26b52c8a-5533-4cee-a9e2-b2cfc3830b8a",
-        "8d95b262-4168-4c7f-9457-5897c7935129"
+        "text_1",
+        "scrolling_image_1",
+        "text_2",
+        "scrolling_image_2",
+        "text_3",
+        "scrolling_image_3"
       ],
       "custom_css": [],
       "settings": {
         "container": "container-full",
-        "color_schema": "",
+        "color_schema": "background-1",
         "section_header_padding_bottom": "medium",
         "heading": "",
         "heading_size": "h2",
         "description": "",
         "alignment": "center",
         "direction": "left",
-        "pause_on_hover": true,
-        "speed": 0.3,
+        "pause_on_hover": false,
+        "speed": 0.2,
         "item_gap": 50,
-        "item_gap_mobile": 30,
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "item_gap_mobile": 24,
+        "padding_top": 12,
+        "padding_bottom": 12,
         "custom_id": "",
-        "custom_class": "border-top border-bottom"
+        "custom_class": "prestige-marquee-top"
       }
     },
-    "8996604a-6390-4d3a-934f-c182420f74f1": {
-      "type": "custom-content",
+    "image_with_text_block_materials": {
+      "type": "image-with-text-block",
       "blocks": {
-        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-image-1": {
-          "type": "image",
+        "subheading-1": {
+          "type": "subheading",
           "settings": {
-            "image": "shopify://shop_images/2024010600617.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center",
-            "block_custom_class": "",
-            "animations": "inherit"
+            "text": "VALORE"
           }
         },
-        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-text-1": {
-          "type": "text",
+        "heading-1": {
+          "type": "heading",
           "settings": {
-            "color_scheme": "",
-            "title": "Design Excellence",
-            "heading_size": "h2",
-            "subheading": "",
-            "text": "<p>At VALORE, we believe that style and performance go hand in hand. Our designs are a reflection of clean, minimalist aesthetics and bold colors, allowing cyclists to perform at their best while looking sharp. From limited-edition collections to innovative collaborations, our gear sets a standard for contemporary cycling fashion.<br/></p>",
-            "alignment": "center",
-            "align_text": "left",
-            "padding_left": 120,
-            "padding_right": 120,
-            "align_content_container": "none",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--primary",
-            "width": "50%",
-            "mobile_color_scheme": "",
-            "mobile_padding_left": 0,
-            "mobile_padding_right": 0,
-            "block_custom_class": "",
-            "animations": "inherit"
+            "text": "ETHICAL PRODUCTION"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We take pride in partnering with suppliers and manufacturers who share our values. By adhering to strict labor laws and environmental standards, we ensure fair wages, safe working conditions, and sustainable practices. At VALORE, we are committed to fostering positive change in the apparel industry.</p>"
+          }
+        },
+        "link-1": {
+          "type": "link",
+          "settings": {
+            "text": "LEARN MORE",
+            "url": "shopify://pages/about-us"
           }
         }
       },
       "block_order": [
-        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-image-1",
-        "template--17157701763298__8996604a-6390-4d3a-934f-c182420f74f1-text-1"
+        "subheading-1",
+        "heading-1",
+        "richtext-1",
+        "link-1"
       ],
-      "custom_css": [],
       "settings": {
-        "container": "container",
-        "color_schema": "",
-        "section_header_padding_bottom": "medium",
-        "heading": "",
-        "heading_size": "h2",
-        "description": "",
-        "column_gap": "medium",
-        "row_gap": "medium",
-        "padding_top": 76,
-        "padding_bottom": 0,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "1fa24f8a-d231-4188-aace-4cc0966e2b73": {
-      "type": "custom-content",
-      "blocks": {
-        "c13109d9-d361-43a7-9723-c7cfc5fe7fcc": {
-          "type": "text",
-          "settings": {
-            "color_scheme": "",
-            "title": "Performance and Innovation",
-            "heading_size": "h2",
-            "subheading": "",
-            "text": "<p>At VALORE, we design cycling apparel for those who push limits. Collaborating with both professional athletes and cycling enthusiasts, we use cutting-edge fabrics and technologies to deliver gear that enhances comfort, aerodynamics, and durability, empowering cyclists at every level.<br/></p>",
-            "alignment": "center",
-            "align_text": "left",
-            "padding_left": 120,
-            "padding_right": 120,
-            "align_content_container": "none",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--primary",
-            "width": "50%",
-            "mobile_color_scheme": "",
-            "mobile_padding_left": 0,
-            "mobile_padding_right": 0,
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        },
-        "5f57f939-5efa-4c9b-8d04-9d35adc7e44d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/1-2024010600020.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center",
-            "block_custom_class": "mobile-order-first",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "c13109d9-d361-43a7-9723-c7cfc5fe7fcc",
-        "5f57f939-5efa-4c9b-8d04-9d35adc7e44d"
-      ],
-      "custom_css": [],
-      "settings": {
-        "container": "container",
-        "color_schema": "",
-        "section_header_padding_bottom": "medium",
-        "heading": "",
-        "heading_size": "h2",
-        "description": "",
-        "column_gap": "medium",
-        "row_gap": "medium",
-        "padding_top": 84,
-        "padding_bottom": 84,
-        "custom_id": "",
-        "custom_class": ""
+        "color_scheme": "scheme-2",
+        "image": "",
+        "image_size": "md",
+        "content_width": "md",
+        "enable_parallax": false,
+        "remove_vertical_spacing": true
       }
     },
     "65ac5e18-3ef9-40e4-8c86-05a3a9d4d488": {
@@ -563,57 +515,7 @@
         "custom_class": ""
       }
     },
-    "ca424d80-c6dd-4d8e-81a4-bd4599587c4c": {
-      "type": "rich-text",
-      "blocks": {
-        "ceffc03a-da04-44bf-9db8-6734d5094f17": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "VALORE"
-          }
-        },
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Ethical Production",
-            "heading_size": "h2",
-            "highlight_style": "none",
-            "enable_highlight_text_color": false
-          }
-        },
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We take pride in partnering with suppliers and manufacturers who share our values. By adhering to strict labor laws and environmental standards, we ensure fair wages, safe working conditions, and sustainable practices. At VALORE, we are committed to fostering positive change in the apparel industry.</p>"
-          }
-        },
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Learn More",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "btn--underline",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "ceffc03a-da04-44bf-9db8-6734d5094f17",
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-heading-1",
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-text-1",
-        "template--17157701763298__ca424d80-c6dd-4d8e-81a4-bd4599587c4c-button-1"
-      ],
-      "settings": {
-        "container": "container-narrow",
-        "color_schema": "accent",
-        "text_alignment": "center",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
+
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -648,15 +550,6 @@
         "heading": "",
         "heading_size": "h2",
         "description": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "valore_pdp_editorial_strip": {
-      "type": "valore-pdp-editorial-strip",
-      "settings": {
-        "container": "container-full",
-        "color_schema": "background-1",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -715,12 +608,9 @@
     "valore_pdp_features_benefits",
     "valore_pdp_ride_details",
     "valore_pdp_product_guide",
-    "valore_pdp_editorial_strip",
     "1757472451fc7201d4",
-    "8996604a-6390-4d3a-934f-c182420f74f1",
-    "1fa24f8a-d231-4188-aace-4cc0966e2b73",
     "65ac5e18-3ef9-40e4-8c86-05a3a9d4d488",
-    "ca424d80-c6dd-4d8e-81a4-bd4599587c4c",
+    "image_with_text_block_materials",
     "73c8e618-10a0-43bf-b1d9-fa6707a4b913",
     "product-recommendations",
     "1757472591c3a85656"

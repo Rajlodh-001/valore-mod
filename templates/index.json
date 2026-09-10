@@ -21,17 +21,17 @@
             "content_position": "center-center",
             "text_alignment": "center",
             "text_color": "#ffffff",
-            "title": "BEAUTIES",
+            "title": "PURPOSE IN MOTION",
             "heading_size": "h-xl",
-            "subheading": "Valore",
+            "subheading": "",
             "description": "",
             "desc_size": "text-desc-base",
             "button_text_1": "WOMEN",
-            "button_link_1": "shopify://collections/cycling-jersey-women",
+            "button_link_1": "shopify://collections/women",
             "button_style_1": "btn--prestige-women",
             "button_size_1": "btn--medium",
             "button_text_2": "MEN",
-            "button_link_2": "shopify://collections/cycling-jersey-mens",
+            "button_link_2": "shopify://collections/men",
             "button_style_2": "btn--prestige-men",
             "button_size_2": "btn--medium"
           }
@@ -46,11 +46,11 @@
             "text_color": "#ffffff",
             "title": "SEE WHAT'S NEW",
             "heading_size": "h-xl",
-            "subheading": "INSPIRED BY ATHLETES",
+            "subheading": "",
             "description": "",
             "desc_size": "text-desc-lg",
             "button_text_1": "SHOP NOW",
-            "button_link_1": "shopify://collections/jerseys",
+            "button_link_1": "shopify://collections/new-arrivals",
             "button_style_1": "btn--prestige-women",
             "button_size_1": "btn--medium",
             "button_text_2": "",
@@ -67,13 +67,13 @@
             "content_position": "center-center",
             "text_alignment": "center",
             "text_color": "#ffffff",
-            "title": "ENGINEERED TO ENDURE",
+            "title": "EVERY RIDE A STORY",
             "heading_size": "h-xl",
-            "subheading": "PRO PERFORMANCE COLLECTION",
+            "subheading": "",
             "description": "",
             "desc_size": "text-desc-lg",
             "button_text_1": "VIEW COLLECTION",
-            "button_link_1": "shopify://collections/spring-summer-made-to-move",
+            "button_link_1": "shopify://collections/spring-summer",
             "button_style_1": "btn--prestige-women",
             "button_size_1": "btn--medium",
             "button_text_2": "",
@@ -113,7 +113,7 @@
           "type": "tab",
           "settings": {
             "title": "Spring / Summer",
-            "collection": "spring-summer-made-to-move",
+            "collection": "spring-summer",
             "button_label": "VIEW SPRING COLLECTION"
           }
         },
@@ -121,7 +121,7 @@
           "type": "tab",
           "settings": {
             "title": "Autumn / Winter",
-            "collection": "cycling-jersey-mens",
+            "collection": "autumn-winter",
             "button_label": "VIEW AUTUMN COLLECTION"
           }
         }
@@ -282,7 +282,7 @@
             "heading_size": "h2",
             "description": "",
             "button_label": "",
-            "button_link": "shopify://collections/mens-cycling-bib-shorts",
+            "button_link": "shopify://collections/bib-shorts",
             "button_style": "btn--white",
             "vertical_content_padding": 40,
             "vertical_content_padding_mobile": 40,
@@ -577,12 +577,15 @@
           "type": "look",
           "settings": {
             "hot_spots_background": "#ffffff",
-            "product_1": "valore-long-sleeve-jersey-sunae-laurel-green",
-            "product_1_horizontal_position": 56,
-            "product_1_vertical_position": 38,
-            "product_2": "valore-monton-mens-bib-shorts-nuova-luna-medium-gray",
-            "product_2_horizontal_position": 45,
-            "product_2_vertical_position": 58
+            "product_1": "nuova-luna-womens-bib-shorts-cocoa-brown",
+            "product_1_horizontal_position": 50,
+            "product_1_vertical_position": 58,
+            "product_2": "nuova-luna-ii-gloves-plum-purple",
+            "product_2_horizontal_position": 35,
+            "product_2_vertical_position": 42,
+            "product_3": "adatto-flowcap-hat-ember-chalk",
+            "product_3_horizontal_position": 50,
+            "product_3_vertical_position": 18
           }
         },
         "look-2": {
@@ -646,48 +649,7 @@
         "cursor_arrows_color": "#000000"
       }
     },
-    "1762786887d266c8a6": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_d982d26_nCdHyX": {
-          "type": "ai_gen_block_d982d26",
-          "settings": {
-            "section_title": "Discover Your Essentials",
-            "title_alignment": "center",
-            "title_size": 32,
-            "title_color": "#222222",
-            "collection_1": "jerseys",
-            "product_1": "occhio-mens-jersey-deep-aqua-blend",
-            "card_title_1": "Jerseys",
-            "description_1": "<p><a href=\"/collections/cycling-jersey-mens\" title=\"Men’s Jerseys\">Men</a>  |  <a href=\"/collections/cycling-jersey-women\" title=\"Women’s Jerseys\">Women</a></p>",
-            "collection_2": "bib-shorts",
-            "product_2": "nuova-luna-ii-mens-bib-shorts-deep-aqua-blue",
-            "card_title_2": "Bib Shorts",
-            "description_2": "<p><a href=\"/collections/mens-cycling-bib-shorts\" title=\"Men's Bib Shorts\">Men</a>  |  <a href=\"/collections/womens-cycling-bib-shorts\" title=\"Women’s Bib Shorts\">Women</a></p>",
-            "collection_3": "accessories",
-            "product_3": "nuova-luna-ii-gloves-midnight-black",
-            "card_title_3": "Accessories",
-            "description_3": "<p><a href=\"/collections/accessories\" title=\"Accessories\">Men</a>  |  <a href=\"/collections/accessories\" title=\"Accessories\">Women</a></p>",
-            "content_alignment": "center",
-            "collection_title_size": 18,
-            "collection_title_weight": "700",
-            "collection_title_color": "#222222",
-            "description_size": 14,
-            "description_color": "#666666",
-            "link_color": "#222222",
-            "link_hover_color": "#000000",
-            "image_border_radius": 8,
-            "grid_gap": 30,
-            "columns_mobile": "1"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_d982d26_nCdHyX"
-      ],
-      "settings": {}
-    },
+
     "video_hero_pWKkdn": {
       "type": "video-hero",
       "blocks": {
@@ -807,105 +769,23 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "rich_text_bdaE6t": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UVEcjN": {
-          "type": "heading",
-          "settings": {
-            "heading": "Find What Moves You",
-            "heading_size": "h2",
-            "highlight_style": "none",
-            "enable_highlight_text_color": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_UVEcjN"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "container": "container",
-        "color_schema": "",
-        "text_alignment": "center",
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "hero_tL6Wk6": {
-      "type": "hero",
-      "blocks": {
-        "button_Ht7UcJ": {
-          "type": "button",
-          "settings": {
-            "button_label": "Let's Get Into Gear",
-            "button_link": "shopify://collections/all",
-            "button_style": "btn--primary",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "button_Ht7UcJ"
-      ],
-      "custom_css": [
-        ".f-hero .f-hero__bg img {object-fit: contain;}"
-      ],
-      "name": "t:sections.hero.presets.name",
-      "settings": {
-        "container": "container-full",
-        "image_overlay_opacity": 0,
-        "hero_height": "adapt",
-        "content_in_container": false,
-        "content_position": "center",
-        "text_alignment": "center",
-        "text_color": "#ffffff",
-        "hero_height_mobile": "large",
-        "content_position_mobile": "center",
-        "show_text_below": true,
-        "text_alignment_mobile": "center",
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit",
-        "enable_bg_zoom_effect": true
-      }
-    },
+
     "featured_blog_LUEACw": {
-      "type": "featured-blog",
-      "name": "t:sections.featured-blog.presets.name",
+      "type": "blog-posts-prestige",
       "settings": {
-        "container": "container",
-        "color_schema": "",
-        "heading": "Every Ride a Story",
+        "subheading": "NEWS",
+        "title": "FROM THE BLOG",
         "heading_size": "h2",
-        "subheading": "",
-        "description": "",
         "blog": "news",
-        "image_aspect_ratio": "adapt",
-        "article_heading_size": "h4",
-        "show_date": true,
-        "show_excerpt": true,
-        "show_readmore": true,
-        "button_label": "",
-        "button_style": "btn--primary",
-        "limit": 3,
-        "columns": 3,
-        "column_gap": "medium",
-        "row_gap": "medium",
-        "enable_slider": false,
-        "show_dots": false,
-        "show_nav": false,
-        "enable_swipe_mobile": false,
-        "column_mobile": "1",
-        "show_excerpt_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 40,
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit"
+        "posts_count": 3,
+        "show_category": true,
+        "show_read_more": true,
+        "button_text": "DISCOVER ALL OUR STORIES",
+        "button_link": "shopify://blogs/news",
+        "container": "container",
+        "color_schema": "background-1",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "product_tabs_mE6rmB": {
@@ -923,7 +803,7 @@
           "type": "tab",
           "settings": {
             "title": "Jerseys",
-            "collection": "cycling-jersey-mens",
+            "collection": "jerseys",
             "button_label": ""
           }
         }
@@ -1398,86 +1278,6 @@
         "custom_class": "",
         "animations": "inherit"
       }
-    },
-    "multicolumn_ByB3cx": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_C7Td3E": {
-          "type": "column",
-          "settings": {
-            "image_link": "",
-            "title": "FREE SHIPPING",
-            "heading_size": "h3",
-            "text": "<p>Exclusive deal on orders $180+</p>",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--underline"
-          }
-        },
-        "column_6Rw3hy": {
-          "type": "column",
-          "settings": {
-            "image_link": "",
-            "title": "EASY REFUND",
-            "heading_size": "h3",
-            "text": "<p>Within 30 days of purchase</p>",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--underline"
-          }
-        },
-        "column_tgeC8K": {
-          "type": "column",
-          "settings": {
-            "image_link": "",
-            "title": "ONLINE SUPPORT",
-            "heading_size": "h3",
-            "text": "<p>24 hours a day, 7 days a week</p>",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--underline"
-          }
-        },
-        "column_V74dnk": {
-          "type": "column",
-          "settings": {
-            "image_link": "",
-            "title": "FLEXIBLE PAYMENT",
-            "heading_size": "h3",
-            "text": "<p>Paypal</p>",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--underline"
-          }
-        }
-      },
-      "block_order": [
-        "column_C7Td3E",
-        "column_6Rw3hy",
-        "column_tgeC8K",
-        "column_V74dnk"
-      ],
-      "settings": {
-        "container": "container",
-        "color_schema": "",
-        "section_header_padding_bottom": "medium",
-        "heading": "",
-        "heading_size": "h2",
-        "description": "",
-        "layout": "vertical",
-        "text_alignment": "center",
-        "image_width": "x-small",
-        "columns": 4,
-        "column_gap": "medium",
-        "row_gap": "medium",
-        "enable_swipe_mobile": false,
-        "column_mobile": "1",
-        "padding_top": 100,
-        "padding_bottom": 40,
-        "custom_id": "",
-        "custom_class": "",
-        "animations": "inherit"
-      }
     }
   },
   "order": [
@@ -1491,11 +1291,8 @@
     "video_W9K8bm",
     "lookbook_kEcaGH",
     "before_after_compare",
-    "1762786887d266c8a6",
     "video_hero_pWKkdn",
     "hero_kyyH7r",
-    "rich_text_bdaE6t",
-    "hero_tL6Wk6",
     "featured_blog_LUEACw",
     "product_tabs_mE6rmB",
     "featured_collection_G7hJg6",
@@ -1504,7 +1301,6 @@
     "hero_yNnGHN",
     "featured_product_QbyGbz",
     "scrolling_promotion_i3kjyD",
-    "collage_tabs_3MBTHm",
-    "multicolumn_ByB3cx"
+    "collage_tabs_3MBTHm"
   ]
 }

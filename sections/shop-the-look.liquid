@@ -61,10 +61,11 @@
       overflow: hidden;
       width: 100%;
       border-radius: 0px;
+      aspect-ratio: 1 / 1;
     }
     .stl__image-wrapper img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
       object-fit: cover;
     }
@@ -316,7 +317,7 @@
                   {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'image-cover' }}
                 {%- else -%}
                   {%- capture fallback_img -%}
-                    {%- cycle 'VALORE2025FW_1030.jpg', '20240823_6970.jpg' -%}
+                    {%- cycle 'VALORE2025FW_1030.jpg', '20250303_448_2_1.jpg' -%}
                   {%- endcapture -%}
                   <img src="{{ fallback_img | strip | asset_url }}" alt="Valore Lookbook" class="image-cover" loading="lazy" width="1200" height="1600">
                 {%- endif -%}
@@ -608,6 +609,64 @@
           "step": 1,
           "unit": "%",
           "default": 40
+        },
+        {
+          "type": "header",
+          "content": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "range",
+          "id": "product_3_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "product_3_vertical_position",
+          "label": "Vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "Product 4"
+        },
+        {
+          "type": "product",
+          "id": "product_4",
+          "label": "Product 4"
+        },
+        {
+          "type": "range",
+          "id": "product_4_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 70
+        },
+        {
+          "type": "range",
+          "id": "product_4_vertical_position",
+          "label": "Vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 70
         }
       ]
     }

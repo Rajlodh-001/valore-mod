@@ -5,6 +5,21 @@
 {{ 'valore-pdp-minimal.css' | asset_url | stylesheet_tag }}
 
 {% liquid
+  assign sec_title = product.metafields.valore_pdp.ride_section_title.value
+  assign sec_sub = product.metafields.valore_pdp.ride_section_sub.value
+
+  assign r1_title = product.metafields.valore_pdp.ride_1_title.value
+  assign r1_val = product.metafields.valore_pdp.ride_1_value.value
+
+  assign r2_title = product.metafields.valore_pdp.ride_2_title.value
+  assign r2_val = product.metafields.valore_pdp.ride_2_value.value
+
+  assign r3_title = product.metafields.valore_pdp.ride_3_title.value
+  assign r3_val = product.metafields.valore_pdp.ride_3_value.value
+
+  assign r4_title = product.metafields.valore_pdp.ride_4_title.value
+  assign r4_val = product.metafields.valore_pdp.ride_4_value.value
+
   assign title = product.metafields.valore_pdp.ride_details_title.value
   assign discipline = product.metafields.valore_pdp.discipline.value
   assign temperature = product.metafields.valore_pdp.temperature.value
@@ -13,7 +28,7 @@
   assign wearing_feel = product.metafields.valore_pdp.wearing_feel.value
 
   assign has_content = false
-  if title != blank or discipline != blank or temperature != blank or compression != blank or fit != blank or wearing_feel != blank
+  if title != blank or discipline != blank or temperature != blank or compression != blank or fit != blank or wearing_feel != blank or r1_val != blank or r2_val != blank or r3_val != blank or r4_val != blank
     assign has_content = true
   endif
 

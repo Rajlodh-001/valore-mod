@@ -51,7 +51,7 @@
     "cart_recommendations_enable": false,
     "show_free_shipping_message": true,
     "pcard_show_second_img": true,
-    "pcard_show_color_swatch": true,
+    "pcard_show_color_swatch": false,
     "pcard_show_review_badge": false,
     "pcard_show_cart_button": false,
     "pcard_show_quickview_button": false,
@@ -1389,18 +1389,6 @@
         "footer": {
           "type": "footer",
           "blocks": {
-            "4e726616-7aea-485a-ba09-14dca70bda19": {
-              "type": "help_bar",
-              "settings": {
-                "color_schema": "background-1",
-                "heading": "Need help?",
-                "working_hours": "9:00am - 6:00pm, Mon to Sun",
-                "email": "hi@yourdomain.com",
-                "phone": "+1-202-555-0195",
-                "divider": true,
-                "custom_class": "border-top"
-              }
-            },
             "footer-1": {
               "type": "text",
               "settings": {
@@ -1410,7 +1398,7 @@
               }
             },
             "38a4c8ff-0f36-4662-b689-09fc66a5126e": {
-              "type": "link_list",
+              "type": "links",
               "settings": {
                 "heading": "Information",
                 "menu": "footer",
@@ -1418,7 +1406,7 @@
               }
             },
             "footer-0": {
-              "type": "link_list",
+              "type": "links",
               "settings": {
                 "heading": "Quick links",
                 "menu": "footer-menu-quick-links",
@@ -1427,7 +1415,6 @@
             }
           },
           "block_order": [
-            "4e726616-7aea-485a-ba09-14dca70bda19",
             "footer-1",
             "38a4c8ff-0f36-4662-b689-09fc66a5126e",
             "footer-0"

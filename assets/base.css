@@ -1250,3 +1250,11 @@ responsive-image img {
     transform: scale(1.2) rotate(5deg) translateZ(0);
   }
 }
+
+/* Hide color / variant swatches on product cards */
+.product-card__options,
+.product-card__swatch,
+.f-product-card__options,
+color-swatch.product-card__swatch {
+  display: none !important;
+}

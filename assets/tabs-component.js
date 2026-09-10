@@ -32,7 +32,8 @@ if (!customElements.get('tabs-component')) {
 			this.domNodes.tabNavs.forEach(tab => {
 				tab.addEventListener('click', e => {
 					e.preventDefault()
-					const index = e.target ? Number(e.target.dataset.index) : -1
+					const tabBtn = e.target.closest('[role="tab"]')
+					const index = tabBtn ? Number(tabBtn.dataset.index) : -1
 					this.setActiveTab(index)
 				})
 			})
@@ -42,7 +43,9 @@ if (!customElements.get('tabs-component')) {
 		}
 
 		setLineStyle = (tab) => {
+			if (!tab) return
 			let navGroupWidth = this.domNodes.tabNavGroup && this.domNodes.tabNavGroup.clientWidth
+			if (!navGroupWidth) return
 			let scale = tab.clientWidth / navGroupWidth
 			let translate = tab.offsetLeft / navGroupWidth / scale
 

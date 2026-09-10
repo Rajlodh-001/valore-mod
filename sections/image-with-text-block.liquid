@@ -1,0 +1,271 @@
+{%- if section.settings.image != blank or section.blocks.size > 0 -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --image-with-text-block-aspect-ratio: {% if section.settings.image != blank and section.settings.image_size == 'auto' and section.blocks.size == 0 %}{{ section.settings.image.aspect_ratio }}{% else %}auto{% endif %};
+      --content-over-media-content-max-width: {% if section.settings.content_width == 'sm' %}190px{% elsif section.settings.content_width == 'md' %}250px{% else %}320px{% endif %};
+    }
+
+    @media screen and (min-width: 700px) {
+      #shopify-section-{{ section.id }} {
+        --content-over-media-content-max-width: {% if section.settings.content_width == 'sm' %}240px{% elsif section.settings.content_width == 'md' %}380px{% else %}520px{% endif %};
+      }
+    }
+  </style>
+
+  <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    <image-banner class="image-with-text-block {% if section.settings.enable_parallax %}image-with-text-block--parallax {% endif %}content-over-media content-over-media--{{ section.settings.image_size }}">
+      {%- if section.settings.image != blank -%}
+        <picture>
+          {%- if section.settings.mobile_image != blank -%}
+            <source
+              media="(max-width: 699px)"
+              srcset="{{ section.settings.mobile_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_image | image_url: width: 1000 }} 1000w"
+              width="{{ section.settings.mobile_image.width }}"
+              height="{{ section.settings.mobile_image.height }}"
+            >
+          {%- endif -%}
+
+          {{-
+            section.settings.image
+            | image_url: width: section.settings.image.width
+            | image_tag: sizes: '100vw', widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200'
+          -}}
+        </picture>
+      {%- else -%}
+        <picture>
+          <img src="{{ '345-P5231708.jpg' | asset_url }}" alt="Materials background" loading="lazy">
+        </picture>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="content text-center">
+          <div class="prose text-sm sm:text-base">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'subheading' -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="h6" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+                  {%- endif -%}
+
+                {%- when 'heading' -%}
+                  {%- if block.settings.text != blank -%}
+                    <h2 class="h2 image-with-text-block__heading" {{ block.shopify_attributes }}>{{ block.settings.text }}</h2>
+                  {%- endif -%}
+
+                {%- when 'richtext' -%}
+                  {%- if block.settings.content != blank -%}
+                    <div {{ block.shopify_attributes }}>
+                      {{- block.settings.content -}}
+                    </div>
+                  {%- endif -%}
+
+                {%- when 'link' -%}
+                  <a
+                    {% if block.settings.url %}
+                      href="{{ block.settings.url }}"
+                    {% endif %}
+                    class="link"
+                    {{ block.shopify_attributes }}
+                  >
+                    {{- block.settings.text | escape -}}
+                  </a>
+
+                {%- when 'liquid' -%}
+                  {%- if block.settings.liquid != blank -%}
+                    <div {{ block.shopify_attributes }}>
+                      {{- block.settings.liquid -}}
+                    </div>
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </image-banner>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Image with text block",
+  "class": "shopify-section--image-with-text-block",
+  "tag": "section",
+  "max_blocks": 6,
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Original image ratio"
+        },
+        {
+          "value": "xs",
+          "label": "Extra small"
+        },
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fit screen"
+        }
+      ],
+      "default": "lg"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "options": [
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        }
+      ],
+      "default": "sm"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "Enable parallax",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_vertical_spacing",
+      "label": "Remove vertical spacing",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "VALORE"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "ETHICAL PRODUCTION"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>We only work with the best materials and fabrics, engineered for high performance. Made for cyclists.</p>"
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "Liquid code"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text block",
+      "blocks": [
+        {
+          "type": "subheading",
+          "settings": {
+            "text": "MATERIALS"
+          }
+        },
+        {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We only work with the best materials and fabrics, engineered for high performance. Made for cyclists.</p>"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "text": "Learn more"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

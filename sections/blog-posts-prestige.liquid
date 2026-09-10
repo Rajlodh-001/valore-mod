@@ -1,0 +1,195 @@
+{%- comment -%}
+  Prestige Theme Blog Posts section ported to Valore
+{%- endcomment -%}
+
+<div class="blog-posts-prestige f-section-padding color-{{ section.settings.color_schema }}" style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="{{ section.settings.container }}">
+    <div class="section__header text-center">
+      {%- if section.settings.subheading != blank -%}
+        <p class="section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="section__heading {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- assign blog = blogs[section.settings.blog] -%}
+    <div class="valore-blog-grid">
+      {%- if blog != blank and blog.articles_count > 0 -%}
+        {%- for article in blog.articles limit: section.settings.posts_count -%}
+          <div class="valore-blog-card">
+            {%- if article.image != blank -%}
+              <a href="{{ article.url }}" class="valore-blog-card__media">
+                {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: article.title }}
+              </a>
+            {%- endif -%}
+            <div class="valore-blog-card__content">
+              {%- if section.settings.show_category and article.tags.size > 0 -%}
+                <span class="valore-blog-card__category">{{ article.tags | first | uppercase }}</span>
+              {%- endif -%}
+              <h3 class="valore-blog-card__title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </h3>
+              {%- if section.settings.show_read_more -%}
+                <a href="{{ article.url }}" class="valore-blog-card__read-more">Read more</a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {% comment %} Placeholder articles matching screenshot {% endcomment %}
+        <div class="valore-blog-card">
+          <div class="valore-blog-card__media">
+            <img src="{{ 'blog_dummy_1.jpg' | asset_url }}" alt="How to choose your business bag" loading="lazy">
+          </div>
+          <div class="valore-blog-card__content">
+            <span class="valore-blog-card__category">PRODUCT</span>
+            <h3 class="valore-blog-card__title"><a href="#">HOW TO CHOOSE YOUR BUSINESS BAG</a></h3>
+            <a href="#" class="valore-blog-card__read-more">Read more</a>
+          </div>
+        </div>
+
+        <div class="valore-blog-card">
+          <div class="valore-blog-card__media">
+            <img src="{{ 'blog_dummy_2.jpg' | asset_url }}" alt="A shooting day in Etretat" loading="lazy">
+          </div>
+          <div class="valore-blog-card__content">
+            <span class="valore-blog-card__category">STORY</span>
+            <h3 class="valore-blog-card__title"><a href="#">A SHOOTING DAY IN ETRETAT</a></h3>
+            <a href="#" class="valore-blog-card__read-more">Read more</a>
+          </div>
+        </div>
+
+        <div class="valore-blog-card">
+          <div class="valore-blog-card__media">
+            <img src="{{ 'blog_dummy_3.jpg' | asset_url }}" alt="Focus on your new favorite" loading="lazy">
+          </div>
+          <div class="valore-blog-card__content">
+            <span class="valore-blog-card__category">PRODUCT</span>
+            <h3 class="valore-blog-card__title"><a href="#">FOCUS ON YOUR NEW FAVORITE: LE GIANNI</a></h3>
+            <a href="#" class="valore-blog-card__read-more">Read more</a>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.button_text != blank -%}
+      <div class="section__footer flex justify-center" style="margin-top: 4rem;">
+        <a href="{{ section.settings.button_link | default: blog.url | default: '/blogs/news' }}" class="btn btn--prestige-dark">
+          {{ section.settings.button_text | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts (Prestige)",
+  "class": "shopify-section--blog-posts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "NEWS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "FROM THE BLOG"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "posts_count",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Posts count",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_read_more",
+      "label": "Show read more link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "DISCOVER ALL OUR STORIES"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container", "label": "Fixed" },
+        { "value": "container-fluid", "label": "Stretched" },
+        { "value": "container-full", "label": "Full width" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_schema",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts (Prestige)"
+    }
+  ]
+}
+{% endschema %}

@@ -77,6 +77,82 @@
       </div>
     </div>
   </div>
+
+  <script>
+    (function() {
+      function initTextWithIconsSlider() {
+        var carousel = document.getElementById('{{ carousel_id }}');
+        if (!carousel) return;
+        var parent = carousel.closest('.container') || carousel.parentElement;
+        if (!parent) return;
+        var items = carousel.querySelectorAll('.text-with-icons__item');
+        var dots = parent.querySelectorAll('.page-dots .tap-area');
+        if (!items.length || !dots.length) return;
+
+        var currentIndex = 0;
+
+        function updateSlide(index) {
+          if (index < 0) index = 0;
+          if (index >= items.length) index = items.length - 1;
+          currentIndex = index;
+
+          items.forEach(function(item, i) {
+            if (i === currentIndex) {
+              item.classList.add('is-selected');
+            } else {
+              item.classList.remove('is-selected');
+            }
+          });
+
+          dots.forEach(function(dot, i) {
+            dot.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+          });
+        }
+
+        dots.forEach(function(dot, idx) {
+          function handleDotSelect(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(idx);
+          }
+          dot.addEventListener('click', handleDotSelect);
+          dot.addEventListener('touchstart', handleDotSelect, { passive: false });
+        });
+
+        var startX = 0;
+        var startY = 0;
+
+        carousel.addEventListener('touchstart', function(e) {
+          if (e.touches && e.touches.length) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+          }
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', function(e) {
+          if (!e.changedTouches || !e.changedTouches.length) return;
+          var endX = e.changedTouches[0].clientX;
+          var endY = e.changedTouches[0].clientY;
+          var diffX = startX - endX;
+          var diffY = startY - endY;
+
+          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+            if (diffX > 0) {
+              updateSlide(currentIndex + 1);
+            } else {
+              updateSlide(currentIndex - 1);
+            }
+          }
+        }, { passive: true });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTextWithIconsSlider);
+      } else {
+        initTextWithIconsSlider();
+      }
+    })();
+  </script>
 {%- endif -%}
 
 {% schema %}

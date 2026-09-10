@@ -95,8 +95,13 @@
                             assign tab_name = 'Tab ' | append: forloop.index
                           endif
                         endif
+
+                        assign tab_name_mobile = tab_name | replace: 'Spring / Summer', 'Spring' | replace: 'Autumn / Winter', 'Autumn' | replace: 'SPRING / SUMMER', 'SPRING' | replace: 'AUTUMN / WINTER', 'AUTUMN'
                     %}
-                      <button class="f-tabs__nav focus-inset" role="tab" id="{{- block.id -}}">{{ tab_name }}</button>
+                      <button class="f-tabs__nav focus-inset" role="tab" id="{{- block.id -}}">
+                        <span class="tab-name-mobile">{{ tab_name_mobile }}</span>
+                        <span class="tab-name-desktop">{{ tab_name }}</span>
+                      </button>
                   {% endfor %}
               </div>
             </div>

@@ -67,8 +67,15 @@
                     <span>
                       <span class="font-body-bolder">{{ option_label }}</span>
                       {% if show_selected_value and option.selected_value != blank %}
+                        {% liquid
+                          assign sel_val = option.selected_value
+                          if is_size and sel_val contains '-' and sel_val contains 'asia' or is_size and sel_val contains '-' and sel_val contains 'ASIA'
+                            assign sel_val = sel_val | replace: '-', ' ' | upcase
+                            assign sel_val = sel_val | replace: 'ASIA ', 'ASIA ' | replace: ' EUROPE ', ' = EUROPE '
+                          endif
+                        %}
                         <span class="variant-picker__label-sep" aria-hidden="true">—</span>
-                        <span class="selected-value">{{ option.selected_value }}</span>
+                        <span class="selected-value">{{ sel_val }}</span>
                       {% endif %}
                     </span>
                     {%- if is_size and show_size_chart -%}
@@ -78,8 +85,14 @@
                   <div class="sizes">
                     {%- for value in option.values -%}
                       {%- assign display_value = value -%}
-                      {%- if is_size and value contains '=' -%}
-                        {%- assign display_value = value | split: '=' | first | remove: 'Asia' | strip -%}
+                      {%- if is_size -%}
+                        {%- if value contains '=' -%}
+                          {%- assign display_value = value | split: '=' | first | remove: 'Asia' | remove: 'ASIA' | strip -%}
+                        {%- elsif value contains 'asia-' or value contains 'ASIA-' -%}
+                          {%- assign val_lower = value | downcase -%}
+                          {%- assign asia_part = val_lower | split: '-europe-' | first | remove: 'asia-' | strip -%}
+                          {%- assign display_value = asia_part | replace: '-', ' ' | upcase -%}
+                        {%- endif -%}
                       {%- endif -%}
                       <div
                         class="variant-picker__option"
@@ -266,17 +279,21 @@
                       class="open-size-chart open-foxkit-sizechart btn btn--with-icon btn--plain foxkit-hidden"
                       aria-label="{{ 'products.product.open_size_chart' | t }}"
                     >
-                      <span
-                        ><u>{{ 'products.product.open_size_chart' | t }}</u></span
-                      >
+                      <span><u>{{ 'products.product.open_size_chart' | t }}</u></span>
                     </button>
                   {% endif %}
                 </div>
                 <div class="variant-picker__option-values">
                   {%- for value in option.values -%}
                     {%- assign display_value = value -%}
-                    {%- if is_size and value contains '=' -%}
-                      {%- assign display_value = value | split: '=' | first | remove: 'Asia' | strip -%}
+                    {%- if is_size -%}
+                      {%- if value contains '=' -%}
+                        {%- assign display_value = value | split: '=' | first | remove: 'Asia' | remove: 'ASIA' | strip -%}
+                      {%- elsif value contains 'asia-' or value contains 'ASIA-' -%}
+                        {%- assign val_lower = value | downcase -%}
+                        {%- assign asia_part = val_lower | split: '-europe-' | first | remove: 'asia-' | strip -%}
+                        {%- assign display_value = asia_part | replace: '-', ' ' | upcase -%}
+                      {%- endif -%}
                     {%- endif -%}
                     <div
                       class="variant-picker__option"

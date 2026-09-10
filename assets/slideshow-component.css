@@ -136,7 +136,11 @@
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: circleProgress 6s linear infinite;
+  animation: circleProgress var(--slide-duration, 6s) linear 1 forwards;
+}
+
+.f-slideshow .flickity-wrapper.flickity-controls-group.f-pagination-bg--none .flickity-page-dots .dot[data-duration="22s"].is-selected::before {
+  animation-duration: 22s !important;
 }
 
 @keyframes circleProgress {
@@ -154,16 +158,26 @@
   display: block;
 }
 .f-slideshow-wrapper--small {
-  --slide-height: 28rem;
+  --slide-height: 38rem;
 }
 .f-slideshow-wrapper--medium {
-  --slide-height: 34rem;
+  --slide-height: 48rem;
 }
 .f-slideshow-wrapper--large {
-  --slide-height: 42rem;
+  --slide-height: 58rem;
 }
 .f-slideshow-wrapper--adapt {
   --slide-height: 100%;
+}
+@media (max-width: 767.98px) {
+  .f-slideshow-wrapper {
+    --slide-height: 56rem !important;
+  }
+  .f-slideshow__slides:not(.f-slideshow-wrapper--adapt),
+  .f-slideshow__slide {
+    height: 56rem !important;
+    min-height: 56rem !important;
+  }
 }
 @media (min-width: 768px) {
   .f-slideshow-wrapper--small {

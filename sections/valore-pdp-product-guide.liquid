@@ -15,7 +15,7 @@
   assign model_shorts = product.metafields.valore_pdp.model_shorts_size.value
 
   assign has_content = false
-  if fit_fabric != blank or size_guide_table != blank or care_advice != blank
+  if fit_fabric != blank or size_guide_table != blank or care_advice != blank or section.settings.shipping_text != blank or section.settings.returns_text != blank
     assign has_content = true
   endif
 

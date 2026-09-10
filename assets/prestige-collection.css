@@ -146,12 +146,20 @@
   min-height: auto;
   border: 0;
   color: #b0b0b0;
+  transition: color 0.2s ease;
+}
+
+.column-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
 }
 
 .prestige-collection-toolbar__layout-btn.is-active,
 .prestige-collection-toolbar__layout-btn[aria-selected="true"],
 .prestige-collection-toolbar__layout-btn:hover {
-  color: #121212;
+  color: #121212 !important;
+  opacity: 1 !important;
 }
 
 .prestige-collection-toolbar__layout-btn svg {
@@ -738,11 +746,11 @@
 
 @media (max-width: 767px) {
   .prestige-collection-toolbar__count {
-    position: static;
-    transform: none;
-    flex: 1;
-    text-align: center;
-    font-size: 1rem;
+    display: none !important;
+  }
+
+  .prestige-collection-toolbar__btn[data-prestige-desktop-columns] {
+    display: none !important;
   }
 
   .prestige-collection-toolbar {
@@ -755,3 +763,10 @@
     padding-inline: 1.6rem;
   }
 }
+
+@media (min-width: 768px) {
+  .prestige-collection-toolbar .column-switcher {
+    display: none !important;
+  }
+}
+

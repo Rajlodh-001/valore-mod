@@ -916,6 +916,9 @@ details[open]:not(.parent-group) > summary > [data-collapsible-icon] svg:first-c
   flex: 0 0 auto;
   z-index: 1;
 }
+.f-quantity__button * {
+  pointer-events: none;
+}
 .f-quantity__button svg {
   pointer-events: none;
   transition: 0.3s all;
@@ -1253,6 +1256,14 @@ details[open]:not(.parent-group) > summary > [data-collapsible-icon] svg:first-c
   min-height: 800px !important;
   max-height: 85vh !important;
   overflow: hidden !important;
+}
+
+@media (max-width: 767.98px) {
+  .prestige-video-section .deferred-media {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+  }
 }
 
 .prestige-video-section .deferred-media__poster .section__header {

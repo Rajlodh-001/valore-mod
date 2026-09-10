@@ -33,10 +33,9 @@
   assign f6_img = product.metafields.valore_pdp.feature_6_image.value
 
   assign has_content = false
-  if sec_title != blank or f1_title != blank or f2_title != blank or f3_title != blank or f4_title != blank or f5_title != blank or f6_title != blank
+  if f1_title != blank or f2_title != blank or f3_title != blank or f4_title != blank or f5_title != blank or f6_title != blank or sec_title != blank
     assign has_content = true
   endif
-
   assign container = section.settings.container
   assign section_id = section.settings.custom_id | default: section.id
 %}

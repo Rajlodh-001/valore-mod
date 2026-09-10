@@ -354,8 +354,9 @@
     padding-block: 1.2rem;
   }
 
-  .site-header .container-fluid {
-    padding-inline: 2rem;
+  .site-header .container-fluid,
+  .site-header .container {
+    padding-inline: 1.4rem !important;
   }
 }
 
@@ -399,6 +400,67 @@
 @media (min-width: 1024px) {
   .site-header--design-2 .site-header__inner {
     column-gap: 4rem;
+  }
+}
+
+/* Mobile Header Layout & Overlap Fix (Prestige Alignment) */
+@media (max-width: 1023.98px) {
+  .site-header .site-header__inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .site-header .mobile-nav-toggle {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    z-index: 2;
+  }
+
+  .site-header .site-header__center,
+  .site-header .site-header__center--max {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    max-width: 60% !important;
+    z-index: 1;
+  }
+
+  .site-header .site-header__right {
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    z-index: 2;
+  }
+
+  .site-header__addons .header-search-form drawer-opener,
+  .site-header__search {
+    display: inline-flex !important;
+  }
+}
+
+/* Global logo max-width rules across all breakpoints */
+.site-header .site-logo__img {
+  max-width: 85px !important;
+  height: auto !important;
+}
+
+@media (min-width: 768px) {
+  .site-header .site-logo__img {
+    max-width: 90px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-header .site-logo__img {
+    max-width: 100px !important;
   }
 }
 

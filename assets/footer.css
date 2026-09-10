@@ -44,18 +44,53 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .footer__block-list {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+@media (max-width: 767px) {
+  .footer {
+    padding: 3rem 1.5rem 2rem !important;
   }
-}
-
-@media (max-width: 640px) {
+  .footer .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   .footer__block-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2rem !important;
+    gap: 2.2rem !important;
+    width: 100% !important;
+  }
+  .footer__block--newsletter,
+  .footer__block--links,
+  .footer__block--text {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .footer__block--newsletter form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+  .footer__block--newsletter .button,
+  .footer__block--newsletter button[type="submit"] {
+    width: auto !important;
+    align-self: flex-start !important;
+    padding: 0.6rem 1.8rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    padding: 4rem 2.5rem 3rem !important;
+  }
+  .footer .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .footer__block-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 3rem 2.5rem !important;
   }
 }
 
@@ -77,6 +112,14 @@
   color: #777777 !important;
   line-height: 1.6 !important;
   font-weight: 400 !important;
+}
+
+.footer__block--newsletter .form-control {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 .footer__block--newsletter .input,
@@ -225,7 +268,8 @@
 @media (max-width: 768px) {
   .footer__aside {
     flex-direction: column !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 1.25rem !important;
   }
 }
@@ -338,10 +382,66 @@
   letter-spacing: 0.02em !important;
 }
 
-@media (max-width: 768px) {
-  .text-with-icons {
-    flex-direction: column !important;
-    gap: 2.5rem !important;
+@media (max-width: 699px) {
+  .text-with-icons:not(.text-with-icons--stacked) {
+    grid: auto / auto-flow 100% !important;
+    gap: 0 !important;
+    display: grid !important;
+    overflow: hidden !important;
+  }
+  .text-with-icons:not(.text-with-icons--stacked) > * {
+    grid-area: 1 / -1 !important;
+    padding-inline: 2.5rem !important;
+    opacity: 1;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .text-with-icons:not(.text-with-icons--stacked) > :not(.is-selected) {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .page-dots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    margin-top: 1.5rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+  }
+  .page-dots .tap-area {
+    position: relative !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #b0b0b0 !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    transition: background 0.25s ease, opacity 0.25s ease !important;
+    opacity: 0.6 !important;
+    pointer-events: auto !important;
+  }
+  .page-dots .tap-area::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -10px !important;
+    bottom: -10px !important;
+    left: -10px !important;
+    right: -10px !important;
+  }
+  .page-dots .tap-area .sr-only,
+  .page-dots .tap-area span {
+    display: none !important;
+  }
+  .page-dots .tap-area[aria-current="true"] {
+    background: #111111 !important;
+    opacity: 1 !important;
   }
 }
 

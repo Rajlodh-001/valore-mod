@@ -182,7 +182,7 @@
   padding-top: 2rem;
 }
 .f-cart-drawer__buttons.f-cart-drawer__view-cart {
-  gap: 8px;
+  gap: 12px;
 }
 .f-cart-drawer__buttons.f-cart-drawer__view-cart [data-checkout-button] {
   flex: 1;
@@ -194,8 +194,114 @@
 }
 @media (min-width: 768px) {
   .f-cart-drawer__buttons.f-cart-drawer__view-cart a {
-    padding: 0 2.9rem;
+    padding: 0 2rem;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Prestige Button Animations for Cart Drawer                                 */
+/* -------------------------------------------------------------------------- */
+
+/* View Cart Button (Hollow outline -> Solid Black slide) */
+.f-cart-drawer__buttons a.btn--secondary,
+.f-cart-drawer__buttons a.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 4.4rem !important;
+  min-height: 4.4rem !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+  border: 1px solid #12171a !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-heading-family) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+
+  --initial-gradient: linear-gradient(transparent, transparent);
+  --hover-gradient: linear-gradient(#12171a, #12171a);
+  --initial-background-position: left;
+  --hover-background-position: right;
+  background-color: transparent !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-size: 101% 101%, 0 101% !important;
+  background-position: var(--initial-background-position) !important;
+  background-repeat: no-repeat !important;
+  color: #12171a !important;
+  transition: background-size 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-position 0.45s step-end, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+}
+
+.f-cart-drawer__buttons a.btn--secondary::before,
+.f-cart-drawer__buttons a.btn--secondary::after,
+.f-cart-drawer__buttons a.btn::before,
+.f-cart-drawer__buttons a.btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+.f-cart-drawer__buttons a.btn--secondary:hover,
+.f-cart-drawer__buttons a.btn:hover {
+  color: #ffffff !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
+}
+
+/* Checkout Button (Solid Black -> Transparent Hollow slide) */
+.f-cart-drawer__buttons button.btn--primary,
+.f-cart-drawer__buttons [data-checkout-button] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 4.4rem !important;
+  min-height: 4.4rem !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+  border: 1px solid #12171a !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-heading-family) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+
+  --initial-gradient: linear-gradient(#12171a, #12171a);
+  --hover-gradient: linear-gradient(transparent, transparent);
+  --initial-background-position: right;
+  --hover-background-position: left;
+  background-color: transparent !important;
+  background-image: var(--initial-gradient), var(--hover-gradient) !important;
+  background-size: 101% 101%, 0 101% !important;
+  background-position: var(--initial-background-position) !important;
+  background-repeat: no-repeat !important;
+  color: #ffffff !important;
+  transition: background-size 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-position 0.45s step-end, color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border-color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) !important;
+}
+
+.f-cart-drawer__buttons button.btn--primary::before,
+.f-cart-drawer__buttons button.btn--primary::after,
+.f-cart-drawer__buttons [data-checkout-button]::before,
+.f-cart-drawer__buttons [data-checkout-button]::after {
+  display: none !important;
+  content: none !important;
+}
+
+.f-cart-drawer__buttons button.btn--primary:hover,
+.f-cart-drawer__buttons [data-checkout-button]:hover {
+  color: #12171a !important;
+  border-color: #12171a !important;
+  background-position: var(--hover-background-position) !important;
+  background-size: 0 101%, 101% 101% !important;
 }
 .f-cart-drawer__buttons .agree-terms {
   width: 100%;
